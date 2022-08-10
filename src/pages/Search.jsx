@@ -5,7 +5,7 @@ import CustomPaginationActionsTable from '../components/Table'
 import CourseCardSlider from '../components/CourseCardSlider/CourseCardSlider'
 import NewsCardSlider from '../components/NewsCardSlider/NewsCardSlider';
 
-const Homepage=()=>{
+const Search=()=>{
     return(
         <>
             <Navbar />
@@ -18,4 +18,4 @@ const Homepage=()=>{
     )
 }
 
-export default Homepage;
+export default Search;
