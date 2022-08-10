@@ -1,9 +1,9 @@
 import React from 'react';
-import Homepage from './pages/Homepage';
+import Signup from './components/Studentsignup';
 const App =()=>{
   return(
     <>
-      <Homepage/>
+      <Signup/>
     </>
   )
 }

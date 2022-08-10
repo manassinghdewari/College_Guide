@@ -111,7 +111,10 @@ export default function SignUp() {
           <Avatar sx={{ m: 1, bgcolor: 'blue' }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography 
+          className="text-center pt-3"
+          component="h1" 
+          variant="h5">
             Sign up
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
@@ -192,6 +195,16 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
+            <Typography align="center" component="h1" variant="h7" sx={{ m:1,}}>
+                 OR
+          </Typography>
+            <Button 
+            variant="contained"
+            fullWidth
+             color="primary"
+             sx={{ mt: 3, mb: 2 }}>
+                Sign up with Google 
+             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="#" variant="body2">
