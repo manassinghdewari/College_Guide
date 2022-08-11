@@ -1,9 +1,10 @@
 import React from 'react';
-import CollegeSignin from './components/Collegesignin';
+import Accordian from './components/FAQsection/Accordian';
+import Accordion from './components/FAQsection/Accordian';
 const App =()=>{
   return(
     <>
-      <CollegeSignin/>
+      <Accordion/>
     </>
   )
 }
