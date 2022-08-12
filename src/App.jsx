@@ -1,9 +1,10 @@
 import React from 'react';
-import Homepage from './pages/Homepage';
+import Accordian from './components/FAQsection/Accordian';
+import Accordion from './components/FAQsection/Accordian';
 const App =()=>{
   return(
     <>
-      <Homepage/>
+      <Accordion/>
     </>
   )
 }
