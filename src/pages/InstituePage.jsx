@@ -1,16 +1,12 @@
 import React from 'react';
 import Navbar from '../components/Navbar'
-import ImageSlider from '../components/imageSlider/ImageSlider'
-import InstitutePageBody from '../components/InstitutePageBody';
+import InstitutePageBody from '../components/InstitutePageBody/InstitutePageBody';
 const InstitutePage=()=>{
     return(
         <>
             <Navbar />
             
             <InstitutePageBody />
-           
-            
-            <ImageSlider />
             
 
         </>
