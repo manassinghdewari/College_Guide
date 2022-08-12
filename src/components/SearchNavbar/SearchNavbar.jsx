@@ -11,9 +11,9 @@ const SearchNavbar=()=>{
 
   return (
     <div className="align-items: center; justify-center flex mt-1.5">
-      <AppBar className="bg-white w-10/12 shadow-none" position="static">
+      <AppBar className="bg-white w-9/12 shadow-none" position="static">
         <Toolbar>
-            
+        <Box sx={{ flexGrow: 0.3 }} />
           <Typography
             className="text-black"
             variant="h6"
@@ -23,7 +23,7 @@ const SearchNavbar=()=>{
           >
             "Bengaluru"
           </Typography>
-          <Box sx={{ flexGrow: 0.4 }} />
+          <Box sx={{ flexGrow: 0.3 }} />
           <Typography
             className="text-black"
             variant="h6"
