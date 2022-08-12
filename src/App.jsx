@@ -1,9 +1,9 @@
 import React from 'react';
-  import Search from './pages/Search';
+  import InstitutePage from './pages/InstituePage';
 const App =()=>{
   return(
     <>
-      <Search/>
+      <InstitutePage/>
     </>
   )
 }
