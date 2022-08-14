@@ -1,10 +1,9 @@
 import React from 'react';
-import Accordian from './components/FAQsection/Accordian';
-import Accordion from './components/FAQsection/Accordian';
+  import InstitutePage from './pages/InstituePage';
 const App =()=>{
   return(
     <>
-      <Accordion/>
+      <InstitutePage/>
     </>
   )
 }

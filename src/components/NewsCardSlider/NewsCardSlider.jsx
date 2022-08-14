@@ -18,7 +18,7 @@ const responsive = {
     slidesToSlide: 1 // optional, default to 1.
   }
 };
-const CollegeCardSlider=()=>
+const NewsCardSlider=()=>
 (
     <>
     <div className="align-items: center; justify-center flex py-5">
@@ -41,4 +41,4 @@ const CollegeCardSlider=()=>
     </div>
     </>
 )
-export default CollegeCardSlider;
+export default NewsCardSlider;
