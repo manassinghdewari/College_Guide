@@ -1,10 +1,12 @@
-import React from 'react';
-import AddressForm from '../src/Collegeregistration/BasicDetails';
 
+import Homepage from './pages/Homepage';
+
+  import InstitutePage from './pages/InstituePage';
 const App =()=>{
   return(
     <>
-      <AddressForm/>
+      <Homepage/>
+
     </>
   )
 }
