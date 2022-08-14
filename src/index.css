@@ -7,17 +7,17 @@
 .Heromain{
     font-size: 72px;
     font-family: 'Roboto', sans-serif;
-    padding-left: 15%;
-    padding-top: 20%;
+    padding-left: 29%;
+    padding-top: 10%;
     letter-spacing: -1px;
     line-height:1;
 }
 .Herosub{
     font-size: 32px;
     font-family: 'Roboto', sans-serif;
-    padding-left: 15%;
+    padding-left: 29%;
     color: rgba(0, 0, 0, 0.602);
-    padding-right: 17%;
+    padding-right: 12%;
     letter-spacing: -1px;
     padding-top: 3%;
 }
