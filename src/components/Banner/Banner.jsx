@@ -8,7 +8,7 @@ const Banner = () => {
             <div className="Herosub">Education is the kindling of a flame, not the filling of a vessel.</div>
         </div>
         <div class="col">
-            <img src={require("./8747-removebg.png")} alt="college" height="631" />
+            <img src={require("../../images/8747-removebg.png")} alt="college" height="631" />
         </div>
     </div>
     </>
