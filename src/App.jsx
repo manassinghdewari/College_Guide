@@ -1,10 +1,10 @@
 import React from 'react';
-import Accordian from './components/FAQsection/Accordian';
-import Accordion from './components/FAQsection/Accordian';
+import AddressForm from '../src/Collegeregistration/BasicDetails';
+
 const App =()=>{
   return(
     <>
-      <Accordion/>
+      <AddressForm/>
     </>
   )
 }
