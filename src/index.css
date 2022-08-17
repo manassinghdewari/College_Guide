@@ -109,3 +109,22 @@
     padding: 50px;
 
 }
+.upload_button{
+    padding-left: 1rem;
+}
+@media only screen and (max-width: 501px) {
+    .upload_button{
+        padding-left: 2.5rem;
+    }
+  }
+  .box
+{
+    text-align: center;
+   
+}
+.addremove{
+    padding-left: 45rem;
+}
+.stepper{
+    padding-left: 33rem;
+}

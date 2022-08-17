@@ -1,11 +1,11 @@
 
-import Homepage from './pages/Homepage';
+import React from 'react';
+import Signin from './components/Studentsignin';
 
-  import InstitutePage from './pages/InstituePage';
-const App =()=>{
+  function App() {
   return(
     <>
-      <Homepage/>
+      <Signin/>;
 
     </>
   )
