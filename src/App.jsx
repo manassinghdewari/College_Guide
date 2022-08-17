@@ -1,11 +1,10 @@
 import React from 'react';
-import Homepage from './pages/Homepage';
-import InstituePage from './pages/InstituePage'
+import ResponsiveBreakpointsExample from './components/Table/Table'
 const App =()=>{
   return(
     <>
       {/* <Homepage/> */}
-      <InstituePage />
+      <ResponsiveBreakpointsExample />
     </>
   )
 }
