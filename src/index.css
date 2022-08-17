@@ -4,12 +4,21 @@
 .btn_collapse{
     display: none;
 }
+.btngrouplist{
+    flex-direction: row!important;
+    flex-wrap: wrap;
+}
 .btngroup{
     background-color: rgba(0, 0, 0, 0.75);
+    display: flex!important;
+}
+.btngroupdiv{
+    display: flex!important;
 }
 .btnbtngroup{
     color:rgba(255, 255, 255,0.7)!important;
     font-weight: 700;
+    padding: 10px;
 
 }
 .btnbtngroup:focus{
@@ -155,6 +164,7 @@
    
   } 
   @media only screen and ( max-width: 1050px) {
+
     
     .Heromain{
         font-size: 40px;
