@@ -1,4 +1,210 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.ban{
+    background-color: #DAE9FE;
+}
+.Heromain{
+    font-size: 4.5rem;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 29%;
+    padding-top: 10%;
+    letter-spacing: -1px;
+    line-height:1;
+}
+.Herosub{
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 29%;
+    color: rgba(0, 0, 0, 0.602);
+    padding-right: 12%;
+    letter-spacing: -1px;
+    padding-top: 3%;
+}
+.head{
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .colh{
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .wid22{
+    width: 22rem;
+  }
+  .btn1
+{
+    background-color: #1447FC!important;
+}
+.btn2
+{
+    background-color: #FF5E15!important;
+}
+.col-1
+{
+    text-align: center!important;
+}
+.acc{
+    color: #2A42E8!important;
+    font-weight: bold;
+    font-size: 13px!important;
+}
+.est{
+    color: #848484!important;
+    font-weight: bold;
+    font-size: 13px!important;
 
+}
+.rate{
+    font-weight: 700!important;
+}
+.title{
+
+    font-weight: bold;
+    font-size: 18px!important;
+
+}
+
+.lik{
+    color: white!important;
+}
+.rank{
+    background-color: #d2d2d2;
+    color: #2A42E8;
+    font-weight: bold;
+    position: absolute;
+    padding-left: 4px;
+    padding-right: 4px;
+    
+}
+.ran{
+    padding-top: 12rem;
+}
+.btn3{
+    background-color: #ffffff!important;
+    color: #000000!important;
+    border-color: #000000!important;
+    text-align: right!important;
+    font-weight: bold!important;
+}
+.col-4{
+    text-align: right!important;
+}
+.col-5
+{
+    width: 90px!important;
+}
+.hei18{
+  height: 18rem;
+}
+.tar{
+  text-align: right!important;
+}
+.p4{
+  padding-top: 10px!important;
+  padding-bottom: 10px!important;
+}
+
+.Button{
+    padding: 50px;
+
+}
+<<<<<<< HEAD
+.upload_button{
+    padding-left: 1rem;
+}
+@media only screen and (max-width: 501px) {
+    .upload_button{
+        padding-left: 2.5rem;
+    }
+  }
+  .box
+{
+    text-align: center;
+   
+}
+.addremove{
+    padding-left: 45rem;
+}
+.stepper{
+    padding-left: 33rem;
+}
+=======
+ @media only screen and ( max-width: 1550px) {
+    
+    .Heromain{
+        font-size: 65px;
+        
+    }
+    .Herosub{
+        font-size: 28px;
+        
+    }
+    
+   
+  } 
+  @media only screen and ( max-width: 1390px) {
+    
+    .Heromain{
+        font-size: 50px;
+        
+    }
+    .Herosub{
+        font-size: 22px;
+        
+    }
+    
+   
+  } 
+  @media only screen and ( max-width: 1050px) {
+    
+    .Heromain{
+        font-size: 40px;
+        
+    }
+    .Herosub{
+        font-size: 20px;
+        
+    }
+    
+   
+  } 
+  @media only screen and ( max-width: 850px) {
+    
+    .Heromain{
+        font-size: 30px;
+        
+    }
+    .Herosub{
+        font-size: 16px;
+        
+    }
+    
+   
+  } 
+  @media only screen and ( max-width: 667px) {
+    .ban{
+        flex: none!important;
+    }
+    .bantext{
+        flex: none!important;
+        text-align: center;
+        align-content: center;
+    }
+    .Heromain{
+        font-size: 30px;
+        padding-left: 0%;
+        padding-right: 0%;
+        
+    }
+    .Herosub{
+        font-size: 16px;
+        padding-left: 0%;
+        padding-right: 0%;
+        
+    }
+    
+   
+  } 
+  
+>>>>>>> 781aeeb00d81b5a0cff8199b82a4c603c1555537
