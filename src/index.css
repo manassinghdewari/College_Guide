@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.btn_collapse{
+    display: none;
+}
 .btngroup{
     background-color: rgba(0, 0, 0, 0.75);
 }
@@ -161,8 +164,11 @@
         font-size: 20px;
         
     }
+
     
-   
+   .Banner_Name{
+    font-size: 28px;
+   }
   } 
   @media only screen and ( max-width: 850px) {
     
@@ -174,8 +180,23 @@
         font-size: 16px;
         
     }
-    
-   
+    .Banner_Name{
+        font-size: 23px;
+       }
+   .pagebody{
+    flex: none!important;
+   }
+   .right-col{
+    width: 100%;
+   }
+   .btn_expand{
+    display: none;
+}
+.btn_collapse{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
   } 
   @media only screen and ( max-width: 667px) {
     .ban{
@@ -199,6 +220,9 @@
         
     }
     
+    .Banner_Name{
+        font-size: 18px;
+       }
    
   } 
   
