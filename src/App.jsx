@@ -1,12 +1,12 @@
 <<<<<<< HEAD
 
-import React from 'react';
-import Signin from './components/Studentsignin';
+import Homepage from './pages/Homepage';
 
-  function App() {
+  import InstitutePage from './pages/InstituePage';
+const App =()=>{
   return(
     <>
-      <Signin/>;
+      <Homepage/>
 
 =======
 import React from 'react';
