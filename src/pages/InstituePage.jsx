@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import InstitutePageBody from "../components/InstitutePageBody/InstitutePageBody";
-import Banner from "../components/Banner/Banner";
+import Footer from "../components/Footer/Footer";
 const InstitutePage = () => {
   return (
     <>
       <Navbar />
       <InstitutePageBody/>
+      <Footer />
     </>
   );
 };

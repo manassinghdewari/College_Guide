@@ -5,7 +5,7 @@
     background-color: #DAE9FE;
 }
 .Heromain{
-    font-size: 72px;
+    font-size: 4.5rem;
     font-family: 'Roboto', sans-serif;
     padding-left: 29%;
     padding-top: 10%;
@@ -13,7 +13,7 @@
     line-height:1;
 }
 .Herosub{
-    font-size: 32px;
+    font-size: 2rem;
     font-family: 'Roboto', sans-serif;
     padding-left: 29%;
     color: rgba(0, 0, 0, 0.602);
@@ -109,3 +109,80 @@
     padding: 50px;
 
 }
+ @media only screen and ( max-width: 1550px) {
+    
+    .Heromain{
+        font-size: 65px;
+        
+    }
+    .Herosub{
+        font-size: 28px;
+        
+    }
+    
+   
+  } 
+  @media only screen and ( max-width: 1390px) {
+    
+    .Heromain{
+        font-size: 50px;
+        
+    }
+    .Herosub{
+        font-size: 22px;
+        
+    }
+    
+   
+  } 
+  @media only screen and ( max-width: 1050px) {
+    
+    .Heromain{
+        font-size: 40px;
+        
+    }
+    .Herosub{
+        font-size: 20px;
+        
+    }
+    
+   
+  } 
+  @media only screen and ( max-width: 850px) {
+    
+    .Heromain{
+        font-size: 30px;
+        
+    }
+    .Herosub{
+        font-size: 16px;
+        
+    }
+    
+   
+  } 
+  @media only screen and ( max-width: 667px) {
+    .ban{
+        flex: none!important;
+    }
+    .bantext{
+        flex: none!important;
+        text-align: center;
+        align-content: center;
+    }
+    .Heromain{
+        font-size: 30px;
+        padding-left: 0%;
+        padding-right: 0%;
+        
+    }
+    .Herosub{
+        font-size: 16px;
+        padding-left: 0%;
+        padding-right: 0%;
+        
+    }
+    
+   
+  } 
+  
