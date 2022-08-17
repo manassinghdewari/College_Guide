@@ -188,6 +188,7 @@ export default function SignUp() {
               </Grid>
             </Grid>
             <Button
+              className='btn1'
               type="submit"
               fullWidth
               variant="contained"
@@ -199,6 +200,7 @@ export default function SignUp() {
                  OR
           </Typography>
             <Button 
+            className='btn1'
             variant="contained"
             fullWidth
              color="primary"
