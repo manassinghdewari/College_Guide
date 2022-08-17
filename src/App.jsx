@@ -3,6 +3,7 @@ import Homepage from './pages/Homepage';
 import InstitutePage from './pages/InstitutePage'
 import Search from './pages/Search'
 import { Route,Routes } from "react-router-dom";
+import ResponsiveBreakpointsExample from './components/Table/Table'
 const App =()=>{
   return(
     <>
@@ -15,6 +16,7 @@ const App =()=>{
           <Route path="search" element={<Search />}/>
         </Routes>
       }
+
     </>
   )
 }
