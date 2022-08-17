@@ -109,6 +109,27 @@
     padding: 50px;
 
 }
+<<<<<<< HEAD
+.upload_button{
+    padding-left: 1rem;
+}
+@media only screen and (max-width: 501px) {
+    .upload_button{
+        padding-left: 2.5rem;
+    }
+  }
+  .box
+{
+    text-align: center;
+   
+}
+.addremove{
+    padding-left: 45rem;
+}
+.stepper{
+    padding-left: 33rem;
+}
+=======
  @media only screen and ( max-width: 1550px) {
     
     .Heromain{
@@ -186,3 +207,4 @@
    
   } 
   
+>>>>>>> 781aeeb00d81b5a0cff8199b82a4c603c1555537

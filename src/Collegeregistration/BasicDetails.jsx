@@ -28,8 +28,8 @@ function Stepper() {
     };
   
     return (
+        <div className='stepper'>
       <MobileStepper
-      align="center"
         variant="dots"
         steps={6}
         position="center"
@@ -54,8 +54,10 @@ function Stepper() {
             )}
             Back
           </Button>
+          
         }
       />
+      </div>
     );
   }
 
