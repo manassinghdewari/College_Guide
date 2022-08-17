@@ -1,6 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.btn_collapse{
+    display: none;
+}
+.btngrouplist{
+    flex-direction: row!important;
+    flex-wrap: wrap;
+}
+.btngroup{
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex!important;
+}
+.btngroupdiv{
+    display: flex!important;
+}
+.btnbtngroup{
+    color:rgba(255, 255, 255,0.7)!important;
+    font-weight: 700;
+    padding: 10px;
+
+}
+.btnbtngroup:focus{
+    color:rgba(255, 255, 255,1)!important;
+    
+}
+.btnbtngroup:hover{
+    color:rgba(255, 255, 255,1)!important;
+    
+}
 .ban{
     background-color: #DAE9FE;
 }
@@ -136,6 +164,7 @@
    
   } 
   @media only screen and ( max-width: 1050px) {
+
     
     .Heromain{
         font-size: 40px;
@@ -145,8 +174,11 @@
         font-size: 20px;
         
     }
+
     
-   
+   .Banner_Name{
+    font-size: 28px;
+   }
   } 
   @media only screen and ( max-width: 850px) {
     
@@ -158,8 +190,23 @@
         font-size: 16px;
         
     }
-    
-   
+    .Banner_Name{
+        font-size: 23px;
+       }
+   .pagebody{
+    flex: none!important;
+   }
+   .right-col{
+    width: 100%;
+   }
+   .btn_expand{
+    display: none;
+}
+.btn_collapse{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
   } 
   @media only screen and ( max-width: 667px) {
     .ban{
@@ -183,6 +230,9 @@
         
     }
     
+    .Banner_Name{
+        font-size: 18px;
+       }
    
   } 
   
