@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 const CourseCard = () => {
   return (
     <>
@@ -30,10 +31,8 @@ const CourseCard = () => {
               </div>
               <div className="col">Entrance test followed by counselling.</div>
             </div>
-            <div className="text-center p-3">
-              <a href="/" className="btn btn-primary bg-blue-700">
-                Show More
-              </a>
+            <div className="text-center p-3"> 
+              <Link to="/search" className="btn btn-primary bg-blue-700">Show More</Link>
             </div>
           </div>
         </div>
