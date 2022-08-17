@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar'
-import CustomPaginationActionsTable from '../components/Table'
+import Table from '../components/Table/Table'
 import CourseCardSlider from '../components/CourseCardSlider/CourseCardSlider'
 import NewsCardSlider from '../components/NewsCardSlider/NewsCardSlider';
 import Banner from '../components/Banner/Banner';
@@ -11,7 +11,7 @@ const Homepage=()=>{
             <Navbar />
             <Banner />
             <NewsCardSlider />
-            <CustomPaginationActionsTable />
+            <Table />
             <CourseCardSlider />
             <Footer />
         </>

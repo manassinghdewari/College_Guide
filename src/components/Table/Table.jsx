@@ -1,35 +1,35 @@
-import React from 'react';
-import './App.css';
-  
-// Example of a data array that
-// you might receive from an API
-const data = [
-  { name: "Anom", age: 19, gender: "Male" },
-  { name: "Megha", age: 19, gender: "Female" },
-  { name: "Subham", age: 25, gender: "Male"},
-]
-  
-const  Table=()=>{
+import Table from 'react-bootstrap/Table';  
+    const data = [
+        { name: "Anom", age: 19, gender: "Male" },
+        { name: "Megha", age: 19, gender: "Female" },
+        { name: "Subham", age: 25, gender: "Male"},
+    ]
+
+function ResponsiveBreakpointsExample() {
   return (
-    <div className="App">
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Gender</th>
-        </tr>
-        {data.map((val, key) => {
-          return (
-            <tr key={key}>
-              <td>{val.name}</td>
-              <td>{val.age}</td>
-              <td>{val.gender}</td>
-            </tr>
-          )
-        })}
-      </table>
+    <div sx={{display: 'flex',width:"100%",justifyContent: 'center',alignItems: 'center'}}>
+      <div sx={{width:"70%"}}>
+            <Table responsive="sm">
+                <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>College Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                {data.map((val, key) => {
+                return (
+                    <tr key={key}>
+                    <td>{val.name}</td>
+                    <td>{val.age}</td>
+                    </tr>
+                )
+                })}
+                </tbody>
+            </Table>
+      </div>      
     </div>
   );
 }
-  
-export default Table;
+
+export default ResponsiveBreakpointsExample;
