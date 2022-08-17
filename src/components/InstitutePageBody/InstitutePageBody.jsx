@@ -6,6 +6,7 @@ import { Button } from "@material-ui/core";
 import PhoneIcon from "@mui/icons-material/Phone";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Accordian from "../FAQsection/Accordian"
+import ButtonGroup from "./ButtonGroup";
 
 const InstitutePageBody = () => {
   return (
@@ -13,6 +14,7 @@ const InstitutePageBody = () => {
       <div className="align-items: center; justify-center flex">
         <div className="w-10/12">
           <Banner />
+          <ButtonGroup/>
           <div className="row">
             <div className="col-9"></div>
             <div className="col-3">

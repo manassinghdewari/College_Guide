@@ -1,6 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.btngroup{
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.btnbtngroup{
+    color:rgba(255, 255, 255,0.7)!important;
+    font-weight: 700;
+
+}
+.btnbtngroup:focus{
+    color:rgba(255, 255, 255,1)!important;
+    
+}
+.btnbtngroup:hover{
+    color:rgba(255, 255, 255,1)!important;
+    
+}
 .ban{
     background-color: #DAE9FE;
 }
