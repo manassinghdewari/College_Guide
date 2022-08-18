@@ -4,8 +4,8 @@ import InstituePage from './pages/InstituePage'
 const App =()=>{
   return(
     <>
-      {/* <Homepage/> */}
-      <InstituePage />
+      <Homepage/>
+      {/* <InstituePage /> */}
     </>
   )
 }
