@@ -1,4 +1,4 @@
-img{
+.logo{
     height: 45px !important;
     width: 45px !important;
 }
@@ -12,6 +12,5 @@ img{
 }
 
 .table-container{
-  
     border: 1px solid black;
 }

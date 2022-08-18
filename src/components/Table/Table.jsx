@@ -29,7 +29,7 @@ const Table=()=>{
                   src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
-                  className="rounded-circle"
+                  className="rounded-circle logo"
                   />
               <div className="ms-3">
                 <p className="fw-normal mb-1">Indian Institute of Technology Madras</p>
@@ -54,7 +54,7 @@ const Table=()=>{
                   src="https://iisc.ac.in/wp-content/uploads/2020/08/IISc_Master_Seal_Black_Transparent.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
-                  className="rounded-circle"
+                  className="rounded-circle logo"
                   />
               <div className="ms-3">
                 <p className="fw-normal mb-1">Indian Institute of Science</p>
@@ -79,7 +79,7 @@ const Table=()=>{
                   src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Indian_Institute_of_Technology_Bombay_Logo.svg/1200px-Indian_Institute_of_Technology_Bombay_Logo.svg.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
-                  className="rounded-circle"
+                  className="rounded-circle logo"
                   />
               <div className="ms-3">
                 <p className="fw-normal mb-1">Indian Institute of Technology Bombay</p>
@@ -104,7 +104,7 @@ const Table=()=>{
                   src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Indian_Institute_of_Technology_Delhi_Logo.svg/1200px-Indian_Institute_of_Technology_Delhi_Logo.svg.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
-                  className="rounded-circle"
+                  className="rounded-circle logo"
                   />
               <div className="ms-3">
                 <p className="fw-normal mb-1">Indian Institute of Technology Delhi</p>
@@ -129,7 +129,7 @@ const Table=()=>{
                   src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/IIT_Kanpur_Logo.svg/1200px-IIT_Kanpur_Logo.svg.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
-                  className="rounded-circle"
+                  className="rounded-circle logo"
                   />
               <div className="ms-3">
                 <p className="fw-normal mb-1">Indian Institute of Technology Kanpur</p>
@@ -154,7 +154,7 @@ const Table=()=>{
                   src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/IIT_Kharagpur_Logo.svg/1200px-IIT_Kharagpur_Logo.svg.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
-                  className="rounded-circle"
+                  className="rounded-circle logo"
                   />
               <div className="ms-3">
                 <p className="fw-normal mb-1">Indian Institute of Kharagpur</p>
@@ -179,7 +179,7 @@ const Table=()=>{
                   src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/Indian_Institute_of_Technology_Roorkee_logo.png/220px-Indian_Institute_of_Technology_Roorkee_logo.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
-                  className="rounded-circle"
+                  className="rounded-circle logo"
                   />
               <div className="ms-3">
                 <p className="fw-normal mb-1">Indian Institute of Technology Roorkee</p>
@@ -204,7 +204,7 @@ const Table=()=>{
                   src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/IIT_Guwahati_Logo.svg/640px-IIT_Guwahati_Logo.svg.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
-                  className="rounded-circle"
+                  className="rounded-circle logo"
                   />
               <div className="ms-3">
                 <p className="fw-normal mb-1">Indian Institute of Technology Guwahati</p>
@@ -229,7 +229,7 @@ const Table=()=>{
                   src="https://upload.wikimedia.org/wikipedia/en/thumb/8/85/All_India_Institute_of_Medical_Sciences%2C_Delhi.svg/1200px-All_India_Institute_of_Medical_Sciences%2C_Delhi.svg.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
-                  className="rounded-circle"
+                  className="rounded-circle logo"
                   />
               <div className="ms-3">
                 <p className="fw-normal mb-1">All India Institute of Medical Sciences Delhi </p>
@@ -254,7 +254,7 @@ const Table=()=>{
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Jawaharlal_Nehru_University_Logo_vectorized.svg/1200px-Jawaharlal_Nehru_University_Logo_vectorized.svg.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
-                  className="rounded-circle"
+                  className="rounded-circle logo"
                   />
               <div className="ms-3">
                 <p className="fw-normal mb-1">Jawaharlal Nehru University</p>
