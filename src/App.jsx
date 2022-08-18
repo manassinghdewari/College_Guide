@@ -5,7 +5,7 @@ import InstitutePage from './pages/InstitutePage'
 const App =()=>{
   return(
     <>
-      <Homepage   />
+      <InstitutePage   />
     </>
   )
 }
