@@ -10,7 +10,7 @@ const Homepage=()=>{
         <>
             <Navbar />
             <Banner />
-            <NewsCardSlider />
+            <NewsCardSlider/>
             <Table />
             <CourseCardSlider />
             <Footer />

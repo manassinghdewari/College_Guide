@@ -1,6 +1,129 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.car
+{
+    padding: 20px!important;
+}
+.card{
+    background-color: #F5F5F5!important;
+    width: 22rem;
+}
+.Notification_Outer_link{
+    display: block;
+    padding:5px;
+    width: auto !important;
+    text-decoration: none;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    background-color: transparent;
+    /* border: 1px solid #e9e9e9; */
+
+}
+.Notification_innerbox{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+}
+.Notification_image_div{
+    margin-right: 0.75rem;
+    width: 56px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    border: 1px solid #dedede;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+
+}
+.Notification_image{
+    height: 44px;
+    width: 44px;
+    max-height: 44px;
+    max-width: 44px;
+    overflow: hidden;
+    object-fit: contain;
+    display: block;
+    border-radius: 50%;
+    border-style: none;
+}
+.Notification_Head{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0 !important;
+    color: #333 !important;
+    font-size: 14px;
+    font-weight: 700;
+    min-width: 122px;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    background-color: transparent;
+}
+.Notification_Body{
+    width: 100%;
+    display: block;
+    color: #333 !important;
+    font-size: 16px;
+    margin-bottom: 0.4rem;
+    overflow: hidden;
+}
+p{
+    margin-top: 0;
+}
+.Notification-height-footer-divider{
+    height: 45px;
+    margin-bottom: -10px;
+}
+.Notification-height-footer{
+    padding: 9px 16px;
+    height: 64px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.Notification-hr{
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    color: #000;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+.Notification_Internal_Link{
+    color: #333 !important;
+    font-size: 16px;
+    font-weight: 700;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    display: flex;
+    padding-bottom: 12px;
+    text-decoration: none;
+}
 .btn_collapse{
     display: none;
 }
