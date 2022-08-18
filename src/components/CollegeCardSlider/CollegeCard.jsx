@@ -37,13 +37,14 @@ const CollegeCard = () => (
           <div className="title row p4">
             <div className="col-5">
               <img
+                className="collegelogo"
                 src="https://images.shiksha.com/mediadata/images/1651569550phpDG50QS.jpeg"
                 alt="Logo"
                 width="75"
                 height="75"
               />
             </div>
-            <div className="col">
+            <div className="col collegename">
               Sir M. Visversaraya Institute of Tecnology
             </div>
           </div>

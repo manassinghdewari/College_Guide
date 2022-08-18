@@ -240,6 +240,8 @@ p{
 }
 .col-4{
     text-align: right!important;
+    margin-top: -10px;
+    margin-left: -128px;
 }
 .col-5
 {
@@ -329,9 +331,53 @@ p{
     display: flex;
     justify-content: space-evenly;
     padding-top: 20px;
+    .institutebody{
+        width: 100%;
+    }
 }
   } 
   @media only screen and ( max-width: 667px) {
+    .institutebody{
+        width: 100%;
+    }
+    .wid22{
+        width:16rem;
+        font-size: 10px;
+    }
+    .btn2{
+        font-size: 10px;
+    }
+    .btn3{
+        font-size: 10px;
+    }
+    .hei18{
+        height: 10rem;
+    }
+    .ran{
+        padding-top: 5rem;
+    }
+    .p4{
+        padding-top: 5px!important;
+  padding-bottom: 5px!important;
+    }
+    .acc{
+        font-size: 10px!important;
+    }
+    .est{
+        font-size: 10px!important;
+    }
+    .col-4{
+        text-align: left;
+        margin-left: -97px;
+        margin-top: -9px;
+    }
+    .collegename{
+        font-size: 13px;
+    }
+    .collegelogo{
+        width: 40px;
+        height: 40px;
+    }
     .ban{
         flex: none!important;
     }
