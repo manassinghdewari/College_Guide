@@ -1,5 +1,4 @@
 import React from 'react';
-import MultipleEntry from '../src/Collegeregistration/ResearchPublication'
 import Homepage from './pages/Homepage';
 import InstitutePage from './pages/InstitutePage'
 import Search from "./pages/Search"
@@ -10,7 +9,6 @@ const App =()=>{
   return(
     <>
       {/* <Homepage/> */}
-      <MultipleEntry/>
       {/* <InstituePage /> */}
       {
         <Routes>
