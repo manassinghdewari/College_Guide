@@ -151,14 +151,14 @@ export default function PrimarySearchAppBar() {
           <Search sx={{m:'20px'}}>
           <IconButton
           size="medium"
-          aria-label="show 17 new notifications"
           >
-             <SearchIcon/>   
+             <SearchIcon  sx={{ display: { xs: 'none', md: 'flex' } }}/>   
           </IconButton>
           <InputBase placeholder="search..." />
         </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            
             <IconButton
               size="large"
               edge="end"
