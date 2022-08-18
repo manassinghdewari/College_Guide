@@ -1,7 +1,7 @@
 import React from 'react';
 import Homepage from './pages/Homepage';
 import InstitutePage from './pages/InstitutePage'
-import Search from "./pages/Searchad"
+import Search from "./pages/Search"
 import { Route,Routes } from "react-router-dom";
 import ResponsiveBreakpointsExample from './components/Table/Table'
 import PrimarySearchAppBar from './components/Navbar';
