@@ -12,7 +12,7 @@ const InstitutePageBody = () => {
   return (
     <>
       <div className="align-items: center; justify-center flex">
-        <div className="w-10/12">
+        <div className="w-10/12 institutebody">
           <Banner />
           <ButtonGroup/>
           <div className="row pagebody">
