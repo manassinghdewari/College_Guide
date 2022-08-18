@@ -1,10 +1,10 @@
 import React from 'react';
-import ResponsiveBreakpointsExample from './components/Table/Table'
+import MultipleEntry from '../src/Collegeregistration/ResearchPublication'
 const App =()=>{
   return(
     <>
       {/* <Homepage/> */}
-      <ResponsiveBreakpointsExample />
+      <MultipleEntry/>
     </>
   )
 }
