@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css'
-import App from './App';
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 import { StyledEngineProvider } from '@mui/material';
-import { BrowserRouter, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { PersistGate } from "redux-persist/lib/integration/react";
+import { persistor, store } from "./redux/store";
+import { Provider } from "react-redux";
 // import axios from 'axios'
 const ScrollToTop = ({ children }) => {
     const { pathname } = useLocation();
@@ -15,15 +18,15 @@ const ScrollToTop = ({ children }) => {
     return children || null;
   };
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <StyledEngineProvider injectFirst>
-        <BrowserRouter >
+  <StyledEngineProvider injectFirst>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
         <ScrollToTop >
             <App />
         </ScrollToTop>
-        </BrowserRouter>
-    </StyledEngineProvider>
-    
+      </PersistGate>
+    </Provider>
+  </StyledEngineProvider>
 );

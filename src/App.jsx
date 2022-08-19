@@ -1,9 +1,15 @@
-import React, { useEffect } from 'react';
-import Homepage from './pages/Homepage';
-import InstitutePage from './pages/InstitutePage'
-import Search from "./pages/Search"
-import Compare from "./pages/Compare"
-import { Route,Routes } from "react-router-dom";
+import React from "react";
+// import MultipleEntry from "../src/Collegeregistration/ResearchPublication";
+import Homepage from "./pages/Homepage";
+import InstitutePage from "./pages/InstitutePage";
+import Search from "./pages/Search";
+import { Route, Routes } from "react-router-dom";
+// import ResponsiveBreakpointsExample from "./components/Table/Table";
+// import PrimarySearchAppBar from "./components/Navbar";
+import { useSelector } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import StudentSignin from "../src/components/authentication/Studentsignin";
+
 import ResponsiveBreakpointsExample from './components/Table/Table'
 import Compare from './components/GroupButton/Compare'
 import Info from './components/GroupButton/Info';
@@ -14,15 +20,22 @@ import Faculty from './components/GroupButton/Faculty';
 import Courses from './components/GroupButton/Courses';
 import Facility from './components/GroupButton/Facility';
 import Alumni from './components/GroupButton/Alumni';
-const App =()=>{
-  return(
-    <>
-      {/* <Homepage/> */}
-      {/* <InstituePage /> */}
-      {
+const App = () => {
+  const { currentUser } = useSelector((state) => state.user);
+  console.log(currentUser);
 
+  return (
+    <BrowserRouter>
+      {/* <Homepage/> */}
+      {/* <MultipleEntry/> */}
         <Routes>
           
+          <Route path="institutepage" element={<InstitutePage />} />
+          <Route path="search" element={<Search />} />
+          <Route
+            path="login"
+            element={currentUser ? <Homepage /> : <StudentSignin />}
+          />
               <Route exact path="/" element={<Homepage />} />
               <Route exact path="/institutepage" element={<InstitutePage />}>
                 <Route index element={<Compare/>}/>
@@ -36,11 +49,11 @@ const App =()=>{
                 <Route path="facility" element={<Facility/>}/>
                 <Route path="alumni" element={<Alumni/>}/>
               </Route>
-              <Route exact path="/search" element={<Search />}/>
         </Routes>
       }
-    </>
-  )
-}
+      {/* <StudentSignin /> */}
+    </BrowserRouter>
+  );
+};
 
 export default App;
