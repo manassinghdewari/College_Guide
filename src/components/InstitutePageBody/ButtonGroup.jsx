@@ -55,16 +55,6 @@ const ButtonGroup = () => {
                 Info
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/institutepage/fees"className="nav-link  btnbtngroup">
-                Fees
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/institutepage/review" className="nav-link  btnbtngroup">
-                Review
-              </Link>
-            </li>
             
             <li className="nav-item">
               <Link to="/institutepage/placement" className="nav-link  btnbtngroup">
@@ -79,11 +69,6 @@ const ButtonGroup = () => {
             <li className="nav-item">
             <Link href="/"to="/institutepage/courses" className="nav-link  btnbtngroup">
                 Courses
-              </Link>
-            </li>
-            <li className="nav-item">
-            <Link to="/institutepage/facility" className="nav-link  btnbtngroup">
-                Facility
               </Link>
             </li>
             <li className="nav-item">
