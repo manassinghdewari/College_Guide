@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body{
+    overflow-x:hidden ;
 .container-table{
     margin-top: 20px;
 }
@@ -209,6 +211,7 @@ p{
     display: flex;
     padding-bottom: 12px;
     text-decoration: none;
+
 }
 .btn_collapse{
     display: none;
