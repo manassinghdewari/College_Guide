@@ -16,7 +16,9 @@ const InstitutePageBody = () => {
           <Banner />
           <ButtonGroup/>
           <div className="row pagebody">
-            <div className="col-9"></div>
+            <div className="col-9">
+            
+            </div>
             <div className="col-3 right-col">
               <div className="btn_expand">
                 
