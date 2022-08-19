@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import Homepage from './pages/Homepage';
 import InstitutePage from './pages/InstitutePage'
-import Search from './pages/Search'
+import Search from "./pages/Search"
+import Compare from "./pages/Compare"
 import { Route,Routes } from "react-router-dom";
 import ResponsiveBreakpointsExample from './components/Table/Table'
 import Compare from './components/GroupButton/Compare'
@@ -13,7 +14,6 @@ import Faculty from './components/GroupButton/Faculty';
 import Courses from './components/GroupButton/Courses';
 import Facility from './components/GroupButton/Facility';
 import Alumni from './components/GroupButton/Alumni';
-  
 const App =()=>{
   return(
     <>
@@ -37,10 +37,8 @@ const App =()=>{
                 <Route path="alumni" element={<Alumni/>}/>
               </Route>
               <Route exact path="/search" element={<Search />}/>
-          
         </Routes>
       }
-
     </>
   )
 }
