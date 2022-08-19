@@ -7,7 +7,11 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Accordian from "../FAQsection/Accordian";
 import ButtonGroup from "./ButtonGroup";
+
 import useFetch from "../../api/UseFetch";
+
+
+import {Outlet} from 'react-router-dom'
 
 const InstitutePageBody = () => {
   const { data, loading, error } = useFetch("/college");
@@ -20,7 +24,9 @@ const InstitutePageBody = () => {
           <Banner />
           <ButtonGroup />
           <div className="row pagebody">
-            <div className="col-9"></div>
+            <div className="col-9">
+              <Outlet />
+            </div>
             <div className="col-3 right-col">
               <div className="btn_expand">
                 <div className="py-3 align-items: center; justify-center flex">

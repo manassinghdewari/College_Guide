@@ -1,54 +1,95 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 const ButtonGroup = () => {
+  // let button =[
+  //   {
+  //     name:"Compare",
+  //     number:1,
+  //   },
+  //   {
+  //     name:"Info",
+  //     number:2,
+  //   },
+  //   {
+  //     name:"Review",
+  //     number:3,
+  //   },
+  //   {
+  //     name:"Review",
+  //     number:4,
+  //   },
+  //   {
+  //     name:"Review",
+  //     number:3,
+  //   },
+  //   {
+  //     name:"Review",
+  //     number:3,
+  //   },
+  //   {
+  //     name:"Review",
+  //     number:3,
+  //   },
+  //   {
+  //     name:"Review",
+  //     number:3,
+  //   },
+  //   {
+  //     name:"Review",
+  //     number:3,
+  //   },
+    
+  // ]
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark btngroup">
         <div className="collapse navbar-collapse btngroupdiv" id="navbarNav">
-          <ul className="navbar-nav w-full justify-evenly btngrouplist">
+          <ul className="navbar-nav w-full btngrouplist">
             <li className="nav-item active">
-              <a className="nav-link  btnbtngroup" href="/">
+              <Link to="/institutepage/compare"className="nav-link  btnbtngroup">
                 Compare <span className="sr-only">(current)</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link  btnbtngroup" href="/">
+              <Link to="/institutepage/info"className="nav-link  btnbtngroup" >
                 Info
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link  btnbtngroup" href="/">
+              <Link to="/institutepage/fees"className="nav-link  btnbtngroup">
                 Fees
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link  btnbtngroup" href="/">
+              <Link to="/institutepage/review" className="nav-link  btnbtngroup">
                 Review
-              </a>
+              </Link>
+            </li>
+            
+            <li className="nav-item">
+              <Link to="/institutepage/placement" className="nav-link  btnbtngroup">
+                  Placement
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link  btnbtngroup" href="/">
-                Placement
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link  btnbtngroup" href="/">
+            <Link to="/institutepage/faculty" className="nav-link  btnbtngroup">
                 Faculty
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link  btnbtngroup" href="/">
+            <Link href="/"to="/institutepage/courses" className="nav-link  btnbtngroup">
                 Courses
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link  btnbtngroup" href="/">
+            <Link to="/institutepage/facility" className="nav-link  btnbtngroup">
                 Facility
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link  btnbtngroup" href="/">
-                Alumini
-              </a>
+            <Link to="/institutepage/alumni" className="nav-link  btnbtngroup">
+                Alumni
+            </Link>
             </li>
           </ul>
         </div>

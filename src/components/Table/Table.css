@@ -1,4 +1,4 @@
-.logo{
+.table_image{
     height: 45px !important;
     width: 45px !important;
 }
@@ -13,4 +13,8 @@
 
 .table-container{
     border: 1px solid black;
+}
+
+.ms-6{
+    margin-left: 20px;
 }
