@@ -16,6 +16,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import SchoolIcon from '@mui/icons-material/School';
+import { UserAuth } from './GoogleAuth/Context/AuthContext';
 
 const Search = styled("div")(({ theme }) => ({
   backgroundColor: "white",
@@ -25,6 +26,17 @@ const Search = styled("div")(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+  // firebase start
+  const {logOut,user}=UserAuth();
+  const handleSignOut=async()=>{
+    try{
+        await logOut();
+    }catch(error){{
+        console.log(error);
+    }}
+}
+  // firebase end
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -156,6 +168,9 @@ export default function PrimarySearchAppBar() {
           </IconButton>
           <InputBase placeholder="search..." />
         </Search>
+        <button onClick={handleSignOut}>
+          LogOut
+        </button>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             

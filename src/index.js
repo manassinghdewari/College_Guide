@@ -4,6 +4,7 @@ import './index.css'
 import App from './App';
 import { StyledEngineProvider } from '@mui/material';
 import { BrowserRouter, useLocation } from 'react-router-dom';
+import { AuthContextProvider } from './components/GoogleAuth/Context/AuthContext';
 // import axios from 'axios'
 const ScrollToTop = ({ children }) => {
     const { pathname } = useLocation();
@@ -20,9 +21,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <StyledEngineProvider injectFirst>
         <BrowserRouter >
-        <ScrollToTop >
-            <App />
-        </ScrollToTop>
+        <AuthContextProvider>
+          <ScrollToTop >
+              <App />
+          </ScrollToTop>
+        </AuthContextProvider>
         </BrowserRouter>
     </StyledEngineProvider>
     
