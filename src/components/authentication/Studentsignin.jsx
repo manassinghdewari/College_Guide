@@ -13,24 +13,31 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useDispatch, useSelector } from "react-redux";
+import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
 export default function SignIn() {
   const [formData, setFormData] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(formData);
-
+    dispatch(loginStart());
     try {
       const { data } = await axios.post(
         "http://localhost:8080/api/auth/login",
         formData
       );
+      dispatch(loginSuccess(data));
       console.log({ user: data });
+      navigate("/");
     } catch (error) {
-      console.log(error);
+      dispatch(loginFailure(error));
     }
   };
 
