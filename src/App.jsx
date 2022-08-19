@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import Homepage from './pages/Homepage';
 import InstitutePage from './pages/InstitutePage'
 import Search from "./pages/Search"
-import Compare from "./pages/Compare"
 import { Route,Routes } from "react-router-dom";
-import ResponsiveBreakpointsExample from './components/Table/Table'
 import Compare from './components/GroupButton/Compare'
 import Info from './components/GroupButton/Info';
 import Fees from './components/GroupButton/Fees';
