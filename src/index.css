@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
 .car
 {
     padding: 20px!important;
