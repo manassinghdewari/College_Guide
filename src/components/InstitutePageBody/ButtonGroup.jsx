@@ -46,23 +46,8 @@ const ButtonGroup = () => {
         <div className="collapse navbar-collapse btngroupdiv" id="navbarNav">
           <ul className="navbar-nav w-full btngrouplist">
             <li className="nav-item active">
-              <Link to="/institutepage/compare"className="nav-link  btnbtngroup">
-                Compare <span className="sr-only">(current)</span>
-              </Link>
-            </li>
-            <li className="nav-item">
               <Link to="/institutepage/info"className="nav-link  btnbtngroup" >
                 Info
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/institutepage/fees"className="nav-link  btnbtngroup">
-                Fees
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/institutepage/review" className="nav-link  btnbtngroup">
-                Review
               </Link>
             </li>
             
@@ -82,14 +67,14 @@ const ButtonGroup = () => {
               </Link>
             </li>
             <li className="nav-item">
-            <Link to="/institutepage/facility" className="nav-link  btnbtngroup">
-                Facility
-              </Link>
-            </li>
-            <li className="nav-item">
             <Link to="/institutepage/alumni" className="nav-link  btnbtngroup">
                 Alumni
             </Link>
+            </li>
+            <li className="nav-item ">
+              <Link to="/institutepage/compare"className="nav-link  btnbtngroup">
+                Compare <span className="sr-only">(current)</span>
+              </Link>
             </li>
           </ul>
         </div>

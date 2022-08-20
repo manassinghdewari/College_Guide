@@ -3,7 +3,7 @@ const NewsCard = () => {
   return (
     <>
       <div className="car">
-        <div className="card">
+        <div className="card card1">
             <a href="/" className="Notification_Outer_link">
               <div className="Notification_innerbox">
                 <div className="Notification_image_div">

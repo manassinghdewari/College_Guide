@@ -1,6 +1,8 @@
 import React, {useEffect } from 'react';
 import Homepage from './pages/Homepage';
 import InstitutePage from './pages/InstitutePage'
+import Search from "./pages/Search"
+import { Route,Routes } from "react-router-dom";
 import Search from './pages/Search'
 import { Route,Routes,Navigate,BrowserRouter, useLocation} from "react-router-dom";
 // import MultipleEntry from "../src/Collegeregistration/ResearchPublication";
