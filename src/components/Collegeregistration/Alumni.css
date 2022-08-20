@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+.addremove{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: right;
+    text-align: center
+}
+.box{
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.input-field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.addremovecontainer{
+    flex-direction: row;
+}
+.upload-btn{
+    margin-top: 13px !important;
+}
