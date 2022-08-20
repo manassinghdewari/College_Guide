@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {Link} from 'react-router-dom';
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 import {
   Avatar,
   Button,
@@ -19,6 +20,7 @@ import {
   Checkbox,
 } from "@mui/material";
 import axios from "axios";
+import { BASE_URL } from "../../api/UseFetch";
 
 function Copyright() {
   return (
@@ -98,7 +100,7 @@ export default function SignUp() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/auth/registerUser",
+        `${BASE_URL}/auth/registerUser`,
         formData
       );
       console.log({ user: data });
