@@ -29,7 +29,9 @@ const Table=()=>{
                   src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
+
                   className="rounded-circle table_image"
+
                   />
               <div className="ms-3">
                 <p className="fw-normal mb-1">Indian Institute of Technology Madras</p>
@@ -54,6 +56,7 @@ const Table=()=>{
                   src="https://iisc.ac.in/wp-content/uploads/2020/08/IISc_Master_Seal_Black_Transparent.png"
                   alt=""
                   sx={{width: "45px", height: "45px"}}
+
                   className="rounded-circle table_image"
                   />
               <div className="ms-3">

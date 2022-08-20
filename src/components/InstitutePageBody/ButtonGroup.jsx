@@ -44,7 +44,7 @@ const ButtonGroup = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark btngroup">
         <div className="collapse navbar-collapse btngroupdiv" id="navbarNav">
-          <ul className="navbar-nav w-full justify-evenly btngrouplist">
+          <ul className="navbar-nav w-full btngrouplist">
             <li className="nav-item active">
               <Link to="/institutepage/compare"className="nav-link  btnbtngroup">
                 Compare <span className="sr-only">(current)</span>
@@ -65,6 +65,7 @@ const ButtonGroup = () => {
                 Review
               </Link>
             </li>
+            
             <li className="nav-item">
               <Link to="/institutepage/placement" className="nav-link  btnbtngroup">
                   Placement

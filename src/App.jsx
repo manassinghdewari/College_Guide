@@ -1,9 +1,13 @@
-import React, { Children, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import Homepage from './pages/Homepage';
 import InstitutePage from './pages/InstitutePage'
 import Search from './pages/Search'
-import { Route,Routes,Navigate} from "react-router-dom";
-import ResponsiveBreakpointsExample from './components/Table/Table'
+import { Route,Routes,Navigate,BrowserRouter, useLocation} from "react-router-dom";
+// import MultipleEntry from "../src/Collegeregistration/ResearchPublication";
+// import ResponsiveBreakpointsExample from "./components/Table/Table";
+// import PrimarySearchAppBar from "./components/Navbar";
+import { useSelector } from "react-redux";
+import StudentSignin from "../src/components/authentication/Studentsignin";
 import Compare from './components/GroupButton/Compare'
 import Info from './components/GroupButton/Info';
 import Fees from './components/GroupButton/Fees';
@@ -15,39 +19,57 @@ import Facility from './components/GroupButton/Facility';
 import Alumni from './components/GroupButton/Alumni';
 import Studentsignin from './components/authentication/Studentsignin'
 import Studentsignup from './components/authentication/Studentsignup'
-import Protected from './components/GoogleAuth/Protected';
+// import Protected from './components/GoogleAuth/Protected';
 
-const App =()=>{
-  return(
-    <>
+const ScrollToTop = ({ children }) => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return children || null;
+};
+
+const App = () => {
+  const { currentUser } = useSelector((state) => state.user);
+  
+
+  return (
+    <BrowserRouter>
       {/* <Homepage/> */}
-      {/* <InstituePage /> */}
-      {
+      {/* <MultipleEntry/> */}
+      <ScrollToTop>
+      <Routes>
+        <Route exact path="/" element={<Homepage />} />
 
-        <Routes>
-
-              <Route exact path="/" element={<Protected><Homepage /></Protected>} />
-              <Route exact path="/institutepage" element={<InstitutePage />}>
-                <Route index element={<Compare/>}/>
-                <Route exact path="compare" element={<Compare/>}/>
-                <Route exact path="info" element={<Info/>}/>
-                <Route exact path="fees" element={<Fees/>}/>
-                <Route exact path="review" element={<Review/>}/>
-                <Route exact path="placement" element={<Placement/>}/>
-                <Route exact path="faculty" element={<Faculty/>}/>
-                <Route exact path="courses" element={<Courses/>}/>
-                <Route exact path="facility" element={<Facility/>}/>
-                <Route exact path="alumni" element={<Alumni/>}/>
-              </Route>
-              <Route exact path="/search" element={<Search />}/>
-              <Route exact path="/signin" element={<Studentsignin/>}/>
-              <Route exact path="/signup" element={<Studentsignup/>} />
+        <Route path="institutepage" element={<InstitutePage />} />
+        <Route path="search" element={<Search />} />
+        <Route
+        path="login"
+        element={currentUser ? <Homepage /> : <StudentSignin />}
+        />
+        <Route exact path="/institutepage" element={<InstitutePage />}>
+          <Route index element={<Compare/>}/>
+          <Route exact path="compare" element={<Compare/>}/>
+          <Route exact path="info" element={<Info/>}/>
+          <Route exact path="fees" element={<Fees/>}/>
+          <Route exact path="review" element={<Review/>}/>
+          <Route exact path="placement" element={<Placement/>}/>
+          <Route exact path="faculty" element={<Faculty/>}/>
+          <Route exact path="courses" element={<Courses/>}/>
+          <Route exact path="facility" element={<Facility/>}/>
+          <Route exact path="alumni" element={<Alumni/>}/>
+          </Route>
+          <Route exact path="/search" element={<Search />}/>
+          <Route exact path="/signin" element={<Studentsignin/>}/>
+          <Route exact path="/signup" element={<Studentsignup/>} />
 
         </Routes>
-      }
-
-    </>
-  )
-}
+      </ScrollToTop>
+      {/* <StudentSignin /> */}
+    </BrowserRouter>
+  );
+};
 
 export default App;
