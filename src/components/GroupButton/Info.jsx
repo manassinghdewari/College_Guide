@@ -1,6 +1,8 @@
 import React from 'react';
-
+import useFetch from '../../api/UseFetch';
 const Info=()=> {
+    const { data: college, loading, error } = useFetch("/college/");
+    console.log(college);
     return (
         <>
         <div class='text-xl font-bold mt-5'>
