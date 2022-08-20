@@ -13,10 +13,11 @@ import useFetch from "../../api/UseFetch";
 import { Outlet, useLocation } from "react-router-dom";
 
 const InstitutePageBody = () => {
-  console.log("hi from institute");
   const { pathname } = useLocation();
-  const id = pathname.split("/")[2];
-  const { data, loading, error } = useFetch(`/college/{id}`);
+  const id = pathname.split("/")[3];
+
+  const { data, loading, error } = useFetch(`/college/${id}`);
+  console.log(data);
 
   return (
     <>

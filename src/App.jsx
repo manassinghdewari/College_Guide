@@ -48,7 +48,11 @@ const App = () => {
             path="login"
             element={currentUser ? <Homepage /> : <StudentSignin />}
           />
-          <Route exact path="/institutepage/:id" element={<InstitutePage />}>
+          <Route
+            exact
+            path="/institutepage/find/:id"
+            element={<InstitutePage />}
+          >
             <Route index element={<Compare />} />
             <Route exact path="compare" element={<Compare />} />
             <Route exact path="info" element={<Info />} />
