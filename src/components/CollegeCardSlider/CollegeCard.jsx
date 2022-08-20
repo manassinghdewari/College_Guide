@@ -5,7 +5,7 @@ const CollegeCard = ({ collegeInfo }) => {
 
   return (
     <div>
-      <Link to={`/institutepage/find/${id}`}>
+      <Link to={`/institutepage/${id}`}>
         <div className="card card1 rounded-3 wid22">
           <img
             className="card-img rounded-3 hei18"
