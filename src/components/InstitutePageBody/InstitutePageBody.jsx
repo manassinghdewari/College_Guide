@@ -10,8 +10,7 @@ import ButtonGroup from "./ButtonGroup";
 import useFetch from "../../api/UseFetch";
 
 const InstitutePageBody = () => {
-  const { data, loading, error } = useFetch("/college");
-  console.log(data);
+  console.log("hi from institute");
 
   return (
     <>

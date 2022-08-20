@@ -16,6 +16,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../api/UseFetch";
 
 const theme = createTheme();
 
@@ -26,15 +27,12 @@ export default function SignIn() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formData);
+
     dispatch(loginStart());
     try {
-      const { data } = await axios.post(
-        "http://localhost:8080/api/auth/login",
-        formData
-      );
+      const { data } = await axios.post(`${BASE_URL}/auth/login`, formData);
       dispatch(loginSuccess(data));
-      console.log({ user: data });
+
       navigate("/");
     } catch (error) {
       dispatch(loginFailure(error));
