@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.addremove_container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center
+}
+.box-details{
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}

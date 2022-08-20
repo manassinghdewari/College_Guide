@@ -8,7 +8,8 @@ import AddIcon from '@material-ui/icons/Add';
 import { v4 as uuidv4 } from 'uuid';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import './ResearchPublication.css'
+import './OnlineCourses.css'
+import { Box } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
@@ -54,14 +55,14 @@ function MultipleEntry() {
 
     return (
             <Container className='box'>
-                <Typography variant="h4" >Research Paper Details</Typography>
+                <Typography variant="h4" >Online Course Details</Typography>
                 <form className={classes.root} onSubmit={handleSubmit}>
                     {inputFields.map(inputField => (
                         <span key={inputField.id}>
                            <div>
                                 <TextField
                                     name="name"
-                                    label="Total Publications"
+                                    label="Title"
                                     variant="filled"
                                     value={inputField.total}
                                     onChange={event => handleChangeInput(inputField.id, event)}
@@ -73,14 +74,14 @@ function MultipleEntry() {
                                <div>
                                <TextField
                                     name="department"
-                                    label="Topic of Publication"
+                                    label="Course Name"
                                     variant="filled"
                                     value={inputField.topic}
                                     onChange={event => handleChangeInput(inputField.id, event)}
                                 />
                                 <TextField
                                     name="qualification"
-                                    label="Research Paper Link"
+                                    label="Course Link"
                                     variant="filled"
                                     value={inputField.link}
                                     onChange={event => handleChangeInput(inputField.id, event)}
@@ -100,6 +101,7 @@ function MultipleEntry() {
                                 
                        
                             </div>
+                            <Box textAlign='center'>
                             <Button
                             className={classes.button}
                             variant="contained"
@@ -108,6 +110,7 @@ function MultipleEntry() {
                             alignItems="center"
                             onClick={handleSubmit}
                         >FINISH</Button>
+                        </Box>
                         </span>
                     ))}
                    
