@@ -8,24 +8,24 @@ import { PersistGate } from "redux-persist/lib/integration/react";
 import { persistor, store } from "./redux/store";
 import { Provider } from "react-redux";
 // import axios from 'axios'
-const ScrollToTop = ({ children }) => {
-    const { pathname } = useLocation();
+// const ScrollToTop = ({ children }) => {
+//     const { pathname } = useLocation();
   
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
+//     useEffect(() => {
+//       window.scrollTo(0, 0);
+//     }, [pathname]);
   
-    return children || null;
-  };
+//     return children || null;
+//   };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <StyledEngineProvider injectFirst>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <ScrollToTop >
+        {/* <ScrollToTop > */}
             <App />
-        </ScrollToTop>
+        {/* </ScrollToTop> */}
       </PersistGate>
     </Provider>
   </StyledEngineProvider>

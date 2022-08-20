@@ -1,28 +1,59 @@
-import React, { useState } from "react";
+import React,{useEffect,useState} from 'react';
 import axios from "axios";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import {Link} from 'react-router-dom';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
-import { useNavigate } from "react-router-dom";
+
+// firebase
+import GoogleButton from 'react-google-button'
+// import { UserAuth } from '../GoogleAuth/Context/AuthContext'; 
+import { useNavigate } from 'react-router-dom';
+// import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+// import { auth } from '../GoogleAuth/Firebase';
 
 const theme = createTheme();
 
 export default function SignIn() {
+  const {currentUser}= useSelector((state)=>state.user);
   const [formData, setFormData] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  // firebase component start
+  // const {googleSignIn,user} =UserAuth();
+  
+  // const handleGoogleSignIn=async ()=>{
+  //   dispatch(loginStart());
+  //   const provider= new GoogleAuthProvider();
+  //     // try{
+  //     //    signInWithPopup(auth,provider)
+  //     //   console.log(data)
+  //     //   dispatch(loginSuccess(data));
+  //     // } catch(error){
+  //     //     dispatch(loginFailure(error));
+  //     // }
+  //     signInWithPopup(auth,provider).then((res)=>
+  //     dispatch(loginSuccess(res.data)));
+  // }
+  useEffect(()=>{
+      if(currentUser!=null){
+          navigate('/')
+      }
+  },[currentUser])   //useEffect will run each time when user will change
+  // firebase component end
+  
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -104,31 +135,30 @@ export default function SignIn() {
             >
               Sign In
             </Button>
-            <Typography
-              align="center"
-              component="h1"
-              variant="h7"
-              sx={{ m: 1 }}
-            >
-              OR
-            </Typography>
-            <Button
-              variant="contained"
-              fullWidth
-              color="primary"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In with Google
-            </Button>
+            <Typography align="center" component="h1" variant="h7" sx={{ m:1,}}>
+                 OR
+          </Typography>
+          <GoogleButton 
+            variant="contained"
+            fullWidth
+             color="primary"
+            //  onClick={handleGoogleSignIn}
+             sx={{ mt: 3, mb: 2 }}>
+                Sign In with Google 
+             </GoogleButton>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
+                <Link to="/">
+                  <Typography variant="body2">
+                  Forgot password
+                  </Typography>
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                <Link to="/signup">
+                <Typography variant="body2">
+                Don't have an account? Sign Up
+                  </Typography>
                 </Link>
               </Grid>
             </Grid>
