@@ -134,7 +134,7 @@ export default function SignIn() {
             >
               OR
             </Typography>
-            variant="contained"
+            {/* variant="contained" */}
             {/* <GoogleButton
               fullWidth
               color="primary"
