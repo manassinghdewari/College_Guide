@@ -7,7 +7,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Accordian from "../FAQsection/Accordian";
 import ButtonGroup from "./ButtonGroup";
-
+import LanguageIcon from '@mui/icons-material/Language';
 import useFetch from "../../api/UseFetch";
 
 
@@ -24,15 +24,15 @@ const CollegePageBody = () => {
           <Banner />
           <ButtonGroup />
           <div className="row pagebody">
-            <div className="col-9">
+            <div className="col-9 pgbd">
               <Outlet />
             </div>
             <div className="col-3 right-col">
               <div className="btn_expand">
                 <div className="py-3 align-items: center; justify-center flex">
                   <Button
-                    style={{ backgroundColor: "#DC133C" }}
-                    className="text-white"
+                    style={{ backgroundColor: "#DC133C"}}
+                    className="text-white contbtn"
                     variant="contained"
                     endIcon={<PhoneIcon />}
                   >
@@ -49,12 +49,25 @@ const CollegePageBody = () => {
                     Brochure
                   </Button>
                 </div>
+                <div className="py-3 align-items: center; justify-center flex">
+                  <a href="https://vtu.ac.in/">
+
+                  <Button
+                    style={{ backgroundColor: "#4681f4" }}
+                    className="text-white webbtn"
+                    variant="contained"
+                    endIcon={<LanguageIcon/>}
+                    >
+                    Website
+                  </Button>
+                    </a>
+                </div>
               </div>
               <div className="btn_collapse flex ">
                 <div>
                   <Button
                     style={{ backgroundColor: "#DC133C" }}
-                    className="text-white"
+                    className="text-white contbtn"
                     variant="contained"
                     endIcon={<PhoneIcon />}
                   >
@@ -70,6 +83,19 @@ const CollegePageBody = () => {
                   >
                     Brochure
                   </Button>
+                </div>
+                <div>
+                  <a href="https://vtu.ac.in/">
+
+                  <Button
+                    style={{ backgroundColor: "#3a72b7" }}
+                    className="text-white webbtn"
+                    variant="contained"
+                    endIcon={<LanguageIcon/>}
+                    >
+                    Website
+                  </Button>
+                    </a>
                 </div>
               </div>
               <ImageSlider />

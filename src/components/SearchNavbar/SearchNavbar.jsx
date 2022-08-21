@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import SortBtn from "./SortBtn";
-
+import SortordBtn from "./SortordBtn"
 const SearchNavbar = () => {
   return (
     <div className="align-items: center; justify-center flex mt-1.5">
@@ -22,7 +22,7 @@ const SearchNavbar = () => {
           <Box sx={{ flexGrow: 0.9 }} />
           <SortBtn />
           <Box sx={{ flexGrow: 0.05 }} />
-          
+          <SortordBtn/>
         </Toolbar>
       </AppBar>
     </div>

@@ -1,7 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+.contbtn{
+    padding-left: 21px!important;
+    padding-right: 21px!important;
+}
+.webbtn{
+    padding-left: 23px!important;
+    padding-right: 23px!important;
+}
 .main-content {
 	padding-top: 100px;
 	padding-bottom: 100px;
@@ -523,6 +530,11 @@ p{
 }
     .institutebody{
         width: 100%;
+    }
+    .pgbd{
+        width: 100%!important;
+        padding-left: 25px;
+        padding-right: 15px;
     }
 }
   @media only screen and ( max-width: 667px) {

@@ -71,6 +71,11 @@ const ButtonGroup = () => {
                 Alumni
             </Link>
             </li>
+            <li className="nav-item">
+            <Link to="/institutepage/alumni" className="nav-link  btnbtngroup">
+                Colleges Affliated
+            </Link>
+            </li>
             <li className="nav-item ">
               <Link to="/institutepage/compare"className="nav-link  btnbtngroup">
                 Compare <span className="sr-only">(current)</span>
