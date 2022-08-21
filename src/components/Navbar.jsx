@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -21,6 +21,7 @@ import { useDispatch } from "react-redux";
 import { logout } from "../redux/userSlice";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { searchCollege } from "../redux/searchSlice";
 
 const Search = styled("div")(({ theme }) => ({
   backgroundColor: "white",
@@ -36,9 +37,16 @@ export default function PrimarySearchAppBar() {
   const navigate = useNavigate();
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const [query, setQuery] = useState("");
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      dispatch(searchCollege(query));
+    }
   };
 
   const handleMobileMenuClose = () => {
@@ -162,7 +170,12 @@ export default function PrimarySearchAppBar() {
             <IconButton size="medium">
               <SearchIcon sx={{ display: { xs: "none", md: "flex" } }} />
             </IconButton>
-            <InputBase placeholder="search..." />
+            <InputBase
+              placeholder="search..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyPress={handleKeyPress}
+            />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>

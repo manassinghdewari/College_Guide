@@ -57,9 +57,7 @@ const CollegeCard = ({ collegeInfo }) => {
                 {collegeInfo?.accreditation.map((acc) => acc?.provider + ", ")}
               </div>
               <div className="col est">
-                {collegeInfo?.course
-                  .splice(0, 3)
-                  .map((course) => course?.coursename + ", ")}
+                {collegeInfo?.course.map((course) => course?.coursename + ", ")}
                 ...
               </div>
             </div>

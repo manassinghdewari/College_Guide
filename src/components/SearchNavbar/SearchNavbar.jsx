@@ -5,8 +5,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import SortBtn from "./SortBtn";
 import ExportBtn from "./ExportBtn";
-
+import { useSelector } from "react-redux";
 const SearchNavbar = () => {
+  const { searchQuery } = useSelector((state) => state.search);
   return (
     <div className="align-items: center; justify-center flex mt-1.5">
       <AppBar className="bg-white w-9/12 shadow-none" position="static">
@@ -18,7 +19,7 @@ const SearchNavbar = () => {
             noWrap
             component="div"
           >
-            "Bengaluru"
+            "{searchQuery ? searchQuery : "No search query"}"
           </Typography>
           <Box sx={{ flexGrow: 0.3 }} />
           <Typography
