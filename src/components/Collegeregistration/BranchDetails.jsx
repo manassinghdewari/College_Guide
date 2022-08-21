@@ -8,51 +8,22 @@ import AddIcon from '@material-ui/icons/Add';
 import { v4 as uuidv4 } from 'uuid';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
+import Box from '@mui/material/Box';
 
 
-function StreamSelect() {
-    const [City, setCity] = React.useState('');
-  
-    const handleChange = (event) => {
-      setCity(event.target.value);
-    };
-  
-    return (
-      
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">City*</InputLabel>
-          <Select
-          required
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={City}
-            label="City"
-            onChange={handleChange}
-          >
-            <MenuItem value={'Bangalore'}>Bangalore</MenuItem>
-            <MenuItem value={'Mumbai'}>Mumbai</MenuItem>
-            <MenuItem value={'NewDelhi'}>New Delhi</MenuItem>
-          </Select>
-        </FormControl>
-      
-    );
-  }
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
             margin: theme.spacing(1),
-        },
+        },  
     },
     button: {
         margin: theme.spacing(1),
     }
 }))
 
-function MultipleEntry() {
+
+function BranchDetails() {
     const classes = useStyles()
     const [inputFields, setInputFields] = useState([
         { id: uuidv4(), firstName: '', lastName: '' },
@@ -88,7 +59,7 @@ function MultipleEntry() {
        
             <div className='box'>
             <Container alignItems="center">
-            <Typography variant="h4">Entrance Test Details</Typography>
+                <h1>Branch Details</h1>
                     
                 <form className={classes.root} onSubmit={handleSubmit}>
                     {inputFields.map(inputField => (
@@ -96,7 +67,7 @@ function MultipleEntry() {
                            <div>
                                 <div className='addremove' >
                             <Typography variant="h6" display="block" gutterBottom>
-                                Add/Remove Entry
+                                Add/Remove Branch
                             </Typography>
                             <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
                                 <RemoveIcon />
@@ -108,47 +79,49 @@ function MultipleEntry() {
                             </IconButton>
                             
                                 </div>
-                               
+
+                                <Box
+                                      component="form"
+                                      sx={{
+                                        '& > :not(style)': { m: 1, width: '25ch' },
+                                 }}>
+                                 
                                 <TextField
-                                    name="name"
-                                    label="Name of Entrance Test"
+                                    name="branch"
+                                    label="Branch Name"
                                     variant="filled"
                                     value={inputField.name}
                                     onChange={event => handleChangeInput(inputField.id, event)}
                                 />
-                                </div>
-                                <div>
-                                    <StreamSelect/>    
-                                    </div>
-                                    <div>                            
-                                    <TextField
-                                    name="department"
-                                    label="Stream"
+                                <TextField
+                                    name="seats"
+                                    label="Number of seats"
                                     variant="filled"
                                     value={inputField.department}
                                     onChange={event => handleChangeInput(inputField.id, event)}
                                 />
-                            </div>
-                            <div>
-                                <TextField
-                                    name="qualification"
-                                    label="Entrance Test Website"
+                               
+                                 <TextField 
+                                    name="entrance"
+                                    label="Entrance Test Name"
                                     variant="filled"
-                                    value={inputField.qualification}
+                                    value={inputField.department}
                                     onChange={event => handleChangeInput(inputField.id, event)}
                                 />
-                                </div>
-                              
-                             </span>
+                                 <TextField
+                                    name="link"
+                                    label="Entrance Test Website"
+                                    variant="filled"
+                                    value={inputField.department}
+                                    onChange={event => handleChangeInput(inputField.id, event)}
+                                />
+                                </Box>
+                            </div>
+                            
+                            
+                        </span>
                     ))}
-                    <Button
-                        className={classes.button}
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                        alignItems="center"
-                        onClick={handleSubmit}
-                    >FINISH</Button>
+                   
                 </form>
             </Container>
         </div>
@@ -156,4 +129,4 @@ function MultipleEntry() {
     );
 }
 
-export default MultipleEntry;
+export default BranchDetails ;

@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import GoogleButton from 'react-google-button'
 
 function Copyright(props) {
   return (
@@ -56,6 +57,9 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
+          <GoogleButton className="google-button"
+             onClick={() => { console.log('Google button clicked') }}
+            />
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
@@ -90,16 +94,6 @@ export default function SignIn() {
             >
               Sign In
             </Button>
-            <Typography align="center" component="h1" variant="h7" sx={{ m:1,}}>
-                 OR
-          </Typography>
-            <Button 
-            variant="contained"
-            fullWidth
-             color="primary"
-             sx={{ mt: 3, mb: 2 }}>
-                Sign In with Google 
-             </Button>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">

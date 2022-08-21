@@ -16,7 +16,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import GoogleLogin from 'react-google-login';
+import GoogleButton from 'react-google-button'
 
 function Copyright(props) {
   return (
@@ -118,6 +118,10 @@ export default function SignUp() {
           variant="h5">
             Sign up
           </Typography>
+          
+          <GoogleButton className="google-button"
+             onClick={() => { console.log('Google button clicked') }}
+            />
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -197,17 +201,6 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
-            <Typography align="center" component="h1" variant="h7" sx={{ m:1,}}>
-                 OR
-          </Typography>
-            <Button 
-            className='btn1'
-            variant="contained"
-            fullWidth
-             color="primary"
-             sx={{ mt: 3, mb: 2 }}>
-                Sign up with Google 
-             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="#" variant="body2">
