@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
@@ -7,6 +7,8 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import { useDispatch } from "react-redux";
+import { sortCollege } from "../../redux/searchSlice";
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -56,13 +58,22 @@ const StyledMenu = styled((props) => (
 export default function CustomizedMenus() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
+  const dispatch = useDispatch();
+  const [sortBy, setSortBy] = useState("");
+
+  const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+
+  const handleClick = (e) => {
+    setSortBy({ [e.target.name]: e.target.value });
+    dispatch(sortCollege(sortBy));
     setAnchorEl(null);
   };
 
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <div>
       <Button
@@ -72,7 +83,7 @@ export default function CustomizedMenus() {
         aria-expanded={open ? "true" : undefined}
         variant="contained"
         disableElevation
-        onClick={handleClick}
+        onClick={handleOpen}
         endIcon={<KeyboardArrowDownIcon />}
         className="text-black border sorbtn"
       >
@@ -87,15 +98,33 @@ export default function CustomizedMenus() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem
+          onChange={handleClick}
+          onClick={handleClose}
+          name="Rank"
+          value={sortBy}
+          disableRipple
+        >
           <TrendingUpIcon />
-          Popularity
+          Rank
         </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem
+          onChange={handleClick}
+          onClick={handleClose}
+          name="Fees"
+          value={sortBy}
+          disableRipple
+        >
           <CurrencyRupeeIcon />
           Fees
         </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem
+          onChange={handleClick}
+          onClick={handleClose}
+          name="Rating"
+          value={sortBy}
+          disableRipple
+        >
           <ThumbUpIcon />
           Rating
         </MenuItem>

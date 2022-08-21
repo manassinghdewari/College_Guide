@@ -27,6 +27,7 @@ const NavScrollExample=()=> {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+
             <Nav.Link className="sidelinks" href="#action1">College</Nav.Link>
             <Nav.Link className="sidelinks" href="#action2">University</Nav.Link>
             <Nav.Link className="Loginbtn btn btn-primary rounded-3" href="#action3">Login</Nav.Link>
@@ -34,7 +35,6 @@ const NavScrollExample=()=> {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-
   );
 }
 

@@ -34,7 +34,7 @@ const InstitutePageBody = () => {
     } catch (error) {
       dispatch(fetchFailure(error));
     }
-  }, []);
+  }, [id]);
 
   return (
     <>
