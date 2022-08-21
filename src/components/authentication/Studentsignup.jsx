@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import {Link} from 'react-router-dom';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import GoogleButton from 'react-google-button'
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  Grid,
+  Box,
+  Typography,
+  MenuItem,
+  FormControlLabel,
+  Select,
+  FormControl,
+  InputLabel,
+  Container,
+  Checkbox,
+} from "@mui/material";
+import axios from "axios";
+import { BASE_URL } from "../../api/UseFetch";
+import GoogleButton from 'react-google-button'
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -97,7 +100,7 @@ export default function SignUp() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/auth/registerUser",
+        `${BASE_URL}/auth/registerUser`,
         formData
       );
       console.log({ user: data });

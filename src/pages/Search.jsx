@@ -7,7 +7,6 @@ import Footer from "../components/Footer/Footer";
 const Search = () => {
   return (
     <>
-      
       <Navbar />
       <SearchNavbar />
       <Body />
