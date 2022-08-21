@@ -8,24 +8,20 @@ import AddIcon from '@material-ui/icons/Add';
 import { v4 as uuidv4 } from 'uuid';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-
-
+import './ResearchPublication.css'
+import { Box } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
             margin: theme.spacing(1),
-        },  
+        },
     },
     button: {
         margin: theme.spacing(1),
     }
 }))
 
-
-
-
-
-function BranchDetails() {
+function ResearchPublication() {
     const classes = useStyles()
     const [inputFields, setInputFields] = useState([
         { id: uuidv4(), firstName: '', lastName: '' },
@@ -58,63 +54,61 @@ function BranchDetails() {
     }
 
     return (
-       
-            <div className='box'>
-            <Container alignItems="center">
-                <h1>Branch Details</h1>
-                    
+            <Container className='box'>
+                <Typography variant="h4" >Research Paper Details</Typography>
                 <form className={classes.root} onSubmit={handleSubmit}>
                     {inputFields.map(inputField => (
                         <span key={inputField.id}>
                            <div>
-                                <div className='addremove' >
-                            <Typography variant="h6" display="block" gutterBottom>
-                                Add/Remove Branch
-                            </Typography>
-                            <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
-                                <RemoveIcon />
-                            </IconButton>
-                            <IconButton
-                                onClick={handleAddFields}
-                            >
-                                <AddIcon />
-                            </IconButton>
-                            
-                                </div>
-
-                               
                                 <TextField
-                                    name="branch"
-                                    label="Branch Name"
+                                    name="name"
+                                    label="Total Publications"
                                     variant="filled"
-                                    value={inputField.name}
+                                    value={inputField.total}
                                     onChange={event => handleChangeInput(inputField.id, event)}
-                                />
-                                <TextField
-                                    name="seats"
-                                    label="Number of seats"
-                                    variant="filled"
-                                    value={inputField.department}
-                                    onChange={event => handleChangeInput(inputField.id, event)}
+                                    fullWidth
                                 />
                             </div>
                             
-                            
+                            <div className='addremove_container'>
+                               <div>
+                               <TextField
+                                    name="department"
+                                    label="Topic of Publication"
+                                    variant="filled"
+                                    value={inputField.topic}
+                                    onChange={event => handleChangeInput(inputField.id, event)}
+                                />
+                                <TextField
+                                    name="qualification"
+                                    label="Research Paper Link"
+                                    variant="filled"
+                                    value={inputField.link}
+                                    onChange={event => handleChangeInput(inputField.id, event)}
+                                />
+                               </div>
+                                <div className='addremove' >
+                                  
+                                    <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
+                                        <RemoveIcon />
+                                    </IconButton>
+                                    <IconButton
+                                        onClick={handleAddFields}
+                                    >
+                                        <AddIcon />
+                                    </IconButton>
+                                </div>
+                                
+                       
+                            </div>
+                           
                         </span>
                     ))}
-                    <Button
-                        className={classes.button}
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                        alignItems="center"
-                        onClick={handleSubmit}
-                    >FINISH</Button>
+                   
                 </form>
             </Container>
-        </div>
        
     );
 }
 
-export default BranchDetails ;
+export default ResearchPublication;

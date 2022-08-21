@@ -1,0 +1,22 @@
+img{
+    height: 45px !important;
+    width: 45px !important;
+}
+.heading, .ms-4, .ms-5{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.table-container{
+    border: 1px solid black;
+}
+.ms-6{
+    padding-left: 30rem;
+}
+.table{
+    padding-left: 20rem;
+}
