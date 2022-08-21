@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import Typography from '@mui/material/Typography';
 import './Placement.css'
-import Testing from './Testing'
+import MultipleImage from './MultipleImage';
 import Grid from '@material-ui/core/Grid'
-import { Box } from '@material-ui/core';
 
 function Placement() {
 
@@ -15,10 +13,10 @@ function Placement() {
                 <Typography variant="h4">College Placement Details</Typography>
                 <form>
                 <Grid container direction={"column"} spacing={2}>
-  <Grid item>
+                 <Grid item>
                            <div>
                                 <TextField
-                                    name="name"
+                                    name="maxsalary"
                                     label="Maximum salary"
                                     variant="filled"  
                                 />
@@ -27,21 +25,21 @@ function Placement() {
                             <Grid item>
                             
                                <TextField
-                                    name="department"
+                                    name="mediansalary"
                                     label="Median Salary"
                                     variant="filled"  
                                 />
                                 </Grid>
                                 <Grid item>
                                     <TextField
-                                    name="qualification"
+                                    name="averagesalary"
                                     label="Average Salary"
                                     variant="filled"  
                                 />
                               
                                </Grid>
                                <Grid item>
-                               <Testing/>
+                               <MultipleImage/>
                                </Grid>
                                </Grid>
                              

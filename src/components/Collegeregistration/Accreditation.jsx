@@ -9,7 +9,6 @@ import { v4 as uuidv4 } from 'uuid';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import './Accreditation.css'
-import { Box } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {

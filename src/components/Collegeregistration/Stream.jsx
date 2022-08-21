@@ -10,8 +10,9 @@ import { IconButton, Typography } from '@mui/material';
 import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
 import { v4 as uuidv4 } from 'uuid';
-import BasicSelect from './Course';
+import CourseSelect from './Course';
 import BranchDetails from './BranchDetails';
+
 
  function StreamSelect() {
   const [Stream, setStream] = React.useState([
@@ -75,8 +76,7 @@ const handleRemoveFields = id => {
                         <MenuItem value={20}>Medical</MenuItem>
                         <MenuItem value={30}>Arts</MenuItem>
                     </Select>
-                    <BasicSelect/>
-                    <BranchDetails/>
+                    <CourseSelect/>
                 </FormControl>
             </Box>
 
