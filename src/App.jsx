@@ -18,8 +18,7 @@ import Faculty from "./components/GroupButton/Faculty";
 import Courses from "./components/GroupButton/Courses";
 import Facility from "./components/GroupButton/Facility";
 import Alumni from "./components/GroupButton/Alumni";
-
-import Studentsignup from "./components/authentication/Studentsignup";
+import SignUp from "./components/authentication/Studentsignup";
 // import Protected from './components/GoogleAuth/Protected';
 
 const ScrollToTop = ({ children }) => {
@@ -49,8 +48,7 @@ const App = () => {
             element={currentUser ? <Homepage /> : <StudentSignin />}
           />
           <Route exact path="/institutepage/:id" element={<InstitutePage />}>
-            <Route index element={<Compare />} />
-            <Route exact path="compare" element={<Compare />} />
+            <Route index element={<Info />} />
             <Route exact path="info" element={<Info />} />
             <Route exact path="fees" element={<Fees />} />
             <Route exact path="review" element={<Review />} />
@@ -60,6 +58,8 @@ const App = () => {
             <Route exact path="facility" element={<Facility />} />
             <Route exact path="alumni" element={<Alumni />} />
           </Route>
+          <Route exact path="/institutepage/:id/compare" element={<Compare />} />
+          <Route exact path="/signup" element={<SignUp />} />
         </Routes>
       </ScrollToTop>
       {/* <StudentSignin /> */}

@@ -1,140 +1,145 @@
 import React from 'react';
 import {FaTwitter} from 'react-icons/fa'
 import {FaLinkedin} from 'react-icons/fa'
+import { Link } from 'react-router-dom';
+
+const dataAlumni=[
+    {
+    name:"Manuella Nevoresky",
+    photo:"https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg",
+    designation:{
+        companyName:"Grey-Slone Memorial Hospital",
+        position:"Founder",
+    },
+    websites:{
+        Twitter:"https://twitter.com/johndoefromX",
+        Linkedin:"https://www.linkedin.com/company/john-doe/ ",
+    },
+    research:{
+        title:[
+            {
+                name:"NLP",
+                url:"NLP.com",
+            },
+            {
+                name:"NLP",
+                url:"NLP.com",
+            }
+        ]
+    },
+    branch:"Computer Science Engineering"
+    },
+    {
+        name:"Manuella Nevoresky",
+        photo:"https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg",
+        designation:{
+            companyName:"Grey-Slone Memorial Hospital",
+            position:"Founder",
+        },
+        websites:{
+            Twitter:"https://twitter.com/johndoefromX",
+            Linkedin:"https://www.linkedin.com/company/john-doe/ ",
+        },
+        research:{
+            title:[
+                {
+                    name:"NLP",
+                    url:"NLP.com",
+                },
+                {
+                    name:"NLP",
+                    url:"NLP.com",
+                }
+            ]
+        },
+        branch:"Computer Science Engineering"
+    },
+    {
+        name:"Manuella Nevoresky",
+        photo:"https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg",
+        designation:{
+            companyName:"Grey-Slone Memorial Hospital",
+            position:"Founder",
+        },
+        websites:{
+            Twitter:"https://twitter.com/johndoefromX",
+            Linkedin:"https://www.linkedin.com/company/john-doe/ ",
+        },
+        research:{
+            title:[
+                {
+                    name:"NLP",
+                    url:"NLP.com",
+                },
+                {
+                    name:"NLP",
+                    url:"NLP.com",
+                }
+            ]
+        },
+        branch:"Computer Science Engineering"
+        },
+        {
+            name:"Manuella Nevoresky",
+            photo:"https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg",
+            designation:{
+                companyName:"Grey-Slone Memorial Hospital",
+                position:"Founder",
+            },
+            websites:{
+                Twitter:"https://twitter.com/johndoefromX",
+                Linkedin:"https://www.linkedin.com/company/john-doe/ ",
+            },
+            research:{
+                title:[
+                    {
+                        name:"NLP",
+                        url:"NLP.com",
+                    },
+                    {
+                        name:"NLP",
+                        url:"NLP.com",
+                    }
+                ]
+            },
+            branch:"Computer Science Engineering"
+            },
+
+]
 const Alumni=()=> {
     return (
-        <section className="main-content">
-		<div className="container">
-			<h1>Notable Alumni</h1>
-
-			<table className="table">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Profession</th>
-						<th>Working at</th>
-						<th><div className='flex items-center'>LinkedIn<div className='px-1 text-2xl'><FaLinkedin/></div></div></th>
-						<th><div className='flex items-center justify-center '>Twitter<div className='px-1 text-2xl'><FaTwitter/></div></div></th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<div className="user-info">
-								<div className="user-info__img">
-									<img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="User Img" />
-								</div>
-								<div className="user-info__basic">
-									<h5 className="mb-0">John Doe</h5>
-								</div>
-							</div>
-						</td>
-						<td>
-							Founder
-						</td>
-						<td>
-							<h6 className="mb-0">Grey-Slone Memorial Hospital</h6>
-						</td>
-						<td>
-							<a href="https://www.linkedin.com/company/john-doe/">john-doe</a>
-						</td>
-						<td>
-							<a href="https://twitter.com/johndoefromX">johndoefromX</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div className="user-info">
-								<div className="user-info__img">
-									<img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="User Img" />
-								</div>
-								<div className="user-info__basic">
-									<h5 className="mb-0">John Doe</h5>
-								</div>
-							</div>
-						</td>
-						<td>
-							Founder
-						</td>
-						<td>
-							<h6 className="mb-0">Grey-Slone Memorial Hospital</h6>
-						</td>
-						<td>
-							<a href="https://www.linkedin.com/company/john-doe/">john-doe</a>
-						</td>
-						<td>
-							<a href="https://twitter.com/johndoefromX">johndoefromX</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div className="user-info">
-								<div className="user-info__img">
-									<img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="User Img" />
-								</div>
-								<div className="user-info__basic">
-									<h5 className="mb-0">John Doe</h5>
-								</div>
-							</div>
-						</td>
-						<td>
-							Founder
-						</td>
-						<td>
-							<h6 className="mb-0">Grey-Slone Memorial Hospital</h6>
-						</td>
-						<td>
-							<a href="https://www.linkedin.com/company/john-doe/">john-doe</a>
-						</td>
-						<td>
-							<a href="https://twitter.com/johndoefromX">johndoefromX</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div className="user-info">
-								<div className="user-info__img">
-									<img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="User Img" />
-								</div>
-								<div className="user-info__basic">
-									<h5 className="mb-0">John Doe</h5>
-								</div>
-							</div>
-						</td>
-						<td>
-							Founder
-						</td>
-						<td>
-							<h6 className="mb-0">Grey-Slone Memorial Hospital</h6>
-						</td>
-						<td>
-							<a href="https://www.linkedin.com/company/john-doe/">john-doe</a>
-						</td>
-						<td>
-							<a href="https://twitter.com/johndoefromX">johndoefromX</a>
-						</td>
-					</tr>
-					
-				</tbody>
-			</table>
-
-		</div>
-		<div className='flex items-center justify-center'>
-
-			<nav aria-label="Page navigation example">
-				<ul className="pagination">
-					<li className="page-item"><a className="page-link" href="/">Previous</a></li>
-					<li className="page-item"><a className="page-link" href="/">1</a></li>
-					<li className="page-item"><a className="page-link" href="/">2</a></li>
-					<li className="page-item"><a className="page-link" href="/">3</a></li>
-					<li className="page-item"><a className="page-link" href="/">Next</a></li>
-				</ul>
-			</nav>
-		</div>
-
-	    </section>
-	
+        <div className="container">
+        <div className="row text-center">   
+        {
+            dataAlumni.map((value)=>{
+                return (
+                    <div className="col-xl-3 col-sm-6 mb-2.5 mt-2.5">
+                        <div className="bg-white rounded shadow-sm py-5 px-4">
+                            <div className='flex items-center justify-center'>
+                            <img src={value.photo} alt="" width="100" className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
+                            </div>
+                            <div className="text-xl font-bold mb-0 text-center ">{value.name}</div>
+                            <div className="  text-uppercase font-semibold text-slate-400">{value.designation.position}</div>
+                            <div className="small text-uppercase text-muted font-semibold">{value.designation.companyName}</div>
+                            <div className="small text-muted">{value.branch}</div>
+                            <div>Research on:-
+                            {
+                                value.research.title.map((val)=>{
+                                    <Link to={val.url}>{val.name+","}</Link>      
+                                })
+                            }
+                            </div>
+                            <div className='flex justify-evenly text-lg'>
+                                <Link to={value.websites.Linkedin}><FaLinkedin/></Link>
+                                <Link to={value.websites.Twitter}><FaTwitter/></Link>
+                            </div>
+                        </div>
+                    </div>
+                )
+            })
+        }  
+        </div>
+        </div>
     );
 }
 
