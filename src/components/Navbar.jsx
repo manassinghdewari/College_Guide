@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Navbar.css'
 import SchoolIcon from '@mui/icons-material/School';
-function NavScrollExample() {
+const NavScrollExample=()=> {
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container fluid>

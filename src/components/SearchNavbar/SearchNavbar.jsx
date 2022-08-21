@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import SortBtn from "./SortBtn";
-import ExportBtn from "./ExportBtn";
 
 const SearchNavbar = () => {
   return (
@@ -20,20 +19,10 @@ const SearchNavbar = () => {
           >
             "Bengaluru"
           </Typography>
-          <Box sx={{ flexGrow: 0.3 }} />
-          <Typography
-            className="text-black"
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            Showing 100 Results
-          </Typography>
-          <Box sx={{ flexGrow: 0.5 }} />
+          <Box sx={{ flexGrow: 0.9 }} />
           <SortBtn />
           <Box sx={{ flexGrow: 0.05 }} />
-          <ExportBtn />
+          
         </Toolbar>
       </AppBar>
     </div>
