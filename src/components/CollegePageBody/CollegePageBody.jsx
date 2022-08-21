@@ -13,7 +13,7 @@ import useFetch from "../../api/UseFetch";
 
 import {Outlet} from 'react-router-dom'
 
-const InstitutePageBody = () => {
+const CollegePageBody = () => {
   const { data, loading, error } = useFetch("/college");
   console.log(data);
 
@@ -109,4 +109,4 @@ const InstitutePageBody = () => {
     </>
   );
 };
-export default InstitutePageBody;
+export default CollegePageBody;
