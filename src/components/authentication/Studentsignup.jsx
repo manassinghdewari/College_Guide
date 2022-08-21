@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import {Link} from 'react-router-dom';
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import {
-  Avatar,
-  Button,
-  CssBaseline,
-  TextField,
-  Grid,
-  Box,
-  Typography,
-  MenuItem,
-  FormControlLabel,
-  Select,
-  FormControl,
-  InputLabel,
-  Container,
-  Checkbox,
-} from "@mui/material";
-import axios from "axios";
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import GoogleButton from 'react-google-button'
 
 function Copyright() {
   return (
@@ -129,6 +128,10 @@ export default function SignUp() {
           <Typography className="text-center pt-3" component="h1" variant="h5">
             Register
           </Typography>
+          
+          <GoogleButton className="google-button"
+             onClick={() => { console.log('Google button clicked') }}
+            />
           <Box
             component="form"
             noValidate
@@ -218,23 +221,6 @@ export default function SignUp() {
               sx={{ mt: 3, mb: 2 }}
             >
               Sign Up
-            </Button>
-            <Typography
-              align="center"
-              component="h1"
-              variant="h7"
-              sx={{ m: 1 }}
-            >
-              OR
-            </Typography>
-            <Button
-              className="btn1"
-              variant="contained"
-              fullWidth
-              color="primary"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign up with Google
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>

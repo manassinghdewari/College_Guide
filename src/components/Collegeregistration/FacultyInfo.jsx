@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-function MultipleEntry() {
+function FacultyInfo() {
     const classes = useStyles()
     const [inputFields, setInputFields] = useState([
         { id: uuidv4(), firstName: '', lastName: '' },
@@ -134,14 +134,7 @@ function MultipleEntry() {
                             
                         </span>
                     ))}
-                    <Button
-                        className={classes.button}
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                        alignItems="center"
-                        onClick={handleSubmit}
-                    >FINISH</Button>
+                   
                 </form>
             </Container>
         </div>
@@ -149,4 +142,4 @@ function MultipleEntry() {
     );
 }
 
-export default MultipleEntry;
+export default FacultyInfo;

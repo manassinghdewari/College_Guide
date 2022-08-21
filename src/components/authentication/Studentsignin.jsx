@@ -12,16 +12,20 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useDispatch, useSelector } from "react-redux";
-import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-// firebase
-import GoogleButton from 'react-google-button'
-// import { UserAuth } from '../GoogleAuth/Context/AuthContext'; 
-import { useNavigate } from 'react-router-dom';
-// import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-// import { auth } from '../GoogleAuth/Firebase';
+function Copyright(props) {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+        {'Copyright © '}
+        <Link color="inherit" href="https://mui.com/">
+        College Guide
+        </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
 const theme = createTheme();
 
@@ -94,12 +98,7 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -138,14 +137,13 @@ export default function SignIn() {
             <Typography align="center" component="h1" variant="h7" sx={{ m:1,}}>
                  OR
           </Typography>
-          <GoogleButton 
+            <Button 
             variant="contained"
             fullWidth
              color="primary"
-            //  onClick={handleGoogleSignIn}
              sx={{ mt: 3, mb: 2 }}>
                 Sign In with Google 
-             </GoogleButton>
+             </Button>
             <Grid container>
               <Grid item xs>
                 <Link to="/">

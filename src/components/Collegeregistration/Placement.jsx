@@ -8,7 +8,7 @@ import Testing from './Testing'
 import Grid from '@material-ui/core/Grid'
 import { Box } from '@material-ui/core';
 
-function MultipleEntry() {
+function Placement() {
 
     return (
             <Container className='box-details'>
@@ -44,17 +44,10 @@ function MultipleEntry() {
                                <Testing/>
                                </Grid>
                                </Grid>
-                               <Box textAlign='center'>
-                            <Button
-                            variant="contained"
-                            color="primary"
-                            type="submit"
-                            alignItems="center"
-                        >FINISH</Button>
-                        </Box>
+                             
                 </form>
             </Container>   
     );
 }
 
-export default MultipleEntry;
+export default Placement;

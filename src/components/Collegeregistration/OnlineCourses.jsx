@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-function MultipleEntry() {
+function OnlineCourses() {
     const classes = useStyles()
     const [inputFields, setInputFields] = useState([
         { id: uuidv4(), firstName: '', lastName: '' },
@@ -101,16 +101,7 @@ function MultipleEntry() {
                                 
                        
                             </div>
-                            <Box textAlign='center'>
-                            <Button
-                            className={classes.button}
-                            variant="contained"
-                            color="primary"
-                            type="submit"
-                            alignItems="center"
-                            onClick={handleSubmit}
-                        >FINISH</Button>
-                        </Box>
+                           
                         </span>
                     ))}
                    
@@ -120,4 +111,4 @@ function MultipleEntry() {
     );
 }
 
-export default MultipleEntry;
+export default OnlineCourses;
