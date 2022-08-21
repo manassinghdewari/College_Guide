@@ -5,7 +5,7 @@ import "../../node_modules/draft-js/dist/Draft.css";
 
 
 
-class RichTextEditor extends React.Component {
+class CollegeInfo extends React.Component {
     constructor(props) {
       super(props);
       this.state = {editorState: EditorState.createEmpty()};
@@ -64,7 +64,7 @@ class RichTextEditor extends React.Component {
     render() {
       const {editorState} = this.state;
 
-      let className = 'RichEditor-editor';
+      let className = 'CollegeInfo';
       var contentState = editorState.getCurrentContent();
       if (!contentState.hasText()) {
         if (contentState.getBlockMap().first().getType() !== 'unstyled') {
@@ -199,4 +199,4 @@ class RichTextEditor extends React.Component {
       </div>
     );
   };
-  export default RichTextEditor;
+  export default CollegeInfo;

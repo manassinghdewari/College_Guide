@@ -1,7 +1,7 @@
 import React from "react";
 const CollegeCard = () => (
   <>
-    <div className="card rounded-3 wid22">
+    <div className="card card1 rounded-3 wid22">
       <img
         className="card-img rounded-3 hei18"
         src="https://www.smvit.in/Default/ClientPanel/media/smvit_slider1.jpg"
