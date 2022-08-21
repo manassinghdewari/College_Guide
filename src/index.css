@@ -417,6 +417,53 @@ p{
     
    
   } 
+ @media only screen and ( max-width: 1705px) {
+    
+    .btnbtngroup{
+        font-size: smaller;
+    }
+    
+   
+  } 
+ @media only screen and ( max-width: 1365px) {
+    
+    .btnbtngroup{
+        margin-left: 3vw;
+    }
+    
+   
+  } 
+ @media only screen and ( max-width: 955px) {
+    
+    .btnbtngroup{
+        margin-left: 1vw;
+    }
+    
+   
+  } 
+ @media only screen and ( max-width: 619px) {
+    
+    .btnbtngroup{
+        margin-left: 1vw;
+        font-size: 10px;
+    }
+ }
+ @media only screen and ( max-width: 500px) {
+    
+    .btnbtngroup{
+        margin-left: 0.5vw;
+        font-size: 8px;
+    }
+    
+  } 
+ @media only screen and ( max-width: 410px) {
+    
+    .btnbtngroup{
+        margin-left: 0.1vw;
+        font-size: 7px;
+    }
+    
+  } 
   @media only screen and ( max-width: 1390px) {
     
     .Heromain{

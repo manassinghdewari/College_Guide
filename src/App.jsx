@@ -2,8 +2,6 @@ import React, {useEffect } from 'react';
 import Homepage from './pages/Homepage';
 import InstitutePage from './pages/InstitutePage'
 import Search from "./pages/Search"
-import { Route,Routes } from "react-router-dom";
-import Search from './pages/Search'
 import { Route,Routes,Navigate,BrowserRouter, useLocation} from "react-router-dom";
 // import MultipleEntry from "../src/Collegeregistration/ResearchPublication";
 // import ResponsiveBreakpointsExample from "./components/Table/Table";
@@ -21,6 +19,7 @@ import Facility from './components/GroupButton/Facility';
 import Alumni from './components/GroupButton/Alumni';
 import Studentsignin from './components/authentication/Studentsignin'
 import Studentsignup from './components/authentication/Studentsignup'
+import CollegePage from './pages/Collegepage'
 // import Protected from './components/GoogleAuth/Protected';
 
 const ScrollToTop = ({ children }) => {
@@ -44,8 +43,9 @@ const App = () => {
       <ScrollToTop>
       <Routes>
         <Route exact path="/" element={<Homepage />} />
-
         <Route path="institutepage" element={<InstitutePage />} />
+        <Route path="collegepage" element={<CollegePage />} />
+
         <Route path="search" element={<Search />} />
         <Route
         path="login"
