@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
-import Homepage from "./pages/Homepage";
-import InstitutePage from "./pages/InstitutePage";
-import Search from "./pages/Search";
 
-import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
+import React, {useEffect } from 'react';
+import Homepage from './pages/Homepage';
+import InstitutePage from './pages/InstitutePage'
+import Search from "./pages/Search"
+import { Route,Routes,Navigate,BrowserRouter, useLocation} from "react-router-dom";
 // import MultipleEntry from "../src/Collegeregistration/ResearchPublication";
 // import ResponsiveBreakpointsExample from "./components/Table/Table";
 // import PrimarySearchAppBar from "./components/Navbar";
 import { useSelector } from "react-redux";
 import StudentSignin from "../src/components/authentication/Studentsignin";
+
 import Compare from "./components/GroupButton/Compare";
 import Info from "./components/GroupButton/Info";
 import Fees from "./components/GroupButton/Fees";
@@ -40,6 +41,7 @@ const App = () => {
       {/* <Homepage/> */}
       {/* <MultipleEntry/> */}
       <ScrollToTop>
+
         <Routes>
           <Route exact path="/" element={<Homepage />} />
 
@@ -59,6 +61,7 @@ const App = () => {
             <Route exact path="courses" element={<Courses />} />
             <Route exact path="facility" element={<Facility />} />
             <Route exact path="alumni" element={<Alumni />} />
+
           </Route>
         </Routes>
       </ScrollToTop>
