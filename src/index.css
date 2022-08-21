@@ -1,7 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+.contbtn{
+    padding-left: 21px!important;
+    padding-right: 21px!important;
+}
+.webbtn{
+    padding-left: 23px!important;
+    padding-right: 23px!important;
+}
 .main-content {
 	padding-top: 100px;
 	padding-bottom: 100px;
@@ -382,8 +389,6 @@ p{
 }
 .col-4{
     text-align: right!important;
-    margin-top: -10px;
-    margin-left: -128px;
 }
 .col-5
 {
@@ -417,6 +422,53 @@ p{
     
    
   } 
+ @media only screen and ( max-width: 1705px) {
+    
+    .btnbtngroup{
+        font-size: smaller;
+    }
+    
+   
+  } 
+ @media only screen and ( max-width: 1365px) {
+    
+    .btnbtngroup{
+        margin-left: 3vw;
+    }
+    
+   
+  } 
+ @media only screen and ( max-width: 955px) {
+    
+    .btnbtngroup{
+        margin-left: 1vw;
+    }
+    
+   
+  } 
+ @media only screen and ( max-width: 619px) {
+    
+    .btnbtngroup{
+        margin-left: 1vw;
+        font-size: 10px;
+    }
+ }
+ @media only screen and ( max-width: 500px) {
+    
+    .btnbtngroup{
+        margin-left: 0.5vw;
+        font-size: 8px;
+    }
+    
+  } 
+ @media only screen and ( max-width: 410px) {
+    
+    .btnbtngroup{
+        margin-left: 0.1vw;
+        font-size: 7px;
+    }
+    
+  } 
   @media only screen and ( max-width: 1390px) {
     
     .Heromain{
@@ -431,7 +483,6 @@ p{
    
   } 
   @media only screen and ( max-width: 1050px) {
-
     
     .Heromain{
         font-size: 40px;
@@ -441,11 +492,8 @@ p{
         font-size: 20px;
         
     }
-
     
-   .Banner_Name{
-    font-size: 28px;
-   }
+   
   } 
   @media only screen and ( max-width: 850px) {
     
@@ -477,49 +525,13 @@ p{
     .institutebody{
         width: 100%;
     }
+    .pgbd{
+        width: 100%!important;
+        padding-left: 25px;
+        padding-right: 15px;
+    }
 }
   @media only screen and ( max-width: 667px) {
-    .institutebody{
-        width: 100%;
-    }
-    .wid22{
-        width:16rem;
-        font-size: 10px;
-    }
-    .btn2{
-        font-size: 10px;
-    }
-    .btn3{
-        font-size: 10px;
-    }
-    .hei18{
-        height: 10rem;
-    }
-    .ran{
-        padding-top: 5rem;
-    }
-    .p4{
-        padding-top: 5px!important;
-  padding-bottom: 5px!important;
-    }
-    .acc{
-        font-size: 10px!important;
-    }
-    .est{
-        font-size: 10px!important;
-    }
-    .col-4{
-        text-align: left;
-        margin-left: -97px;
-        margin-top: -9px;
-    }
-    .collegename{
-        font-size: 13px;
-    }
-    .collegelogo{
-        width: 40px;
-        height: 40px;
-    }
     .ban{
         flex: none!important;
     }
@@ -544,9 +556,6 @@ p{
         padding-left: 90rem;
     }
     
-    .Banner_Name{
-        font-size: 18px;
-       }
    
   } 
   

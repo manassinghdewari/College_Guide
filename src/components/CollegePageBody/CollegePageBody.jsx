@@ -1,58 +1,22 @@
-import React, { useEffect } from "react";
-import Banner from "./ColllegePicBanner";
+import React from "react";
+import Banner from "./Banner";
 import CollegeCardSlider from "../CollegeCardSlider/CollegeCardSlider";
+import ImageSlider from "../imageSlider/ImageSlider";
 import { Button } from "@material-ui/core";
 import PhoneIcon from "@mui/icons-material/Phone";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Accordian from "../FAQsection/Accordian";
-import { useDispatch } from "react-redux";
 import ButtonGroup from "./ButtonGroup";
-import AliceCarousel from 'react-alice-carousel';
-import useFetch, { BASE_URL } from "../../api/UseFetch";
 import LanguageIcon from '@mui/icons-material/Language';
 import useFetch from "../../api/UseFetch";
-import image1 from '../../images/28466.jpg'
-import { Outlet, useLocation } from "react-router-dom";
-import {
-  fetchStart,
-  fetchSuccess,
-  fetchFailure,
-} from "../../redux/collegeSlice";
-import axios from "axios";
 
-const InstitutePageBody = () => {
-  const { pathname } = useLocation();
-  const id = pathname.split("/")[2];
-  // const { data, loading, error } = useFetch(`/college/${id}`);
-  const dispatch = useDispatch();
-  useEffect(async () => {
-    dispatch(fetchStart());
-    try {
-      const { data } = await axios.get(`${BASE_URL}/college/${id}`);
-      dispatch(fetchSuccess(data));
-    } catch (error) {
-      dispatch(fetchFailure(error));
-    }
-  }, [id]);
-  
-  // testing
-  const data={
-    photos:[
-      {
-        url:"https://bit.ly/3wl79kw",
-      },
-      {
-        url:"https://bit.ly/3wl79kw",
-      },
-      {
-        url:"https://bit.ly/3wl79kw",
-      },
-      {
-        url:"https://bit.ly/3wl79kw",
-      },
-    ]
-  }
-console.log("collegedata",data);
+
+import {Outlet} from 'react-router-dom'
+
+const CollegePageBody = () => {
+  const { data, loading, error } = useFetch("/college");
+  console.log(data);
+
   return (
     <>
       <div className="align-items: center; justify-center flex">
@@ -134,15 +98,7 @@ console.log("collegedata",data);
                     </a>
                 </div>
               </div>
-        <AliceCarousel autoPlay autoPlayInterval="3000">
-          {
-            data.photos.map((value)=>{
-              return(
-                <img src={value.url} className="sliderimg" alt=""/>
-              )
-            })
-          }
-        </AliceCarousel>
+              <ImageSlider />
             </div>
           </div>
           <div className="font-bold text-3xl">Similar Institutes:-</div>
@@ -153,4 +109,4 @@ console.log("collegedata",data);
     </>
   );
 };
-export default InstitutePageBody;
+export default CollegePageBody;

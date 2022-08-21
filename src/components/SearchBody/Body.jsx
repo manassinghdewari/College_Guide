@@ -2,6 +2,7 @@ import React from "react";
 import Filters from "./Filters";
 import CollegeCard from "../CollegeCardSlider/CollegeCard";
 import useFetch from "../../api/UseFetch";
+import { useSelector } from "react-redux";
 const Body = () => {
   // const colleges = [
   //   {
@@ -23,8 +24,11 @@ const Body = () => {
   //   },
   // ];
 
-  const { data: colleges, loading, error } = useFetch("/college");
+  const { searchQuery, sortBy } = useSelector((state) => state.search);
 
+  const url = sortBy ? `/college?sortBy=${sortBy}&sortOrder=asc` : "/college";
+
+  const { data: college } = useFetch(url);
   return (
     <>
       <div className="align-items: center; justify-center flex my-10">
@@ -33,7 +37,7 @@ const Body = () => {
             <Filters />
           </div>
           <div className="col-9 flex flex-wrap">
-            {colleges?.map((college) => (
+            {college?.map((college) => (
               <span className="px-1 py-2">
                 <CollegeCard collegeInfo={college} key={college._id} />
               </span>

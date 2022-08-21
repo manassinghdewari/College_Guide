@@ -3,7 +3,8 @@ import { styled, alpha } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import GetAppIcon from "@mui/icons-material/GetApp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import SortIcon from '@mui/icons-material/Sort';
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -62,6 +63,7 @@ export default function CustomizedMenus() {
   return (
     <div>
       <Button
+        startIcon={<SortIcon/>}
         id="demo-customized-button"
         aria-controls={open ? "demo-customized-menu" : undefined}
         aria-haspopup="true"
@@ -69,9 +71,10 @@ export default function CustomizedMenus() {
         variant="contained"
         disableElevation
         onClick={handleClick}
+        endIcon={<KeyboardArrowDownIcon />}
         className="text-black border sorbtn"
       >
-        <GetAppIcon />
+        Sort-order
       </Button>
       <StyledMenu
         id="demo-customized-menu"
@@ -82,11 +85,11 @@ export default function CustomizedMenus() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
-          .pdf
+        <MenuItem onClick={handleClose} disableRipple active>
+          Ascending
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          .xml
+          Descending
         </MenuItem>
       </StyledMenu>
     </div>
