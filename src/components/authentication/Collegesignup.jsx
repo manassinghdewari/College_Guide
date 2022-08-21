@@ -7,13 +7,15 @@ import ResearchPublication from '../Collegeregistration/ResearchPublication';
 import OnlineCourses from '../Collegeregistration/OnlineCourses';
 import Placement from '../Collegeregistration/Placement';
 import Alumni from '../Collegeregistration/Alumni';
+import CollegeInfo from '../Collegeregistration/CollegeInfo';
 import { Button } from '@material-ui/core';
+import CollegeImages from '../Collegeregistration/CollegeImages';
 
 
  function Collegesignup() {
 const [page, setPage] = useState(0);
 
-const FormTitles = ["Basic Details" , "Branch Details", "Accreditation Details", "Faculty Details" , "Research Publications", "Online Courses", "Placement Details", "Alumni Details"];
+const FormTitles = ["Basic Details" , "Branch Details", "Accreditation Details", "Faculty Details" , "Research Publications", "Online Courses", "Placement Details", "Alumni Details","College Info","Upload College Images"];
 
 const pageDisplay = () => { 
   if (page==0) {
@@ -40,6 +42,12 @@ const pageDisplay = () => {
   }
   else if (page==7){
     return <Alumni/>;
+  }
+  else if (page==8){
+    return <CollegeInfo/>;
+  }
+  else if(page==9){
+    return <CollegeImages/>;
   }
  
  }

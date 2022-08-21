@@ -10,8 +10,9 @@ import { IconButton, Typography } from '@mui/material';
 import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
 import { v4 as uuidv4 } from 'uuid';
+import BranchDetails from './BranchDetails';
 
- function BasicSelect() {
+ function CourseSelect() {
   const [Courses, setCourses] = React.useState([
     { id: uuidv4(),  CourseName: ''},
   ]);
@@ -73,6 +74,7 @@ const handleRemoveFields = id => {
                         <MenuItem value={20}>Medical</MenuItem>
                         <MenuItem value={30}>Arts</MenuItem>
                     </Select>
+                    <BranchDetails/>
                 </FormControl>
             </Box>
 
@@ -86,4 +88,4 @@ const handleRemoveFields = id => {
   );
 }
 
-export default BasicSelect;
+export default CourseSelect;

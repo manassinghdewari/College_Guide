@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { RMIUploader } from "react-multiple-image-uploader";
 import Typography from '@mui/material/Typography';
-
+import './MultipleImage.css';
 const dataSources = [];
 
-export default function Testing() {
+export default function MultipleImage() {
   const [visible, setVisible] = useState(false);
  
   const hideModal = () => {
@@ -22,7 +22,6 @@ export default function Testing() {
 
   return (
     <div className="App">
-        <Typography variant="h5">Upload College Placement graphs</Typography>
       <RMIUploader
         isOpen={visible}
         hideModal={hideModal}
