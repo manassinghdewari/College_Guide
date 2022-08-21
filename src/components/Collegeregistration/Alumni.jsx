@@ -57,6 +57,19 @@ function Alumni() {
                     {inputFields.map(inputField => (
                         <span key={inputField.id}>
                              <Grid container spacing={2}>
+                               <div className='addremove_container'>
+                                <div className='addremove text-center justify-center items-center' >
+                                  
+                                    <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
+                                        <RemoveIcon />
+                                    </IconButton>
+                                    <IconButton
+                                        onClick={handleAddFields}
+                                    >
+                                        <AddIcon />
+                                    </IconButton>
+                                </div>
+                                </div>
                              
                             
                                <div className='input-field' class="form-check-inline" >
@@ -142,19 +155,6 @@ function Alumni() {
                                 </Button>
                                 </Grid>
                                </div>
-                               <div className='addremove_container'>
-                                <div className='addremove' >
-                                  
-                                    <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
-                                        <RemoveIcon />
-                                    </IconButton>
-                                    <IconButton
-                                        onClick={handleAddFields}
-                                    >
-                                        <AddIcon />
-                                    </IconButton>
-                                </div>
-                                </div>
                            
                             </Grid>
                            

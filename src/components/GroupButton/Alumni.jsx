@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from 'react';
 import {FaTwitter} from 'react-icons/fa'
 import {FaLinkedin} from 'react-icons/fa'
@@ -144,5 +144,4 @@ const Alumni=()=> {
     );
 }
 
->>>>>>> dc596f6a8da0a6b55ce2d1846fd789dfbf5e2076
 export default Alumni;
