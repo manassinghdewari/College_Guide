@@ -4,8 +4,9 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import SortBtn from "./SortBtn";
-import ExportBtn from "./ExportBtn";
 import { useSelector } from "react-redux";
+
+import SortordBtn from "./SortordBtn"
 const SearchNavbar = () => {
   const { searchQuery } = useSelector((state) => state.search);
   return (
@@ -21,20 +22,10 @@ const SearchNavbar = () => {
           >
             "{searchQuery ? searchQuery : "No search query"}"
           </Typography>
-          <Box sx={{ flexGrow: 0.3 }} />
-          <Typography
-            className="text-black"
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            Showing 100 Results
-          </Typography>
-          <Box sx={{ flexGrow: 0.5 }} />
+          <Box sx={{ flexGrow: 0.9 }} />
           <SortBtn />
           <Box sx={{ flexGrow: 0.05 }} />
-          <ExportBtn />
+          <SortordBtn/>
         </Toolbar>
       </AppBar>
     </div>
