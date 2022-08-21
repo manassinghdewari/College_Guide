@@ -13,6 +13,7 @@ import storage from "redux-persist/lib/storage";
 
 import userReducer from "./userSlice";
 import collegeReducer from "./collegeSlice";
+import searchReducer from "./searchSlice";
 
 const persistConfig = {
   key: "root",
@@ -23,6 +24,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   user: userReducer,
   college: collegeReducer,
+  search: searchReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
