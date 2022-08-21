@@ -8,7 +8,7 @@ import AddIcon from '@material-ui/icons/Add';
 import { v4 as uuidv4 } from 'uuid';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import './ResearchPublication.css'
+import './Accreditation.css'
 import { Box } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-function MultipleEntry() {
+function Accreditation() {
     const classes = useStyles()
     const [inputFields, setInputFields] = useState([
         { id: uuidv4(), firstName: '', lastName: '' },
@@ -91,16 +91,7 @@ function MultipleEntry() {
                                 
                        
                             </div>
-                            <Box textAlign='center'>
-                            <Button
-                            className={classes.button}
-                            variant="contained"
-                            color="primary"
-                            type="submit"
-                            alignItems="center"
-                            onClick={handleSubmit}
-                        >FINISH</Button>
-                        </Box>
+                           
                         </span>
                     ))}
                    
@@ -110,4 +101,4 @@ function MultipleEntry() {
     );
 }
 
-export default MultipleEntry;
+export default Accreditation;

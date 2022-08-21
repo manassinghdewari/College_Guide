@@ -34,6 +34,7 @@ const NavScrollExample=()=> {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+
   );
 }
 

@@ -8,6 +8,7 @@ import AddIcon from '@material-ui/icons/Add';
 import { v4 as uuidv4 } from 'uuid';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import Box from '@mui/material/Box';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,9 +21,6 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
     }
 }))
-
-
-
 
 
 function BranchDetails() {
@@ -82,7 +80,12 @@ function BranchDetails() {
                             
                                 </div>
 
-                               
+                                <Box
+                                      component="form"
+                                      sx={{
+                                        '& > :not(style)': { m: 1, width: '25ch' },
+                                 }}>
+                                 
                                 <TextField
                                     name="branch"
                                     label="Branch Name"
@@ -97,19 +100,28 @@ function BranchDetails() {
                                     value={inputField.department}
                                     onChange={event => handleChangeInput(inputField.id, event)}
                                 />
+                               
+                                 <TextField 
+                                    name="entrance"
+                                    label="Entrance Test Name"
+                                    variant="filled"
+                                    value={inputField.department}
+                                    onChange={event => handleChangeInput(inputField.id, event)}
+                                />
+                                 <TextField
+                                    name="link"
+                                    label="Entrance Test Website"
+                                    variant="filled"
+                                    value={inputField.department}
+                                    onChange={event => handleChangeInput(inputField.id, event)}
+                                />
+                                </Box>
                             </div>
                             
                             
                         </span>
                     ))}
-                    <Button
-                        className={classes.button}
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                        alignItems="center"
-                        onClick={handleSubmit}
-                    >FINISH</Button>
+                   
                 </form>
             </Container>
         </div>
