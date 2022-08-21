@@ -59,7 +59,18 @@ function Accreditation() {
                     {inputFields.map(inputField => (
                         <span key={inputField.id}>
                             
-                            <div className='addremove_container'>
+                            <div className=''>
+                                <div className='addremove justify-center items-center text-center' >
+                                  
+                                    <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
+                                        <RemoveIcon />
+                                    </IconButton>
+                                    <IconButton
+                                        onClick={handleAddFields}
+                                    >
+                                        <AddIcon />
+                                    </IconButton>
+                                </div>
                                <div>
                                <TextField
                                     name="department"
@@ -76,17 +87,6 @@ function Accreditation() {
                                     onChange={event => handleChangeInput(inputField.id, event)}
                                 />
                                </div>
-                                <div className='addremove' >
-                                  
-                                    <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
-                                        <RemoveIcon />
-                                    </IconButton>
-                                    <IconButton
-                                        onClick={handleAddFields}
-                                    >
-                                        <AddIcon />
-                                    </IconButton>
-                                </div>
                                 
                        
                             </div>
