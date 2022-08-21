@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import { BASE_URL } from "../../api/UseFetch";
-
+import GoogleButton from 'react-google-button'
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -131,6 +131,10 @@ export default function SignUp() {
           <Typography className="text-center pt-3" component="h1" variant="h5">
             Register
           </Typography>
+          
+          <GoogleButton className="google-button"
+             onClick={() => { console.log('Google button clicked') }}
+            />
           <Box
             component="form"
             noValidate
@@ -220,23 +224,6 @@ export default function SignUp() {
               sx={{ mt: 3, mb: 2 }}
             >
               Sign Up
-            </Button>
-            <Typography
-              align="center"
-              component="h1"
-              variant="h7"
-              sx={{ m: 1 }}
-            >
-              OR
-            </Typography>
-            <Button
-              className="btn1"
-              variant="contained"
-              fullWidth
-              color="primary"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign up with Google
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React,{useEffect,useState} from 'react';
 import axios from "axios";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -90,12 +90,7 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
