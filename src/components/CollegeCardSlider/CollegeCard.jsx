@@ -5,14 +5,14 @@ const CollegeCard = ({ collegeInfo }) => {
 
   return (
     <div>
-      <Link to={`/institutepage/${id}`}>
+      
         <div className="card card1 rounded-3 wid22">
           <img
             className="card-img rounded-3 hei18"
             src={collegeInfo?.photos[0]}
             alt={collegeInfo?.name}
           />
-          <div className="card-img-overlay rounded-3 ">
+          <div className="card-img-overlay rounded-3 h-1/2">
             <div className="row">
               <div className="col">
                 <a href="/" className="btn2 btn btn-primary rounded-3">
@@ -70,7 +70,6 @@ const CollegeCard = ({ collegeInfo }) => {
             </div>
           </div>
         </div>
-      </Link>
     </div>
   );
 };
