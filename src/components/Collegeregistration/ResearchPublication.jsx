@@ -59,7 +59,18 @@ function ResearchPublication() {
                 <form className={classes.root} onSubmit={handleSubmit}>
                     {inputFields.map(inputField => (
                         <span key={inputField.id}>
-                           <div>
+                           <div className='justify-center items-center text-center'>
+                                <div className='addremove' >
+                                  
+                                    <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
+                                        <RemoveIcon />
+                                    </IconButton>
+                                    <IconButton
+                                        onClick={handleAddFields}
+                                    >
+                                        <AddIcon />
+                                    </IconButton>
+                                </div>
                                 <TextField
                                     name="name"
                                     label="Total Publications"
@@ -87,17 +98,6 @@ function ResearchPublication() {
                                     onChange={event => handleChangeInput(inputField.id, event)}
                                 />
                                </div>
-                                <div className='addremove' >
-                                  
-                                    <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
-                                        <RemoveIcon />
-                                    </IconButton>
-                                    <IconButton
-                                        onClick={handleAddFields}
-                                    >
-                                        <AddIcon />
-                                    </IconButton>
-                                </div>
                                 
                        
                             </div>

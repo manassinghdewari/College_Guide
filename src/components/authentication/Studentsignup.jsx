@@ -1,36 +1,27 @@
 import React, { useState } from "react";
-import {Link} from 'react-router-dom';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import GoogleButton from 'react-google-button'
+import { Link } from "react-router-dom";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        College Guide
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  Grid,
+  Box,
+  Typography,
+  MenuItem,
+  FormControlLabel,
+  Select,
+  FormControl,
+  InputLabel,
+  Container,
+  Checkbox,
+} from "@mui/material";
+import axios from "axios";
+import { BASE_URL } from "../../api/UseFetch";
+// import GoogleButton from 'react-google-button'
 
 function CitySelect() {
   const [City, setCity] = useState("");
@@ -97,7 +88,7 @@ export default function SignUp() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/auth/registerUser",
+        `${BASE_URL}/auth/registerUser`,
         formData
       );
       console.log({ user: data });
@@ -128,10 +119,10 @@ export default function SignUp() {
           <Typography className="text-center pt-3" component="h1" variant="h5">
             Register
           </Typography>
-          
-          <GoogleButton className="google-button"
+
+          {/* <GoogleButton className="google-button"
              onClick={() => { console.log('Google button clicked') }}
-            />
+            /> */}
           <Box
             component="form"
             noValidate
@@ -225,9 +216,9 @@ export default function SignUp() {
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link to="/signin" variant="body2">
-                <Typography variant="body2">
-                Already have an account? Sign in
-                </Typography>
+                  <Typography variant="body2">
+                    Already have an account? Sign in
+                  </Typography>
                 </Link>
               </Grid>
             </Grid>
