@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 import BasicDetails from '../Collegeregistration/BasicDetails';
 import StreamSelect from '../Collegeregistration/Stream';
@@ -11,9 +12,13 @@ import CollegeInfo from '../Collegeregistration/CollegeInfo';
 import { Button } from '@material-ui/core';
 import CollegeImages from '../Collegeregistration/CollegeImages';
 
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import { useSelector } from "react-redux";
 
- function Collegesignup() {
-const [page, setPage] = useState(0);
+// const ProctectedRoute = ({ children }) => {
+//   const { currentUser } = useSelector((state) => state.user);
+//   console.log(currentUser.details.role);
+
 
 const FormTitles = ["Basic Details" , "Branch Details", "Accreditation Details", "Faculty Details" , "Research Publications", "Online Courses", "Placement Details", "Alumni Details","College Info","Upload College Images"];
 
@@ -53,30 +58,86 @@ const pageDisplay = () => {
  }
 return (
 
-<>
-  <div className='header'>
-    <h1> {FormTitles[page]} </h1>
-  </div>
- <div className='body'>
-  {pageDisplay()}
- </div>
+//   if (
+//     currentUser.details.role === "admin" ||
+//     currentUser.details.role === "college"
+//   ) {
+//     return children || null;
+//   }
+// };
 
-<Button
-disabled={page == 0}
-onClick={() => {
-  setPage((currpage) => currpage-1);
-}}>
-  Prev
-  </Button>
-<Button
-disabled={page== FormTitles.length-1}
-onClick={() => {
-  setPage((currpage) => currpage+1);
-}}
->Next
-</Button> 
-</>
-);
- }
+// const Collegesignup = () => {
+//   return (
 
-export default Collegesignup;
+
+//       <Routes>
+//         {/* <Route
+//           exact
+//           path="/collegeRegistration"
+//           element={
+//             <ProctectedRoute>
+//               <BasicDetails />
+//             </ProctectedRoute>
+//           }
+//         /> */}
+//         <Route
+//           exact
+//           path="/collegeRegistration/stream"
+//           element={
+//             <ProctectedRoute>
+//               <StreamSelect />
+//             </ProctectedRoute>
+//           }
+//         />
+//         <Route
+//           exact
+//           path="/collegeRegistration/accreditation"
+//           element={
+//             <ProctectedRoute>
+//               <Accreditation />
+//             </ProctectedRoute>
+//           }
+//         />
+//         <Route
+//           exact
+//           path="/collegeRegistration/faculty"
+//           element={
+//             <ProctectedRoute>
+//               <FacultyInfo />
+//             </ProctectedRoute>
+//           }
+//         />
+//         <Route
+//           exact
+//           path="/collegeRegistration/research"
+//           element={
+//             <ProctectedRoute>
+//               <ResearchPublication />
+//             </ProctectedRoute>
+//           }
+//         />
+//         <Route
+//           exact
+//           path="/collegeRegistration/onlineCourse"
+//           element={
+//             <ProctectedRoute>
+//               <OnlineCourses />
+//             </ProctectedRoute>
+//           }
+//         />
+//         <Route
+//           exact
+//           path="/collegeRegistration/placement"
+//           element={
+//             <ProctectedRoute>
+//               <Placement />
+//             </ProctectedRoute>
+//           }
+//         />
+//         <Route exact path="/collegeRegistration/alumni" element={<Alumni />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// };
+
+// export default Collegesignup;

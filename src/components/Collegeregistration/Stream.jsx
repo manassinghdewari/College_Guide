@@ -5,6 +5,7 @@ import Container from "@material-ui/core/Container";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 
+
 import { ClassNames } from "@emotion/react";
 import { IconButton, Typography } from "@mui/material";
 import RemoveIcon from "@material-ui/icons/Remove";
@@ -14,6 +15,7 @@ import CourseSelect from "./Course";
 import BranchDetails from "./BranchDetails";
 import Menu from "@mui/material/Menu";
 import Select from 'react-select'
+
 function StreamSelect() {
   const [Stream, setStream] = React.useState([
     { id: uuidv4(), StreamName: "" },
@@ -53,8 +55,13 @@ function StreamSelect() {
         <form className={ClassNames.root}>
           {Stream.map((Stream) => (
             <span key={Stream.id}>
+
               <div className="">
                 <div className="justify-center items-center text-center addremove">
+
+              <div>
+                <div className="addremove">
+
                   <Typography variant="h6" display="block" gutterBottom>
                     Add/Remove Stream
                   </Typography>
@@ -68,6 +75,7 @@ function StreamSelect() {
                     <AddIcon />
                   </IconButton>
                 </div>
+
 
                 <Box >
                   <FormControl>
@@ -84,6 +92,27 @@ function StreamSelect() {
                       
 
                     <CourseSelect />
+
+                <Box sx={{ maxWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Stream
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      name="Stream"
+                      value={Stream.name}
+                      label="Stream"
+                      onChange={(event) => handleChangeInput(Stream.id, event)}
+                    >
+                      <MenuItem value={10}>Engineering</MenuItem>
+                      <MenuItem value={20}>Medical</MenuItem>
+                      <MenuItem value={30}>Arts</MenuItem>
+                    </Select>
+                    <BasicSelect />
+                    {/* <BranchDetails/> */}
+
                   </FormControl>
                 </Box>
               </div>
