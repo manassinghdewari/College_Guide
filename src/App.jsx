@@ -35,6 +35,7 @@ import OnlineCourses from "./components/Collegeregistration/OnlineCourses";
 import Placements from "./components/Collegeregistration/Placement";
 import AlumniData from "./components/Collegeregistration/Alumni";
 import Collegesignup from "./components/authentication/Collegesignup";
+
 // import Protected from './components/GoogleAuth/Protected';
 
 const ScrollToTop = ({ children }) => {
@@ -73,8 +74,10 @@ const App = () => {
             element={currentUser ? <Homepage /> : <StudentSignin />}
           />
           <Route exact path="/institutepage/:id" element={<InstitutePage />}>
+
             <Route index element={<Compare />} />
             <Route exact path="compare" element={<Compare />} />
+
             <Route exact path="info" element={<Info />} />
             <Route exact path="fees" element={<Fees />} />
             <Route exact path="review" element={<Review />} />
@@ -83,6 +86,7 @@ const App = () => {
             <Route exact path="courses" element={<Courses />} />
             <Route exact path="facility" element={<Facility />} />
             <Route exact path="alumni" element={<Alumni />} />
+
           </Route>
           <Route
             exact
@@ -158,6 +162,7 @@ const App = () => {
     </BrowserRouter>
 
     // // <Collegesignup />
+
   );
 };
 
