@@ -31,7 +31,9 @@ const CollegeCard = ({ collegeInfo }) => {
           </div>
           <div className="card-body">
             <div className="row p4">
-              <div className="col">{collegeInfo?.city},IN</div>
+              <div className="col">
+                {collegeInfo?.address.map((address) => address.state)},IN
+              </div>
               <div className="col col-4">
                 <a href="/" className="btn3 btn btn-primary rounded-3">
                   Compare
