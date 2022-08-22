@@ -1,12 +1,16 @@
-// import React, { useState } from "react";
-// import BasicDetails from "../Collegeregistration/BasicDetails";
-// import StreamSelect from "../Collegeregistration/Stream";
-// import Accreditation from "../Collegeregistration/Accreditation";
-// import FacultyInfo from "../Collegeregistration/FacultyInfo";
-// import ResearchPublication from "../Collegeregistration/ResearchPublication";
-// import OnlineCourses from "../Collegeregistration/OnlineCourses";
-// import Placement from "../Collegeregistration/Placement";
-// import Alumni from "../Collegeregistration/Alumni";
+
+import React, {useState} from 'react';
+import BasicDetails from '../Collegeregistration/BasicDetails';
+import StreamSelect from '../Collegeregistration/Stream';
+import Accreditation from '../Collegeregistration/Accreditation';
+import FacultyInfo from '../Collegeregistration/FacultyInfo';
+import ResearchPublication from '../Collegeregistration/ResearchPublication';
+import OnlineCourses from '../Collegeregistration/OnlineCourses';
+import Placement from '../Collegeregistration/Placement';
+import Alumni from '../Collegeregistration/Alumni';
+import CollegeInfo from '../Collegeregistration/CollegeInfo';
+import { Button } from '@material-ui/core';
+import CollegeImages from '../Collegeregistration/CollegeImages';
 
 // import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import { useSelector } from "react-redux";
@@ -14,6 +18,45 @@
 // const ProctectedRoute = ({ children }) => {
 //   const { currentUser } = useSelector((state) => state.user);
 //   console.log(currentUser.details.role);
+
+
+const FormTitles = ["Basic Details" , "Branch Details", "Accreditation Details", "Faculty Details" , "Research Publications", "Online Courses", "Placement Details", "Alumni Details","College Info","Upload College Images"];
+
+const pageDisplay = () => { 
+  if (page==0) {
+    return <BasicDetails/>;
+  }
+  else if (page==1){
+  return <StreamSelect/>;
+  }
+  
+  else if (page==2){
+    return <Accreditation/>;
+  }
+  else if (page==3){
+    return <FacultyInfo/>;
+  }
+  else if (page==4){
+    return <ResearchPublication/>;
+  }
+  else if (page==5){
+    return <OnlineCourses/>;
+  }
+  else if (page==6){
+    return <Placement/>;
+  }
+  else if (page==7){
+    return <Alumni/>;
+  }
+  else if (page==8){
+    return <CollegeInfo/>;
+  }
+  else if(page==9){
+    return <CollegeImages/>;
+  }
+ 
+ }
+return (
 
 //   if (
 //     currentUser.details.role === "admin" ||
@@ -25,6 +68,7 @@
 
 // const Collegesignup = () => {
 //   return (
+
 
 //       <Routes>
 //         {/* <Route

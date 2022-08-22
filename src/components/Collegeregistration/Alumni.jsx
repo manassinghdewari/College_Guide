@@ -9,7 +9,6 @@ import { v4 as uuidv4 } from 'uuid';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import './Alumni.css'
-import { Box } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid'
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,10 +27,7 @@ function Alumni() {
         { id: uuidv4(), firstName: '', lastName: '' },
     ]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("InputFields", inputFields);
-    };
+    
 
     const handleChangeInput = (id, event) => {
         const newInputFields = inputFields.map(i => {
@@ -57,10 +53,23 @@ function Alumni() {
     return (
             <Container className='box '>
                 <Typography variant="h4" >Alumni Details</Typography>
-                <form className={classes.root}  onSubmit={handleSubmit}>
+                <form className={classes.root} >
                     {inputFields.map(inputField => (
                         <span key={inputField.id}>
                              <Grid container spacing={2}>
+                               <div className='addremove_container'>
+                                <div className='addremove text-center justify-center items-center' >
+                                  
+                                    <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
+                                        <RemoveIcon />
+                                    </IconButton>
+                                    <IconButton
+                                        onClick={handleAddFields}
+                                    >
+                                        <AddIcon />
+                                    </IconButton>
+                                </div>
+                                </div>
                              
                             
                                <div className='input-field' class="form-check-inline" >
@@ -146,31 +155,9 @@ function Alumni() {
                                 </Button>
                                 </Grid>
                                </div>
-                               <div className='addremove_container'>
-                                <div className='addremove' >
-                                  
-                                    <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
-                                        <RemoveIcon />
-                                    </IconButton>
-                                    <IconButton
-                                        onClick={handleAddFields}
-                                    >
-                                        <AddIcon />
-                                    </IconButton>
-                                </div>
-                                </div>
                            
                             </Grid>
-                            <Box textAlign='center'>
-                            <Button
-                            className={classes.button}
-                            variant="contained"
-                            color="primary"
-                            type="submit"
-                            alignItems="center"
-                            onClick={handleSubmit}
-                        >FINISH</Button>
-                        </Box>
+                           
                         </span>
                     ))}
                    

@@ -9,7 +9,6 @@ import { v4 as uuidv4 } from 'uuid';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import './Accreditation.css'
-import { Box } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
@@ -60,7 +59,18 @@ function Accreditation() {
                     {inputFields.map(inputField => (
                         <span key={inputField.id}>
                             
-                            <div className='addremove_container'>
+                            <div className=''>
+                                <div className='addremove justify-center items-center text-center' >
+                                  
+                                    <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
+                                        <RemoveIcon />
+                                    </IconButton>
+                                    <IconButton
+                                        onClick={handleAddFields}
+                                    >
+                                        <AddIcon />
+                                    </IconButton>
+                                </div>
                                <div>
                                <TextField
                                     name="department"
@@ -77,17 +87,6 @@ function Accreditation() {
                                     onChange={event => handleChangeInput(inputField.id, event)}
                                 />
                                </div>
-                                <div className='addremove' >
-                                  
-                                    <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
-                                        <RemoveIcon />
-                                    </IconButton>
-                                    <IconButton
-                                        onClick={handleAddFields}
-                                    >
-                                        <AddIcon />
-                                    </IconButton>
-                                </div>
                                 
                        
                             </div>

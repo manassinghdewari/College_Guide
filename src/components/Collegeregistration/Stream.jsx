@@ -4,20 +4,27 @@ import InputLabel from "@mui/material/InputLabel";
 import Container from "@material-ui/core/Container";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+
+
 import { ClassNames } from "@emotion/react";
 import { IconButton, Typography } from "@mui/material";
 import RemoveIcon from "@material-ui/icons/Remove";
 import AddIcon from "@material-ui/icons/Add";
 import { v4 as uuidv4 } from "uuid";
-import BasicSelect from "./Course";
-// import BranchDetails from './BranchDetails';
+import CourseSelect from "./Course";
+import BranchDetails from "./BranchDetails";
+import Menu from "@mui/material/Menu";
+import Select from 'react-select'
 
 function StreamSelect() {
   const [Stream, setStream] = React.useState([
     { id: uuidv4(), StreamName: "" },
   ]);
-
+  const streams = [
+    { value: 'Engineering', label: 'Engineering' },
+    { value: 'Medical', label: 'Medical' },
+    { value: 'Arts', label: 'Arts' }
+  ]
   const handleChangeInput = (id, event) => {
     const newStream = Stream.map((i) => {
       if (id === i.id) {
@@ -48,8 +55,13 @@ function StreamSelect() {
         <form className={ClassNames.root}>
           {Stream.map((Stream) => (
             <span key={Stream.id}>
+
+              <div className="">
+                <div className="justify-center items-center text-center addremove">
+
               <div>
                 <div className="addremove">
+
                   <Typography variant="h6" display="block" gutterBottom>
                     Add/Remove Stream
                   </Typography>
@@ -63,6 +75,23 @@ function StreamSelect() {
                     <AddIcon />
                   </IconButton>
                 </div>
+
+
+                <Box >
+                  <FormControl>
+                  
+                    <Select
+                    className="w-48"
+                    placeholder="Select Stream"
+                      id="demo-simple-select"
+                      name="Stream"
+                      options={streams}
+                      value={Stream.name}
+                      label="Stream"
+                    />
+                      
+
+                    <CourseSelect />
 
                 <Box sx={{ maxWidth: 120 }}>
                   <FormControl fullWidth>
@@ -83,6 +112,7 @@ function StreamSelect() {
                     </Select>
                     <BasicSelect />
                     {/* <BranchDetails/> */}
+
                   </FormControl>
                 </Box>
               </div>
