@@ -12,73 +12,94 @@ import Select from "@mui/material/Select";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../../api/UseFetch";
-function CitySelect() {
-  const [City, setCity] = React.useState("");
+import { useDispatch } from "react-redux";
+import {
+  fetchFailure,
+  fetchStart,
+  fetchSuccess,
+} from "../../redux/collegeRegSlice";
+// function CitySelect() {
+//   const [City, setCity] = React.useState("");
 
-  const handleChange = (event) => {
-    setCity(event.target.value);
-  };
+//   const handleChange = (event) => {
+//     setCity(event.target.value);
+//   };
 
-  return (
-    <FormControl fullWidth>
-      <InputLabel id="demo-simple-select-label">City*</InputLabel>
-      <Select
-        required
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-        value={City}
-        label="City"
-        onChange={(event) => handleChange(event)}
-      >
-        <MenuItem value={"Bangalore"}>Bangalore</MenuItem>
-        <MenuItem value={"Mumbai"}>Mumbai</MenuItem>
-        <MenuItem value={"NewDelhi"}>New Delhi</MenuItem>
-      </Select>
-    </FormControl>
-  );
-}
-function StateSelect() {
-  const [State, setState] = React.useState("");
+//   return (
+//     <FormControl fullWidth>
+//       <InputLabel id="demo-simple-select-label">City*</InputLabel>
+//       <Select
+//         required
+//         labelId="demo-simple-select-label"
+//         id="demo-simple-select"
+//         value={City}
+//         label="City"
+//         onChange={(event) => handleChange(event)}
+//       >
+//         <MenuItem value={"Bangalore"}>Bangalore</MenuItem>
+//         <MenuItem value={"Mumbai"}>Mumbai</MenuItem>
+//         <MenuItem value={"NewDelhi"}>New Delhi</MenuItem>
+//       </Select>
+//     </FormControl>
+//   );
+// }
+// function StateSelect() {
+//   const [State, setState] = React.useState("");
 
-  const handleChangeState = (event) => {
-    setState(event.target.value);
-  };
+//   const handleChangeState = (event) => {
+//     setState(event.target.value);
+//   };
 
-  return (
-    <FormControl fullWidth>
-      <InputLabel id="demo-simple-select-label">State*</InputLabel>
-      <Select
-        required
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-        value={State}
-        label="State"
-        onChange={(event) => handleChangeState(event)}
-      >
-        <MenuItem value={"Karnataka"}>Bangalore</MenuItem>
-        <MenuItem value={"Maharashtra"}>Mumbai</MenuItem>
-        <MenuItem value={"Delhi"}>New Delhi</MenuItem>
-      </Select>
-    </FormControl>
-  );
-}
+//   return (
+//     <FormControl fullWidth>
+//       <InputLabel id="demo-simple-select-label">State*</InputLabel>
+//       <Select
+//         required
+//         labelId="demo-simple-select-label"
+//         id="demo-simple-select"
+//         value={State}
+//         label="State"
+//         onChange={(event) => handleChangeState(event)}
+//       >
+//         <MenuItem value={"Karnataka"}>Bangalore</MenuItem>
+//         <MenuItem value={"Maharashtra"}>Mumbai</MenuItem>
+//         <MenuItem value={"Delhi"}>New Delhi</MenuItem>
+//       </Select>
+//     </FormControl>
+//   );
+// }
 const BasicDetails = () => {
   const [Details, setDetails] = React.useState("");
+  const [address, setAddress] = React.useState({});
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const handleChangeDetails = (event) => {
     setDetails((prev) => ({
       ...prev,
       [event.target.name]: event.target.value,
     }));
   };
-  console.log(Details);
+
+  const handleChangeAddress = (e) => {
+    setAddress((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handleSubmit = async () => {
     try {
-      const { data } = await axios.post(`${BASE_URL}/college`, Details);
-      console.log(data);
-    } catch (error) {}
+      dispatch(fetchStart());
+      const { data } = await axios.post("/college", Details);
+      const collegeId = data.newCollege._id;
+      dispatch(fetchSuccess(collegeId));
+      //for address
+      try {
+        const res = await axios.post(`/address/${collegeId}`, address);
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    } catch (error) {
+      dispatch(fetchFailure(error));
+    }
   };
 
   return (
@@ -164,14 +185,30 @@ const BasicDetails = () => {
               label="Complete Address of College"
               fullWidth
               name="addressLine"
-              onChange={handleChangeDetails}
+              onChange={handleChangeAddress}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <CitySelect />
+            {/* <CitySelect /> */}
+            <TextField
+              required
+              id="outlined-required"
+              label="City"
+              fullWidth
+              name="city"
+              onChange={handleChangeAddress}
+            />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <StateSelect />
+            {/* <StateSelect /> */}
+            <TextField
+              required
+              id="outlined-required"
+              label="State"
+              fullWidth
+              name="state"
+              onChange={handleChangeAddress}
+            />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
@@ -180,7 +217,7 @@ const BasicDetails = () => {
               label="PIN Code"
               fullWidth
               name="pincode"
-              onChange={handleChangeDetails}
+              onChange={handleChangeAddress}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
