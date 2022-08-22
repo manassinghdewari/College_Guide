@@ -42,7 +42,7 @@ const NavScrollExample = () => {
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand className="font-bold" href="#">
-          <SchoolIcon className="mr-5 ml-2" /> College Guide
+          <SchoolIcon className="mr-5 ml-2 -mt-1" /> College Guide
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
