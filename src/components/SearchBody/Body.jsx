@@ -29,7 +29,11 @@ const Body = () => {
 
   const url = sortBy ? `/college?sortBy=${sortBy}&sortOrder=desc` : "/college";
 
-  const { data: college } = useFetch(url);
+  const { data: college } = useFetch(
+    `/college?sortBy=${sortBy}&sortOrder=desc`
+  );
+  console.log(college);
+
   return (
     <>
       <div className="align-items: center; justify-center flex my-10">
