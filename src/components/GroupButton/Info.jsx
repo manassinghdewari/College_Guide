@@ -1,10 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import useFetch from "../../api/UseFetch";
+
 const Info = () => {
+    const {collegeData}= useSelector((state) => state.college);
+    // console.log(collegeData);
   return (
     <>
       <div class="text-xl font-bold mt-5">
-        Visvesvaraya Technological University (VTU), previously spelled
+        {/* Visvesvaraya Technological University (VTU), previously spelled
         Visveswaraiah Technological University, is a collegiate public state
         university in Belagavi, Karnataka established by the Government of
         Karnataka. All colleges in the State of Karnataka imparting education in
@@ -14,7 +18,8 @@ const Info = () => {
         named after Sir M. Visvesvaraya, an Indian civil engineer, statesman and
         the 19th Diwan of Mysore. VTU is one of oldest technical university
         which provide opportunities for engineering students and management
-        students.
+        students. */}
+        {collegeData?.info}
       </div>
       <div className="flex items-center justify-center text-center mt-5">
         <img

@@ -2,9 +2,9 @@ import React from "react";
 import ShareIcon from "@mui/icons-material/Share";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useSelector } from "react-redux";
-const Banner = () => {
+const ColllegePicBanner = () => {
   const { collegeData } = useSelector((state) => state.college);
-  console.log(collegeData);
+  // console.log(collegeData);
 
   return (
     <>
@@ -24,7 +24,7 @@ const Banner = () => {
             className="font-bold text-white text-4xl mx-2 px-2 Banner_Name"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
           >
-            Visvesvaraya Technological University
+            {collegeData?.name}
           </span>
         </div>
         <div className=" flex items-start justify-end self-start justify-self-end ">
@@ -51,4 +51,4 @@ const Banner = () => {
     </>
   );
 };
-export default Banner;
+export default ColllegePicBanner;
