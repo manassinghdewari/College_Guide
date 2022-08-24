@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useFetch from "../../api/UseFetch";
 const CollegeCard = ({ collegeInfo }) => {
   const id = collegeInfo?._id;
+
+  const { data } = useFetch(`/college/placement/${id}`);
 
   return (
     <div>
@@ -66,7 +69,7 @@ const CollegeCard = ({ collegeInfo }) => {
             <hr />
             <div className="row p4">
               <div className="col rate">&#9733; Median Salary:</div>
-              <div className="col">{collegeInfo?.median}</div>
+              <div className="col">{data?.median}</div>
             </div>
           </div>
         </div>

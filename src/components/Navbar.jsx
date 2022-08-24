@@ -23,7 +23,7 @@ const NavScrollExample = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:8080/api/auth/logout");
+      await axios.get("/auth/logout");
       dispatch(logout());
     } catch (error) {
       console.log(error);
@@ -35,13 +35,17 @@ const NavScrollExample = () => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       dispatch(searchCollege(query));
+      navigate(`/search?keyword=${query}`);
     }
   };
 
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container fluid>
-        <Navbar.Brand className="font-bold" href="#">
+        <Navbar.Brand
+          className="font-bold cursor-pointer"
+          onClick={() => navigate("/")}
+        >
           <SchoolIcon className="mr-5 ml-2" /> College Guide
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -56,7 +60,7 @@ const NavScrollExample = () => {
               onChange={(e) => setQuery(e.target.value)}
               onKeyPress={handleKeyPress}
             />
-            <Button className="searchbtn" variant="outline-success">
+            <Button className="searchbtn" onChange variant="outline-success">
               Search
             </Button>
           </Form>
