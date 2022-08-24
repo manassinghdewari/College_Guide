@@ -11,7 +11,6 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
 import { v4 as uuidv4 } from 'uuid';
 import CourseSelect from './Course';
-import BranchDetails from './BranchDetails';
 
 
  function StreamSelect() {
