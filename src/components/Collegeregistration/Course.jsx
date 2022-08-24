@@ -1,22 +1,28 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import Container from '@material-ui/core/Container';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import { ClassNames } from '@emotion/react';
-import { IconButton, Typography } from '@mui/material';
-import RemoveIcon from '@material-ui/icons/Remove';
-import AddIcon from '@material-ui/icons/Add';
-import { v4 as uuidv4 } from 'uuid';
-import BranchDetails from './BranchDetails';
 
- function CourseSelect() {
+import * as React from "react";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import Container from "@material-ui/core/Container";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "react-select";
+import { ClassNames } from "@emotion/react";
+import { IconButton, Typography } from "@mui/material";
+import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@material-ui/icons/Add";
+import { v4 as uuidv4 } from "uuid";
+import BranchDetails from "./BranchDetails";
+
+function CourseSelect() {
+
   const [Courses, setCourses] = React.useState([
     { id: uuidv4(),  CourseName: ''},
   ]);
-
+  const courses = [
+    { value: "B.Tech", label: "B.Tech" },
+    { value: "B.E.", label: "B.E." },
+    { value: "M.Tech", label: "M.Tech" },
+  ];
   const handleChangeInput = (id, event) => {
     const newCourses = Courses.map(i => {
         if (id === i.id) {
@@ -46,7 +52,7 @@ const handleRemoveFields = id => {
                 {Courses.map(Course => (
                     <span key = {Course.id}>
                         <div>
-                            <div className ='addremove'>
+                            <div className ='justify-center items-center text-center  addremove'>
                                 <Typography variant ="h6" display ="block" gutterBottom>
                                     Add/Remove Course
                                 </Typography>
@@ -59,21 +65,18 @@ const handleRemoveFields = id => {
                                 </IconButton>
                             </div>
 
-                            <Box sx={{ maxWidth: 120 }}>
+                            <Box >
                             <FormControl fullWidth>
-                            <InputLabel id="demo-simple-select-label">Course</InputLabel>
+                            
                             <Select
-                            labelId="demo-simple-select-label"
+                            className='w-60'
+                            placeholder="Select Course"
                             id="demo-simple-select"
                             name="Course"
                             value={Course.name}
                             label="Course"
-                            onChange={event => handleChangeInput(Course.id,event)}
-                            >
-                            <MenuItem value={10}>Engineering</MenuItem>
-                        <MenuItem value={20}>Medical</MenuItem>
-                        <MenuItem value={30}>Arts</MenuItem>
-                    </Select>
+                            options={courses}
+                            />
                     <BranchDetails/>
                 </FormControl>
             </Box>
@@ -85,6 +88,7 @@ const handleRemoveFields = id => {
 </Container>
 </div>
    
+
   );
 }
 

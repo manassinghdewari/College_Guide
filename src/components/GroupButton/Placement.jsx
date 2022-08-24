@@ -1,6 +1,19 @@
+import axios from 'axios';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { BASE_URL } from '../../api/UseFetch';
+
+// const {placementData}=await axios.get(`${BASE_URL}/placement/`)
+
+const placementData =
+	{
+		average:"22.5LPA",
+		median:"23.9LPA",
+		highest:"25.9LPA"
+	}
 
 const Placement=()=> {
+	const { collegeData } = useSelector((state) => state.college);
     return (
         <section class="main-content">
 		<div class="container">
@@ -11,19 +24,19 @@ const Placement=()=> {
 					<tr>
 						<th>Highest Package</th>
 						<td>
-							22.5LPA
+							{placementData.highest}
 						</td>
 					</tr>
 					<tr>
 						<th>Average Package</th>
 						<td>
-							22.5LPA
+						{placementData.average}
 						</td>
 					</tr>
 					<tr>
 						<th>Median Package</th>
 						<td>
-							22.5LPA
+						{placementData.median}
 						</td>
 					</tr>
 				</tbody>

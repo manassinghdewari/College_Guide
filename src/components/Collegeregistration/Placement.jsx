@@ -9,39 +9,37 @@ import Grid from '@material-ui/core/Grid'
 function Placement() {
 
     return (
-            <Container className='box-details'>
-                <Typography variant="h4">College Placement Details</Typography>
+            <Container>
+                <Typography variant="h4" className='text-center py-4'>College Placement Details</Typography>
                 <form>
-                <Grid container direction={"column"} spacing={2}>
-                 <Grid item>
-                           <div>
+                
+                           <div className='justify-center text-center items-center'>
                                 <TextField
+                                className='mx-3'
                                     name="maxsalary"
                                     label="Maximum salary"
                                     variant="filled"  
                                 />
-                            </div>
-                            </Grid>
-                            <Grid item>
+                            
                             
                                <TextField
+                               className='mx-3'
                                     name="mediansalary"
                                     label="Median Salary"
                                     variant="filled"  
-                                />
-                                </Grid>
-                                <Grid item>
+                                    />
+                                
                                     <TextField
+                                    className='mx-3'
                                     name="averagesalary"
                                     label="Average Salary"
                                     variant="filled"  
-                                />
+                                    />
                               
-                               </Grid>
-                               <Grid item>
+                               
+                                    </div>
                                <MultipleImage/>
-                               </Grid>
-                               </Grid>
+                               
                              
                 </form>
             </Container>   

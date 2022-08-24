@@ -5,14 +5,14 @@ const CollegeCard = ({ collegeInfo }) => {
 
   return (
     <div>
-      <Link to={`/institutepage/${id}`}>
+      
         <div className="card card1 rounded-3 wid22">
           <img
             className="card-img rounded-3 hei18"
             src={collegeInfo?.photos[0]}
             alt={collegeInfo?.name}
           />
-          <div className="card-img-overlay rounded-3 ">
+          <div className="card-img-overlay rounded-3 h-1/2">
             <div className="row">
               <div className="col">
                 <a href="/" className="btn2 btn btn-primary rounded-3">
@@ -31,7 +31,9 @@ const CollegeCard = ({ collegeInfo }) => {
           </div>
           <div className="card-body">
             <div className="row p4">
-              <div className="col">{collegeInfo?.city},IN</div>
+              <div className="col">
+                {collegeInfo?.address.map((address) => address.state)},IN
+              </div>
               <div className="col col-4">
                 <a href="/" className="btn3 btn btn-primary rounded-3">
                   Compare
@@ -57,9 +59,7 @@ const CollegeCard = ({ collegeInfo }) => {
                 {collegeInfo?.accreditation.map((acc) => acc?.provider + ", ")}
               </div>
               <div className="col est">
-                {collegeInfo?.course
-                  .splice(0, 3)
-                  .map((course) => course?.coursename + ", ")}
+                {collegeInfo?.course.map((course) => course?.coursename + ", ")}
                 ...
               </div>
             </div>
@@ -70,7 +70,6 @@ const CollegeCard = ({ collegeInfo }) => {
             </div>
           </div>
         </div>
-      </Link>
     </div>
   );
 };
