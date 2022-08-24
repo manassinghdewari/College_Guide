@@ -8,16 +8,17 @@ const CollegeInfo = () => {
   };
  
   return (
-    <div className="row">
-    <div className="col-md-6" style={{ margin: "auto", marginTop: "50px" }}>
+    
+    <div className="mt-5">
       <div style={{ textAlign: "center" }}>
       </div>
       <RichTextEditor initialValue="" getValue={getValue} />
       <br />
       <div> {value} </div>
     </div>
+  
    
-  </div>
+
 );
 }
 export default CollegeInfo;
