@@ -63,7 +63,8 @@ function Accreditation() {
   };
 
   return (
-    <Container className="box">
+    <>
+    <Container className="box pb-10">
       <Typography variant="h4">Accreditation Details</Typography>
       <form className={classes.root} onSubmit={handleSubmit}>
         {inputFields.map((inputField) => (
@@ -73,7 +74,7 @@ function Accreditation() {
                 <IconButton
                   disabled={inputFields.length === 1}
                   onClick={() => handleRemoveFields(inputField.id)}
-                >
+                  >
                   <RemoveIcon />
                 </IconButton>
                 <IconButton onClick={handleAddFields}>
@@ -87,20 +88,74 @@ function Accreditation() {
                   variant="filled"
                   value={inputField.topic}
                   onChange={(event) => handleChangeInput(inputField.id, event)}
-                />
+                  />
                 <TextField
                   name="qualification"
                   label="Grade"
                   variant="filled"
                   value={inputField.link}
                   onChange={(event) => handleChangeInput(inputField.id, event)}
-                />
+                  />
               </div>
             </div>
           </span>
         ))}
       </form>
     </Container>
+    <Container className='box'>
+    <Typography variant="h4" >Research Paper Details</Typography>
+    <form className={classes.root} onSubmit={handleSubmit}>
+        {inputFields.map(inputField => (
+          <span key={inputField.id}>
+               <div className='justify-center items-center text-center'>
+                    <div className='addremove justify-center items-center text-center' >
+                      
+                        <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
+                            <RemoveIcon />
+                        </IconButton>
+                        <IconButton
+                            onClick={handleAddFields}
+                            >
+                            <AddIcon />
+                        </IconButton>
+                    </div>
+                    <TextField
+                        name="name"
+                        label="Total Publications"
+                        variant="filled"
+                        value={inputField.total}
+                        onChange={event => handleChangeInput(inputField.id, event)}
+                        fullWidth
+                        />
+                </div>
+                
+                <div className='addremove_container'>
+                   <div>
+                   <TextField
+                        name="department"
+                        label="Topic of Publication"
+                        variant="filled"
+                        value={inputField.topic}
+                        onChange={event => handleChangeInput(inputField.id, event)}
+                        />
+                    <TextField
+                        name="qualification"
+                        label="Research Paper Link"
+                        variant="filled"
+                        value={inputField.link}
+                        onChange={event => handleChangeInput(inputField.id, event)}
+                        />
+                   </div>
+                    
+           
+                </div>
+               
+            </span>
+        ))}
+       
+    </form>
+</Container>
+        </>
   );
 }
 
