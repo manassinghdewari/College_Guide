@@ -10,7 +10,6 @@ import ButtonGroup from "./ButtonGroup";
 import AliceCarousel from 'react-alice-carousel';
 import useFetch, { BASE_URL } from "../../api/UseFetch";
 import LanguageIcon from '@mui/icons-material/Language';
-import useFetch from "../../api/UseFetch";
 import image1 from '../../images/28466.jpg'
 import { Outlet, useLocation } from "react-router-dom";
 import {

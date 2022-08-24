@@ -1,49 +1,45 @@
 import React, { useState } from 'react';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import Typography from '@mui/material/Typography';
 import './Placement.css'
-import Testing from './Testing'
+import MultipleImage from './MultipleImage';
 import Grid from '@material-ui/core/Grid'
-import { Box } from '@material-ui/core';
 
 function Placement() {
 
     return (
-            <Container className='box-details'>
-                <Typography variant="h4">College Placement Details</Typography>
+            <Container>
+                <Typography variant="h4" className='text-center py-4'>College Placement Details</Typography>
                 <form>
-                <Grid container direction={"column"} spacing={2}>
-  <Grid item>
-                           <div>
+                
+                           <div className='justify-center text-center items-center'>
                                 <TextField
-                                    name="name"
+                                className='mx-3'
+                                    name="maxsalary"
                                     label="Maximum salary"
                                     variant="filled"  
                                 />
-                            </div>
-                            </Grid>
-                            <Grid item>
+                            
                             
                                <TextField
-                                    name="department"
+                               className='mx-3'
+                                    name="mediansalary"
                                     label="Median Salary"
                                     variant="filled"  
-                                />
-                                </Grid>
-                                <Grid item>
+                                    />
+                                
                                     <TextField
-                                    name="qualification"
+                                    className='mx-3'
+                                    name="averagesalary"
                                     label="Average Salary"
                                     variant="filled"  
-                                />
+                                    />
                               
-                               </Grid>
-                               <Grid item>
-                               <Testing/>
-                               </Grid>
-                               </Grid>
+                               
+                                    </div>
+                               <MultipleImage/>
+                               
                              
                 </form>
             </Container>   
