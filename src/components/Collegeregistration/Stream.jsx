@@ -1,10 +1,18 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import Container from "@material-ui/core/Container";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Button from "@mui/material/Button";
+
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import Container from '@material-ui/core/Container';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { ClassNames } from '@emotion/react';
+import { IconButton, Typography } from '@mui/material';
+import RemoveIcon from '@material-ui/icons/Remove';
+import AddIcon from '@material-ui/icons/Add';
+import { v4 as uuidv4 } from 'uuid';
+import CourseSelect from './Course';
+
 
 import { ClassNames } from "@emotion/react";
 import { IconButton, Typography } from "@mui/material";
