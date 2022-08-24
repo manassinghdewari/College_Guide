@@ -12,7 +12,7 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/joy": "^5.0.0-alpha.39",
     "@mui/lab": "^5.0.0-alpha.93",
-    "@mui/material": "^5.10.0",
+    "@mui/material": "^5.10.2",
     "@mui/styles": "^5.9.3",
     "@reduxjs/toolkit": "^1.8.5",
     "@syncfusion/ej2-react-dropdowns": "^20.2.43",
