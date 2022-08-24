@@ -30,7 +30,7 @@ const Body = () => {
   const url = sortBy ? `/college?sortBy=${sortBy}&sortOrder=desc` : "/college";
 
   const { data: college } = useFetch(
-    `/college?sortBy=${sortBy}&sortOrder=desc`
+    `/college?keyword=${searchQuery}&sortBy=${sortBy}&sortOrder=desc`
   );
   console.log(college);
 

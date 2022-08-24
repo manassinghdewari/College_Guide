@@ -50,7 +50,7 @@ function Alumni() {
       { id: uuidv4(), firstName: "", lastName: "" },
     ]);
   };
-  console.log(inputFields);
+  console.log(inputFields.flat());
 
   const handleSubmit = async () => {
     try {
@@ -129,7 +129,7 @@ function Alumni() {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    name="company"
+                    name="companyName"
                     label="Company Name"
                     fullWidth
                     variant="filled"
@@ -143,7 +143,7 @@ function Alumni() {
               <div className="input-field">
                 <Grid item xs={12}>
                   <TextField
-                    name="designation"
+                    name="position"
                     label="Designation"
                     fullWidth
                     variant="filled"
@@ -180,7 +180,7 @@ function Alumni() {
 
                 <Grid item xs={12}>
                   <TextField
-                    name="research"
+                    name="url"
                     label="Research Paper Link"
                     fullWidth
                     variant="filled"
