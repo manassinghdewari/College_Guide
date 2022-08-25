@@ -6,6 +6,15 @@ import Footer from "../components/Footer/Footer";
 const InstitutePage = () => {
   return (
     <>
+    {
+      function () {
+				window.onpageshow = function(event) {
+					if (event.persisted) {
+						window.location.reload();
+					}
+				};
+			}()
+    }
       <Navbar />
       <CollegePageBody/>
       <Footer />

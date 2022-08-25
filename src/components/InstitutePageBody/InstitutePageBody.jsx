@@ -8,9 +8,8 @@ import Accordian from "../FAQsection/Accordian";
 import { useDispatch } from "react-redux";
 import ButtonGroup from "./ButtonGroup";
 import AliceCarousel from 'react-alice-carousel';
-import useFetch, { BASE_URL } from "../../api/UseFetch";
+import { BASE_URL } from "../../api/UseFetch";
 import LanguageIcon from '@mui/icons-material/Language';
-import useFetch from "../../api/UseFetch";
 import image1 from '../../images/28466.jpg'
 import { Outlet, useLocation } from "react-router-dom";
 import {
@@ -25,14 +24,17 @@ const InstitutePageBody = () => {
   const id = pathname.split("/")[2];
   // const { data, loading, error } = useFetch(`/college/${id}`);
   const dispatch = useDispatch();
-  useEffect(async () => {
-    dispatch(fetchStart());
+  useEffect(() => {
+    async function fetchData(){
+      dispatch(fetchStart());
     try {
       const { data } = await axios.get(`${BASE_URL}/college/${id}`);
       dispatch(fetchSuccess(data));
     } catch (error) {
       dispatch(fetchFailure(error));
     }
+    }
+    fetchData();
   }, [id]);
   
   // testing

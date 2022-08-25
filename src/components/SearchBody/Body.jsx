@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Filters from "./Filters";
 import CollegeCard from "../CollegeCardSlider/CollegeCard";
 import useFetch from "../../api/UseFetch";
@@ -29,7 +29,11 @@ const Body = () => {
   const url = sortBy ? `/college?sortBy=${sortBy}&sortOrder=asc` : "/college";
 
   const { data: college } = useFetch(url);
+  
+  // console.log("this is for compare",college);
+  // const [collegeIdCompare,setCollegeIdCompare]=useState([]);
   return (
+
     <>
       <div className="align-items: center; justify-center flex my-10">
         <div className="row w-11/12">
@@ -40,6 +44,12 @@ const Body = () => {
             {college?.map((college) => (
               <span className="px-1 py-2">
                 <CollegeCard collegeInfo={college} key={college._id} />
+                {/* {
+                  setCollegeIdCompare((oldData)=>{
+                    return [...oldData,college._id]
+                  })
+                  // console.log("this is for compare",college._id)
+                } */}
               </span>
             ))}
           </div>

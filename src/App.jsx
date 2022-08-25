@@ -20,6 +20,8 @@ import Courses from "./components/GroupButton/Courses";
 import Facility from "./components/GroupButton/Facility";
 import Alumni from "./components/GroupButton/Alumni";
 import SignUp from "./components/authentication/Studentsignup";
+import CollegeSignIn from './components/authentication/Collegesignin';
+import Collegesignup from './components/authentication/Collegesignup';
 // import Protected from './components/GoogleAuth/Protected';
 
 const ScrollToTop = ({ children }) => {
@@ -36,6 +38,16 @@ const App = () => {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
+    <>
+      {
+        function () {
+          window.onpageshow = function(event) {
+            if (event.persisted) {
+              window.location.reload();
+            }
+          };
+        }()
+    }
     <BrowserRouter>
       {/* <Homepage/> */}
       {/* <MultipleEntry/> */}
@@ -46,9 +58,12 @@ const App = () => {
 
           <Route path="search" element={<Search />} />
           <Route
-            path="login"
+            exact
+            path="/login"
             element={currentUser ? <Homepage /> : <StudentSignin />}
           />
+          <Route exact path="/collegesignin" element={<CollegeSignIn/>}/>
+          <Route exact path="/collegesignup" element={<Collegesignup/>}/>
           <Route exact path="/institutepage/:id" element={<InstitutePage />}>
             <Route index element={<Info />} />
             <Route exact path="info" element={<Info />} />
@@ -67,7 +82,9 @@ const App = () => {
       </ScrollToTop>
       {/* <StudentSignin /> */}
     </BrowserRouter>
-  );
+
+    </>
+      );
 };
 
 export default App;

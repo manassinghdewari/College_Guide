@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import { PersistGate } from "redux-persist/lib/integration/react";
 import { persistor, store } from "./redux/store";
 import { Provider } from "react-redux";
+
 // import axios from 'axios'
 // const ScrollToTop = ({ children }) => {
 //     const { pathname } = useLocation();

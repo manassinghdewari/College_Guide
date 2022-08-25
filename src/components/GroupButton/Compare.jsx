@@ -1,8 +1,15 @@
 import React from "react";
+import { useEffect } from "react";
 
-const Compare = () => {
+function refreshPage() {
+  window.location.reload(false);
+}
+
+const Compare = ({collegeIdData}) => {
+  console.log("this is from compare",collegeIdData);
   return (
-    <div className="container-table">
+    <>
+      <div className="container-table">
       <div className="container pb-5 mb-2 ">
         <div className="comparison-table">
           <table className="table table-bordered">
@@ -353,6 +360,7 @@ const Compare = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

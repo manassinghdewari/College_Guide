@@ -10,7 +10,6 @@ const Search = () => {
       <Navbar />
       <SearchNavbar />
       <Body />
-      <ImageSlider />
       <Footer />
     </>
   );
