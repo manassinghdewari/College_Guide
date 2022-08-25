@@ -24,7 +24,7 @@ import Faculty from "./components/GroupButton/Faculty";
 import Courses from "./components/GroupButton/Courses";
 import Facility from "./components/GroupButton/Facility";
 import Alumni from "./components/GroupButton/Alumni";
-
+import Collegesignin from "./components/authentication/Collegesignin"
 import Studentsignup from "./components/authentication/Studentsignup";
 import BasicDetails from "./components/Collegeregistration/BasicDetails";
 import Stream from "./components/Collegeregistration/Stream";
@@ -62,6 +62,16 @@ const App = () => {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
+    <>
+      {
+        function () {
+          window.onpageshow = function(event) {
+            if (event.persisted) {
+              window.location.reload();
+            }
+          };
+        }()
+    }
     <BrowserRouter>
       {/* <Homepage/> */}
       {/* <MultipleEntry/> */}
@@ -71,9 +81,12 @@ const App = () => {
 
           <Route path="search" element={<Search />} />
           <Route
-            path="login"
+            exact
+            path="/login"
             element={currentUser ? <Homepage /> : <StudentSignin />}
           />
+          <Route exact path="/collegesignin" element={<Collegesignin/>}/>
+          <Route exact path="/collegesignup" element={<Collegesignup/>}/>
           <Route exact path="/institutepage/:id" element={<InstitutePage />}>
             <Route index element={<Compare />} />
             <Route exact path="compare" element={<Compare />} />
@@ -164,9 +177,8 @@ const App = () => {
       </ScrollToTop>
       {/* <StudentSignin /> */}
     </BrowserRouter>
-
-    // // <Collegesignup />
-  );
+    </>
+      );
 };
 
 export default App;
