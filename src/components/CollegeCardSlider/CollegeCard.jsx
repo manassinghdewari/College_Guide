@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BASE_URL } from "../../api/UseFetch";
 // import Compare from "../GroupButton/Compare";
-
+import useFetch from "../../api/UseFetch";
 let collegeIdData=[]
 
 
-import useFetch from "../../api/UseFetch";
+
 const CollegeCard = ({ collegeInfo }) => {
   
   const id = collegeInfo?._id;
