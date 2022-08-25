@@ -1,18 +1,18 @@
 export const questions = [
     {
         id: 1,
-        question: 'Is IIM Ahmedabad a government institute?',
-        answer:'Indian Institute of Ahmedabad is a public autonomous B-School located in Ahmedabad, Gujarat India. IIMs are a group of 20 public, autonomous institutes for Management education and research in India.'
+        question: 'How many campuses does VIT have?',
+        answer:'Under Vit group there are VIT Vellore, VIT Chennai, VIT AP and VIT Bhopal.The first two come under Deemed to be University and VIT AP and VIT Bhopal are state private Universities.'
     },
     {
         id: 2,
-        question: 'Is IIM Ahmedabad a government institute?',
-        answer:'Indian Institute of Ahmedabad is a public autonomous B-School located in Ahmedabad, Gujarat India. IIMs are a group of 20 public, autonomous institutes for Management education and research in India.'
+        question: 'Does university provide the internet facility at campus?',
+        answer:'Yes, University provides both Wi-Fi and Internet facilities.'
     },
     {
         id: 3,
-        question: 'Is IIM Ahmedabad a government institute?',
-        answer:'Indian Institute of Ahmedabad is a public autonomous B-School located in Ahmedabad, Gujarat India. IIMs are a group of 20 public, autonomous institutes for Management education and research in India.'
+        question: 'Can I join VIT without VITEEE?',
+        answer:'Yes, Of course you can join VIT even if you do not appear for VITEE, in courses other than B.Tech like B.A , B.Sc ,B.Arch etc.'
     },
    
     

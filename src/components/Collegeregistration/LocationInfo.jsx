@@ -12,12 +12,13 @@ import Select from "@mui/material/Select";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../../api/UseFetch";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   fetchFailure,
   fetchStart,
   fetchSuccess,
 } from "../../redux/collegeRegSlice";
+import { startTransition } from "react";
 // function CitySelect() {
 //   const [City, setCity] = React.useState("");
 
@@ -69,97 +70,86 @@ import {
 //   );
 // }
 const LocationInfo = () => {
-  const [Details, setDetails] = React.useState("");
+  // const [Details, setDetails] = React.useState("");
+  const navigate = useNavigate();
   const [address, setAddress] = React.useState({});
   // const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const handleChangeDetails = (event) => {
-    setDetails((prev) => ({
-      ...prev,
-      [event.target.name]: event.target.value,
-    }));
-  };
+  const { collegeId } = useSelector((state) => state.collegeId);
 
   const handleChangeAddress = (e) => {
     setAddress((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async () => {
+    //for address
     try {
-      dispatch(fetchStart());
-      const { data } = await axios.post("/college", Details);
-      const collegeId = data.newCollege._id;
-      dispatch(fetchSuccess(collegeId));
-      //for address
-      try {
-        const res = await axios.post(`/address/${collegeId}`, address);
-        console.log(res);
-      } catch (error) {
-        console.log(error);
-      }
+      const res = await axios.post(`/address/${collegeId}`, address);
+
+      navigate("/collegeRegistration/alumni");
     } catch (error) {
-      dispatch(fetchFailure(error));
+      console.log(error);
     }
   };
 
   return (
     <>
-
       <React.Fragment>
-      <div className="items-center justify-center text-center flex">
-        <div className="w-3/4 text-center">
-
-        <Typography variant="h3" gutterBottom align="center">
-          Location Info
-        </Typography>
-        <Grid className="text-center justify-center items-center" container spacing={3}>
-           
-          <Grid item xs={12}>
-            <TextField
-            required
-            id="outlined-required"
-            label="Complete Address of College"
-            fullWidth
-            name="addressLine"
-            onChange={handleChangeAddress}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}> 
-            <TextField
-            required
-            id="outlined-required"
-            label="City"
-            fullWidth
-            name="city"
-            onChange={handleChangeAddress}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-            required
-            id="outlined-required"
-            label="State"
-            fullWidth
-              name="state"
-              onChange={handleChangeAddress}
-              />
+        <div className="items-center justify-center text-center flex">
+          <div className="w-3/4 text-center">
+            <Typography variant="h3" gutterBottom align="center">
+              Location Info
+            </Typography>
+            <Grid
+              className="text-center justify-center items-center"
+              container
+              spacing={3}
+            >
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Complete Address of College"
+                  fullWidth
+                  name="addressLine"
+                  onChange={handleChangeAddress}
+                />
               </Grid>
               <Grid item xs={12} sm={6}>
-              <TextField
-              required
-              id="outlined-required"
-              label="PIN Code"
-              fullWidth
-              name="pincode"
-              onChange={handleChangeAddress}
-              />
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="City"
+                  fullWidth
+                  name="city"
+                  onChange={handleChangeAddress}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="State"
+                  fullWidth
+                  name="state"
+                  onChange={handleChangeAddress}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="PIN Code"
+                  fullWidth
+                  name="pincode"
+                  onChange={handleChangeAddress}
+                />
+              </Grid>
+
+              <Grid item xs={12}></Grid>
             </Grid>
-          
-          <Grid item xs={12}></Grid>
-        </Grid>
-        <Button onClick={handleSubmit}>Next</Button>
-              </div>
-              </div>
+            <Button onClick={handleSubmit}>Next</Button>
+          </div>
+        </div>
       </React.Fragment>
     </>
   );
