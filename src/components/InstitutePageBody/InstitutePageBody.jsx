@@ -133,7 +133,7 @@ console.log("collegedata",data);
                     </a>
                 </div>
               </div>
-        <AliceCarousel autoPlay autoPlayInterval="3000">
+        {/* <AliceCarousel autoPlay autoPlayInterval="3000">
           {
             data.photos.map((value)=>{
               return(
@@ -141,7 +141,7 @@ console.log("collegedata",data);
               )
             })
           }
-        </AliceCarousel>
+        </AliceCarousel> */}
             </div>
           </div>
           <div className="font-bold text-3xl">Similar Institutes:-</div>

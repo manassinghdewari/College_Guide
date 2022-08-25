@@ -41,7 +41,7 @@ const Compare = () => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
-                      Indian Institute of Technology Delhi
+                     BMS College of Engineering
                     </a>
                   </div>
                 </td>
@@ -77,7 +77,7 @@ const Compare = () => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
-                      Indian Institute of Technology Delhi
+                    Sir M. Visvesvaraya Institute of Technology
                     </a>
                   </div>
                 </td>
@@ -113,7 +113,7 @@ const Compare = () => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
-                      Indian Institute of Technology Delhi
+                      Banaras Hindu University
                     </a>
                   </div>
                 </td>
@@ -134,9 +134,9 @@ const Compare = () => {
               </tr>
               <tr>
                 <th>Ranked by NIRF</th>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
+                <td>199</td>
+                <td>253</td>
+                <td>11</td>
               </tr>
             </tbody>
             <tbody id="college_placement" data-filter="target">
@@ -156,27 +156,9 @@ const Compare = () => {
               </tr>
               <tr>
                 <th>B.E /B.Tech</th>
-                <td> 17.60 Lakhs</td>
-                <td> 17.60 Lakhs</td>
-                <td> 17.60 Lakhs</td>
-              </tr>
-              <tr>
-                <th>B.Tech M.Tech</th>
-                <td> 17.60 Lakhs</td>
-                <td> 17.60 Lakhs</td>
-                <td> 17.60 Lakhs</td>
-              </tr>
-              <tr>
-                <th>M.E /M.Tech.</th>
-                <td> 17.60 Lakhs</td>
-                <td> 17.60 Lakhs</td>
-                <td> 17.60 Lakhs</td>
-              </tr>
-              <tr>
-                <th>MBA</th>
-                <td> 17.60 Lakhs</td>
-                <td> 17.60 Lakhs</td>
-                <td> 17.60 Lakhs</td>
+                <td>INR 8 LPA</td>
+                <td>INR 18.2 Lakhs</td>
+                <td>INR 5 LPA</td>
               </tr>
             </tbody>
             <tbody id="college_details" data-filter="target">
@@ -194,39 +176,27 @@ const Compare = () => {
               </tr>
               <tr>
                 <th>Estd Date</th>
-                <td>1961</td>
-                <td>1961</td>
-                <td>1961</td>
+                <td>1946</td>
+                <td>1916</td>
+                <td>1986</td>
               </tr>
               <tr>
                 <th>Ownership</th>
+                <td>Private</td>
                 <td>Public/Government</td>
-                <td>Public/Government</td>
-                <td>Public/Government</td>
+                <td>Private</td>
               </tr>
               <tr>
                 <th>Campus Size</th>
-                <td>320 (Acres)</td>
-                <td>320 (Acres)</td>
-                <td>320 (Acres)</td>
+                <td>11 (Acres)</td>
+                <td>1300 (Acres)</td>
+                <td>133 (Acres)</td>
               </tr>
               <tr>
                 <th>Total Students Intake</th>
-                <td>1264</td>
-                <td>1264</td>
-                <td>1264</td>
-              </tr>
-              <tr>
-                <th>Total Enrollment</th>
-                <td>9132</td>
-                <td>9132</td>
-                <td>9132</td>
-              </tr>
-              <tr>
-                <th>Total Faculty</th>
-                <td>511</td>
-                <td>511</td>
-                <td>511</td>
+                <td>1380</td>
+                <td>1589</td>
+                <td>955</td>
               </tr>
             </tbody>
             <tbody id="college_facilities" data-filter="target">
@@ -300,33 +270,33 @@ const Compare = () => {
               </tr>
               <tr>
                 <th>B.E /B.Tech</th>
-                <td>15 Courses</td>
-                <td>15 Courses</td>
-                <td>15 Courses</td>
+                <td>14 Courses</td>
+                <td>11 Courses</td>
+                <td>16 Courses</td>
               </tr>
               <tr>
                 <th>M.E /M.Tech.</th>
-                <td>48 Courses</td>
-                <td>48 Courses</td>
-                <td>48 Courses</td>
+                <td>13 Courses</td>
+                <td>38 Courses</td>
+                <td>3 Courses</td>
               </tr>
               <tr>
                 <th>B.Tech M.Tech</th>
-                <td>4 Courses</td>
-                <td>4 Courses</td>
-                <td>4 Courses</td>
+                <td>1 Courses</td>
+                <td>13 Courses</td>
+                <td>0 Courses</td>
               </tr>
               <tr>
                 <th>Dual Degree</th>
                 <td>1 Course</td>
                 <td>1 Course</td>
-                <td>1 Course</td>
+                <td>0 Course</td>
               </tr>
               <tr>
                 <th>M.S</th>
-                <td>10 Courses</td>
-                <td>10 Courses</td>
-                <td>10 Courses</td>
+                <td>14 Courses</td>
+                <td>1 Courses</td>
+                <td>2 Courses</td>
               </tr>
             </tbody>
             <tbody id="college_reviews" data-filter="target">
@@ -344,9 +314,9 @@ const Compare = () => {
               </tr>
               <tr>
                 <th>Student Reviews</th>
-                <td>8/10</td>
-                <td>8/10</td>
-                <td>8/10</td>
+                <td>7.8/10</td>
+                <td>7.8/10</td>
+                <td>7.8/10</td>
               </tr>
             </tbody>
           </table>
