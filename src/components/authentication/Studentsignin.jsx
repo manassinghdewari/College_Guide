@@ -140,7 +140,7 @@ export default function SignIn() {
               variant="h7"
               sx={{ m: 1 }}
             >
-              OR
+              
             </Typography>
             {/* variant="contained" */}
             {/* <GoogleButton
