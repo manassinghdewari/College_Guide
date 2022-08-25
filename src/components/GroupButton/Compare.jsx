@@ -1,12 +1,17 @@
+import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import useFetch, { BASE_URL } from "../../api/UseFetch";
 
-function refreshPage() {
-  window.location.reload(false);
-}
-
-const Compare = ({collegeIdData}) => {
-  console.log("this is from compare",collegeIdData);
+// function refreshPage() {
+//   window.location.reload(false);
+// }
+let id="63072a0d355aab9156ebaa1a";
+const Compare = () => {
+  const {data:placement,loading,error}=useFetch(`/college/placement/${id}`)
+  console.log(placement);
+  const {collegeData}= useSelector((state) => state.college);
   return (
     <>
       <div className="container-table">
@@ -40,7 +45,8 @@ const Compare = ({collegeIdData}) => {
                       href="shop-single.html"
                     >
                       <img
-                        src="https://cache.careers360.mobi/media/colleges/social-media/logo/Indian_Institute_of_Technology_Delhi.jpg"
+                        // src="https://cache.careers360.mobi/media/colleges/social-media/logo/Indian_Institute_of_Technology_Delhi.jpg"
+                        src={collegeData.photos[0]}
                         alt="logo_1"
                       />
                     </a>
@@ -48,7 +54,7 @@ const Compare = ({collegeIdData}) => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
-                      Indian Institute of Technology Delhi
+                      {collegeData.name}
                     </a>
                   </div>
                 </td>
@@ -84,7 +90,7 @@ const Compare = ({collegeIdData}) => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
-                      Indian Institute of Technology Delhi
+                      {collegeData.name}
                     </a>
                   </div>
                 </td>
@@ -120,7 +126,7 @@ const Compare = ({collegeIdData}) => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
-                      Indian Institute of Technology Delhi
+                      {collegeData.name}
                     </a>
                   </div>
                 </td>
@@ -141,9 +147,9 @@ const Compare = ({collegeIdData}) => {
               </tr>
               <tr>
                 <th>Ranked by NIRF</th>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
+                <td>{collegeData.rank}</td>
+                <td>{collegeData.rank}</td>
+                <td>{collegeData.rank}</td>
               </tr>
             </tbody>
             <tbody id="college_placement" data-filter="target">
