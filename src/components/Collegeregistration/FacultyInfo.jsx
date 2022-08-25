@@ -8,6 +8,9 @@ import AddIcon from "@material-ui/icons/Add";
 import { v4 as uuidv4 } from "uuid";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,14 +24,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function FacultyInfo() {
-  const classes = useStyles();
-  const [inputFields, setInputFields] = useState([
-    { id: uuidv4(), firstName: "", lastName: "" },
-  ]);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("InputFields", inputFields);
+  const classes = useStyles();
+  const [inputFields, setInputFields] = useState([{ id: uuidv4() }]);
+
+  const { collegeId } = useSelector((state) => state.collegeId);
+
+  const handleSubmit = async () => {
+    inputFields.map(async (facultyInput) => {
+      try {
+        const { data } = await axios.post(
+          `/faculty/${collegeId}`,
+          facultyInput
+        );
+        navigate("/collegeRegistration/placement");
+      } catch (error) {}
+    });
   };
 
   const handleChangeInput = (id, event) => {
@@ -63,7 +75,7 @@ function FacultyInfo() {
       <Container alignItems="center">
         <h1>Faculty Details</h1>
 
-        <form className={classes.root} onSubmit={handleSubmit}>
+        <form className={classes.root}>
           {inputFields.map((inputField) => (
             <span key={inputField.id}>
               <div className="items-center justify-center text-center">
@@ -96,7 +108,7 @@ function FacultyInfo() {
                   value={inputField.department}
                   onChange={(event) => handleChangeInput(inputField.id, event)}
                 />
-                </div>
+              </div>
               <div className="justify-center items-center text-center">
                 <TextField
                   name="qualification"
@@ -106,14 +118,14 @@ function FacultyInfo() {
                   onChange={(event) => handleChangeInput(inputField.id, event)}
                 />
                 <TextField
-                  name="email address"
+                  name="email"
                   label="E-Mail"
                   variant="filled"
                   value={inputField.emailaddress}
                   onChange={(event) => handleChangeInput(inputField.id, event)}
                 />
               </div>
-              <div  className="justify-center items-center text-center">
+              <div className="justify-center items-center text-center">
                 <TextField
                   name="research"
                   label="Research Paper Link"
@@ -143,6 +155,7 @@ function FacultyInfo() {
             </span>
           ))}
         </form>
+        <Button onClick={handleSubmit}>Next</Button>
       </Container>
     </div>
   );
