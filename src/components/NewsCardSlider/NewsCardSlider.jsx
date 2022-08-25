@@ -1,7 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
-import NewsCard from "./NewsCard";
+
 import pdf1 from '../../components/pdf/IIT Delhi Placements 2022.pdf'
 import pdf2 from '../../components/pdf/NIT Trichy Course Admissions 2022.pdf'
 import pdf3 from '../../components/pdf/AIIMS administration agrees to demands of Optometry Students Association.pdf'
@@ -25,7 +25,7 @@ const responsive = {
 const notifications=[
   {
     topic:"IIT Delhi Placements 2022",
-    text:"At the end of Phase 2 of IIT Delhi placements 2022, a record-breaking 1,300 offers were received.Further, 230 PPOs were received during IIT Delhi placements 2022. Further, the placement rate recorded during IIT Delhi placements 2022 was 82%. Apart from this, more than 600 companies offered 1,000+ job profiles during IIT Delhi placements 2022. It is to note ",
+    text:"At the end of Phase 2 of IIT Delhi placements 2022, a record-breaking 1,300 offers were received.Further, 230 PPOs were received during IIT Delhi placements 2022. Further, the placement rate recorded during IIT Delhi placements 2022 was 82%. Apart from this, more than 600 companies offered 1,000+ job profiles ... ",
     link:pdf1,
   },
   {
@@ -35,7 +35,7 @@ const notifications=[
   },
   {
     topic:"AIIMS administration agrees to demands of Optometry Students Association",
-    text:"After a meeting on August 22, the AIIMS administration agreed to the demands of the AIIMS Optometry students who were protesting after the unfortunate death of Abhishek Malviya, a firstyear student of AIIMS BSc Optometry.AIIMS administration held a meeting with the Optometry Students Association yesterday to listen to their demands after  ",
+    text:"After a meeting on August 22, the AIIMS administration agreed to the demands of the AIIMS Optometry students who were protesting after the unfortunate death of Abhishek Malviya, a first year student of AIIMS BSc Optometry.AIIMS administration held a meeting  ...   ",
     link:pdf3
   }
 ]
@@ -54,7 +54,7 @@ const NewsCardSlider = () => (
           notifications.map((value)=>{
             return(
               <div className="p-5">
-              <div className="card bg-neutral-100 w-80">
+              <div className="card bg-neutral-100 w-80 h-100">
                 <div className="card-body">
                   <h5 className="card-title head text-center">{value.topic}</h5>
                   <div>
