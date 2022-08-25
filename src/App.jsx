@@ -24,7 +24,7 @@ import Faculty from "./components/GroupButton/Faculty";
 import Courses from "./components/GroupButton/Courses";
 import Facility from "./components/GroupButton/Facility";
 import Alumni from "./components/GroupButton/Alumni";
-
+import Collegesignin from "./components/authentication/Collegesignin"
 import Studentsignup from "./components/authentication/Studentsignup";
 import BasicDetails from "./components/Collegeregistration/BasicDetails";
 import Stream from "./components/Collegeregistration/Stream";
@@ -85,7 +85,7 @@ const App = () => {
             path="/login"
             element={currentUser ? <Homepage /> : <StudentSignin />}
           />
-          <Route exact path="/collegesignin" element={<CollegeSignIn/>}/>
+          <Route exact path="/collegesignin" element={<Collegesignin/>}/>
           <Route exact path="/collegesignup" element={<Collegesignup/>}/>
           <Route exact path="/institutepage/:id" element={<InstitutePage />}>
             <Route index element={<Compare />} />
