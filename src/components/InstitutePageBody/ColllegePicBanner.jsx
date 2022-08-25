@@ -5,14 +5,14 @@ import { useSelector } from "react-redux";
 const ColllegePicBanner = () => {
   const { collegeData } = useSelector((state) => state.college);
   // console.log(collegeData);
-
+const url="https://vtu.ac.in/wp-content/uploads/2019/08/vtu-banner-1a-1516x552.jpg";
   return (
     <>
       <div
         className="h-96 justify-between flex"
         style={{
           backgroundImage:
-            'url("https://vtu.ac.in/wp-content/uploads/2019/08/vtu-banner-1a-1516x552.jpg")',
+            `url(${url})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
