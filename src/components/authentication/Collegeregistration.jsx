@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import {Link} from 'react-router-dom';
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -11,75 +11,29 @@ import {
   Grid,
   Box,
   Typography,
-  MenuItem,
   FormControlLabel,
-  Select,
-  FormControl,
-  InputLabel,
   Container,
   Checkbox,
 } from "@mui/material";
 import axios from "axios";
 import { BASE_URL } from "../../api/UseFetch";
-// import GoogleButton from 'react-google-button'
-
-function CitySelect() {
-  const [City, setCity] = useState("");
-
-  const handleChange = (event) => {
-    setCity(event.target.value);
-  };
-
+function Copyright() {
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">City</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={City}
-          label="City"
-          onChange={handleChange}
-        >
-          <MenuItem value={"Bangalore"}>Bangalore</MenuItem>
-          <MenuItem value={"Mumbai"}>Mumbai</MenuItem>
-          <MenuItem value={"NewDelhi"}>New Delhi</MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
+    <Typography variant="body2" color="text.secondary" align="center">
+      {"Copyright © "}
+      <Link color="inherit" href="https://mui.com/">
+        College Guide
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
   );
 }
 
-function CourseSelect() {
-  const [Course, setCourse] = useState("");
-
-  const handleChange = (event) => {
-    setCourse(event.target.value);
-  };
-
-  return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Course</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={Course}
-          label="Course"
-          onChange={handleChange}
-        >
-          <MenuItem value={"B.Tech"}>B.Tech</MenuItem>
-          <MenuItem value={"B.Sc"}>B.Sc</MenuItem>
-          <MenuItem value={"MBA"}>MBA</MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
-  );
-}
 
 const theme = createTheme();
 
-export default function SignUp() {
+export default function Collegeregistration() {
   const [formData, setFormData] = React.useState();
 
   const handleSubmit = async (event) => {
@@ -119,10 +73,6 @@ export default function SignUp() {
           <Typography className="text-center pt-3" component="h1" variant="h5">
             Register
           </Typography>
-
-          {/* <GoogleButton className="google-button"
-             onClick={() => { console.log('Google button clicked') }}
-            /> */}
           <Box
             component="form"
             noValidate
@@ -134,43 +84,13 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  id="username"
-                  label="Enter Username"
-                  name="username"
+                  id="nirfid"
+                  label="Enter Nirf ID"
+                  name="nirfid"
                   onChange={handleChange}
                 />
               </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Enter Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required="true"
-                  fullWidth
-                  type="number"
-                  inputProps={{ maxLength: 10 }}
-                  label="Enter Contact No."
-                  name="phoneno"
-                  onChange={handleChange}
-                  autoComplete="phone-number"
-                  errorText="Please Enter only 10 digits number"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <CitySelect />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <CourseSelect />
-              </Grid>
-
+             
               <Grid item xs={12}>
                 <TextField
                   required
@@ -213,15 +133,6 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link to="/signin" variant="body2">
-                  <Typography variant="body2">
-                    Already have an account? Sign in
-                  </Typography>
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
       </Container>

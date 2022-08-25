@@ -65,7 +65,7 @@ function BranchDetails() {
                     {inputFields.map(inputField => (
                         <span key={inputField.id}>
                            <div>
-                                <div className='addremove' >
+                                <div className='justify-center items-center text-center addremove' >
                             <Typography variant="h6" display="block" gutterBottom>
                                 Add/Remove Branch
                             </Typography>

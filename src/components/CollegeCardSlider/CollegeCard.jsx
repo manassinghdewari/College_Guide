@@ -8,10 +8,14 @@ import { BASE_URL } from "../../api/UseFetch";
 let collegeIdData=[]
 
 
+import useFetch from "../../api/UseFetch";
 const CollegeCard = ({ collegeInfo }) => {
   
   const id = collegeInfo?._id;
   console.log("hello",collegeIdData)
+
+  const { data } = useFetch(`/college/placement/${id}`);
+
   return (
     <>
     
@@ -54,7 +58,9 @@ const CollegeCard = ({ collegeInfo }) => {
           </div>
           <div className="card-body">
             <div className="row p4">
-              <div className="col">{collegeInfo?.city},IN</div>
+              <div className="col">
+                {collegeInfo?.address.map((address) => address.state)},IN
+              </div>
               <div className="col col-4">
                 <Link to="/signup" className="btn3 btn btn-primary rounded-3" >
                   <Typography>
@@ -91,7 +97,7 @@ const CollegeCard = ({ collegeInfo }) => {
             <hr />
             <div className="row p4">
               <div className="col rate">&#9733; Median Salary:</div>
-              <div className="col">{collegeInfo?.median}</div>
+              <div className="col">{data?.median}</div>
             </div>
           </div>
         </div>

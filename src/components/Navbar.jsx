@@ -10,7 +10,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/userSlice";
 import axios from "axios";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { searchCollege } from "../redux/searchSlice";
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ const NavScrollExample = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:8080/api/auth/logout");
+      await axios.get("/auth/logout");
       dispatch(logout());
     } catch (error) {
       console.log(error);
@@ -32,17 +32,23 @@ const NavScrollExample = () => {
     navigate("/login");
   };
 
-		  const handleKeyPress = (e) => {
-		    if (e.key === "Enter") {
-		      dispatch(searchCollege(query));
-		    }
-		  };
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      dispatch(searchCollege(query));
+      navigate(`/search?keyword=${query}`);
+    }
+  };
 
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container fluid>
-        <Navbar.Brand className="font-bold" href="#">
+
+        <Navbar.Brand
+          className="font-bold cursor-pointer"
+          onClick={() => navigate("/")}
+        >
           <SchoolIcon className="mr-5 ml-2" /> College Guide
+
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -56,19 +62,21 @@ const NavScrollExample = () => {
               onChange={(e) => setQuery(e.target.value)}
               onKeyPress={handleKeyPress}
             />
-            <Button className="searchbtn" variant="outline-success">
+            <Button className="searchbtn" onChange variant="outline-success">
               Search
             </Button>
           </Form>
-            <NavLink className="sidelinks" to="/collegesignin" style={{color:"white"}}
-            >
+          <Nav
+            className="my-2 my-lg-0 sidelinksdiv"
+            style={{ maxHeight: "100px" }}
+            navbarScroll
+          >
+            <Nav.Link className="sidelinks" href="/collegeRegistration">
               College
-            </NavLink>
-            <NavLink className="sidelinks" to="/collegesignIn"
-            style={{color:"white"}}
-            >
+            </Nav.Link>
+            <Nav.Link className="sidelinks" href="#action2">
               University
-            </NavLink>
+            </Nav.Link>
             {currentUser ? (
               <Button
                 className="searchbtn"
@@ -78,13 +86,14 @@ const NavScrollExample = () => {
                 Logout
               </Button>
             ) : (
-              <NavLink
+              <Nav.Link
                 className="Loginbtn btn btn-primary rounded-3"
-                to={"/login"}
+                href="/login"
               >
                 Login
-              </NavLink>
+              </Nav.Link>
             )}
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

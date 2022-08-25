@@ -19,6 +19,7 @@ const Body = () => {
   //       { coursename: "B.Tech" },
   //     ],
   //     city: "Bangalore",
+
   //     logo: "https://images.shiksha.com/mediadata/images/1651569550phpDG50QS.jpeg",
   //     median: "7 lakhs",
   //   },
@@ -26,9 +27,13 @@ const Body = () => {
 
   const { searchQuery, sortBy } = useSelector((state) => state.search);
 
-  const url = sortBy ? `/college?sortBy=${sortBy}&sortOrder=asc` : "/college";
+  const url = sortBy ? `/college?sortBy=${sortBy}&sortOrder=desc` : "/college";
 
-  const { data: college } = useFetch(url);
+  const { data: college } = useFetch(
+    `/college?keyword=${searchQuery}&sortBy=${sortBy}&sortOrder=desc`
+  );
+  console.log(college);
+
   
   // console.log("this is for compare",college);
   // const [collegeIdCompare,setCollegeIdCompare]=useState([]);
