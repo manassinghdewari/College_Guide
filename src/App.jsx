@@ -35,6 +35,7 @@ import OnlineCourses from "./components/Collegeregistration/OnlineCourses";
 import Placements from "./components/Collegeregistration/Placement";
 import AlumniData from "./components/Collegeregistration/Alumni";
 import Collegesignup from "./components/authentication/Collegesignup";
+import LocationInfo from "./components/Collegeregistration/LocationInfo";
 
 // import Protected from './components/GoogleAuth/Protected';
 
@@ -61,6 +62,16 @@ const App = () => {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
+    <>
+      {
+        function () {
+          window.onpageshow = function(event) {
+            if (event.persisted) {
+              window.location.reload();
+            }
+          };
+        }()
+    }
     <BrowserRouter>
       {/* <Homepage/> */}
       {/* <MultipleEntry/> */}
@@ -70,11 +81,13 @@ const App = () => {
 
           <Route path="search" element={<Search />} />
           <Route
-            path="login"
+            exact
+            path="/login"
             element={currentUser ? <Homepage /> : <StudentSignin />}
           />
+          <Route exact path="/collegesignin" element={<CollegeSignIn/>}/>
+          <Route exact path="/collegesignup" element={<Collegesignup/>}/>
           <Route exact path="/institutepage/:id" element={<InstitutePage />}>
-
             <Route index element={<Compare />} />
             <Route exact path="compare" element={<Compare />} />
 
@@ -86,7 +99,6 @@ const App = () => {
             <Route exact path="courses" element={<Courses />} />
             <Route exact path="facility" element={<Facility />} />
             <Route exact path="alumni" element={<Alumni />} />
-
           </Route>
           <Route
             exact
@@ -156,14 +168,17 @@ const App = () => {
             path="/collegeRegistration/alumni"
             element={<AlumniData />}
           />
+          <Route
+            exact
+            path="/collegeRegistration/location"
+            element={<LocationInfo />}
+          />
         </Routes>
       </ScrollToTop>
       {/* <StudentSignin /> */}
     </BrowserRouter>
-
-    // // <Collegesignup />
-
-  );
+    </>
+      );
 };
 
 export default App;

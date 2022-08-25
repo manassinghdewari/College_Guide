@@ -8,6 +8,15 @@ import Footer from '../components/Footer/Footer';
 const Homepage=()=>{
     return(
         <>
+        {
+            function () {
+				window.onpageshow = function(event) {
+					if (event.persisted) {
+						window.location.reload();
+					}
+				};
+			}()
+        }
             <Navbar />
             <Banner />
             <NewsCardSlider/>
