@@ -12,8 +12,8 @@ function ResponsiveBreakpointsExample() {
             <Table responsive="sm">
                 <thead>
                 <tr>
-                    <th>Rank</th>
                     <th>College Name</th>
+                    <th>Rank</th>
                 </tr>
                 </thead>
                 <tbody>
