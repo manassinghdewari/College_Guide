@@ -1,9 +1,24 @@
 import React from "react";
+
+const notifications=[
+  {
+    topic:"",
+    text:"",
+  },
+  {
+    topic:"",
+    text:"",
+  },
+  {
+    topic:"",
+    text:"",
+  }
+]
 const NewsCard = () => {
   return (
     <>
       <div className="p-5">
-        <div className="card bg-neutral-100 w-80">
+        <div className="card bg-neutral-100 w-80 ">
           <div className="card-body">
             <h5 className="card-title head text-center">Topic</h5>
             <div>
