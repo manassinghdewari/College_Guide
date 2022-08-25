@@ -1,13 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 const CollegeCard = () => (
   <>
+    <Link to="/institutepage">
     <div className="card rounded-3 wid22">
-      <img
-        className="card-img rounded-3 hei18"
-        src="https://www.smvit.in/Default/ClientPanel/media/smvit_slider1.jpg"
-        alt="Sir M. Visversaraya Institute of Tecnology"
-      />
-      <div className="card-img-overlay rounded-3 ">
+        <img
+          className="card-img rounded-3 hei18"
+          src="https://www.smvit.in/Default/ClientPanel/media/smvit_slider1.jpg"
+          alt="Sir M. Visversaraya Institute of Tecnology"
+        />
+      <div className="card-img-overlay rounded-3 h-1/2">
         <div className="row">
           <div className="col">
             <a href="/" className="btn2 btn btn-primary rounded-3">
@@ -59,6 +61,7 @@ const CollegeCard = () => (
         </div>
       </div>
     </div>
+    </Link>
   </>
 );
 

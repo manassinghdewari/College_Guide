@@ -10,7 +10,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/userSlice";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { searchCollege } from "../redux/searchSlice";
 import { useState } from "react";
 
@@ -62,9 +62,11 @@ const NavScrollExample = () => {
               onChange={(e) => setQuery(e.target.value)}
               onKeyPress={handleKeyPress}
             />
-            <Button className="searchbtn" onChange variant="outline-success">
-              Search
-            </Button>
+            <Link to="/search">
+              <Button className="searchbtn" onChange variant="outline-success">
+                Search
+              </Button>
+            </Link>
           </Form>
           {/* <Nav
             className="my-2 my-lg-0 sidelinksdiv"

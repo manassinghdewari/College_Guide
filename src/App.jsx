@@ -49,7 +49,7 @@ const App = () => {
 
           <Route path="search" element={<Search />} />
         
-          <Route exact path="/institutepage/:id" element={<InstitutePage />}>
+          <Route exact path="/institutepage" element={<InstitutePage />}>
 
             
 
