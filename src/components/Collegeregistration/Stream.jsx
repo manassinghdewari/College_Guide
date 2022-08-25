@@ -12,17 +12,9 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
 import { v4 as uuidv4 } from 'uuid';
 import CourseSelect from './Course';
-
-
-import { ClassNames } from "@emotion/react";
-import { IconButton, Typography } from "@mui/material";
-import RemoveIcon from "@material-ui/icons/Remove";
-import AddIcon from "@material-ui/icons/Add";
-import { v4 as uuidv4 } from "uuid";
-import CourseSelect from "./Course";
 import BranchDetails from "./BranchDetails";
 import Menu from "@mui/material/Menu";
-import Select from "react-select";
+import Button from '@mui/material/Button';
 import { useSelector } from "react-redux";
 function Stream() {
   const { collegeId } = useSelector((state) => state.collegeId);
