@@ -14,6 +14,7 @@ import "./Alumni.css";
 import Grid from "@material-ui/core/Grid";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Alumni() {
+  const navigate = useNavigate();
   const classes = useStyles();
   const [inputFields, setInputFields] = useState([
     { id: uuidv4(), firstName: "", lastName: "" },
@@ -47,17 +49,27 @@ function Alumni() {
   const handleAddFields = () => {
     setInputFields([
       ...inputFields,
-      { id: uuidv4(), firstName: "", lastName: "" },
+      {
+        id: uuidv4(),
+        name: "",
+        position: "",
+        companyName: "",
+        email: "",
+        url: "",
+        Twitter: "",
+        Linkedin: "",
+      },
     ]);
   };
   console.log(inputFields.flat());
 
   const handleSubmit = async () => {
-    try {
-      const { data } = await axios.post(`/alumni/${collegeId}`, inputFields);
-    } catch (error) {
-      console.log(error);
-    }
+    inputFields.map(async (alumniInput) => {
+      try {
+        const { data } = await axios.post(`/alumni/${collegeId}`, alumniInput);
+        navigate("/collegeRegistration/faculty");
+      } catch (error) {}
+    });
   };
 
   const handleRemoveFields = (id) => {
