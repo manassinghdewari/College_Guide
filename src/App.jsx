@@ -62,6 +62,16 @@ const App = () => {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
+    <>
+      {
+        function () {
+          window.onpageshow = function(event) {
+            if (event.persisted) {
+              window.location.reload();
+            }
+          };
+        }()
+    }
     <BrowserRouter>
       {/* <Homepage/> */}
       {/* <MultipleEntry/> */}
@@ -71,9 +81,12 @@ const App = () => {
 
           <Route path="search" element={<Search />} />
           <Route
-            path="login"
+            exact
+            path="/login"
             element={currentUser ? <Homepage /> : <StudentSignin />}
           />
+          <Route exact path="/collegesignin" element={<CollegeSignIn/>}/>
+          <Route exact path="/collegesignup" element={<Collegesignup/>}/>
           <Route exact path="/institutepage/:id" element={<InstitutePage />}>
             <Route index element={<Compare />} />
             <Route exact path="compare" element={<Compare />} />
@@ -164,9 +177,8 @@ const App = () => {
       </ScrollToTop>
       {/* <StudentSignin /> */}
     </BrowserRouter>
-
-    // // <Collegesignup />
-  );
+    </>
+      );
 };
 
 export default App;

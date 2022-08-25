@@ -1,8 +1,20 @@
+import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import useFetch, { BASE_URL } from "../../api/UseFetch";
 
+// function refreshPage() {
+//   window.location.reload(false);
+// }
+let id="63072a0d355aab9156ebaa1a";
 const Compare = () => {
+  const {data:placement,loading,error}=useFetch(`/college/placement/${id}`)
+  console.log(placement);
+  const {collegeData}= useSelector((state) => state.college);
   return (
-    <div className="container-table">
+    <>
+      <div className="container-table">
       <div className="container pb-5 mb-2 ">
         <div className="comparison-table">
           <table className="table table-bordered">
@@ -33,7 +45,8 @@ const Compare = () => {
                       href="shop-single.html"
                     >
                       <img
-                        src="https://cache.careers360.mobi/media/colleges/social-media/logo/Indian_Institute_of_Technology_Delhi.jpg"
+                        // src="https://cache.careers360.mobi/media/colleges/social-media/logo/Indian_Institute_of_Technology_Delhi.jpg"
+                        src={collegeData.photos[0]}
                         alt="logo_1"
                       />
                     </a>
@@ -41,7 +54,9 @@ const Compare = () => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
+
                      BMS College of Engineering
+
                     </a>
                   </div>
                 </td>
@@ -77,7 +92,9 @@ const Compare = () => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
+
                     Sir M. Visvesvaraya Institute of Technology
+
                     </a>
                   </div>
                 </td>
@@ -113,7 +130,9 @@ const Compare = () => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
+
                       Banaras Hindu University
+
                     </a>
                   </div>
                 </td>
@@ -134,9 +153,11 @@ const Compare = () => {
               </tr>
               <tr>
                 <th>Ranked by NIRF</th>
+
                 <td>199</td>
                 <td>253</td>
                 <td>11</td>
+
               </tr>
             </tbody>
             <tbody id="college_placement" data-filter="target">
@@ -323,6 +344,7 @@ const Compare = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
