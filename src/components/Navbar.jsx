@@ -38,6 +38,11 @@ const NavScrollExample = () => {
       navigate(`/search?keyword=${query}`);
     }
   };
+  const handleButtonPress=() =>{
+      dispatch(searchCollege(query));
+      navigate(`/search?keyword=${query}`);
+    };
+
 
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
@@ -60,7 +65,9 @@ const NavScrollExample = () => {
               onChange={(e) => setQuery(e.target.value)}
               onKeyPress={handleKeyPress}
             />
-            <Button className="searchbtn" onChange variant="outline-success">
+            <Button className="searchbtn" onChange variant="outline-success"
+            
+            onClick={handleButtonPress}>
               Search
             </Button>
           </Form>
