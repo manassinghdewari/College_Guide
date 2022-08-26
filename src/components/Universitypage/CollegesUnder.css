@@ -1,4 +1,4 @@
-img{
+.rounded-circle{
     height: 45px !important;
     width: 45px !important;
 }
@@ -16,7 +16,4 @@ img{
 }
 .ms-6{
     padding-left: 30rem;
-}
-.table{
-    padding-left: 20rem;
 }

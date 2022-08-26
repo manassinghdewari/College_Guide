@@ -36,7 +36,8 @@ import Placements from "./components/Collegeregistration/Placement";
 import AlumniData from "./components/Collegeregistration/Alumni";
 import Collegesignup from "./components/authentication/Collegesignup";
 import LocationInfo from "./components/Collegeregistration/LocationInfo";
-
+import CollegeSignIn from "./components/authentication/Collegesignin"
+import CollegesUnder from "./components/Universitypage/CollegesUnder";
 // import Protected from './components/GoogleAuth/Protected';
 
 const ScrollToTop = ({ children }) => {
@@ -51,10 +52,16 @@ const ScrollToTop = ({ children }) => {
 
 const ProctectedRoute = ({ children }) => {
   const { currentUser } = useSelector((state) => state.user);
+
   const role = currentUser.details.role;
 
   if (role === "admin" || role === "college") {
+
     return children || null;
+  }
+  else{
+    alert("You are not authorised to access this route");
+    // Navigate('./components/authentication/Studentsignin.jsx')
   }
 };
 
@@ -63,6 +70,7 @@ const App = () => {
 
   return (
     <>
+
       {(function () {
         window.onpageshow = function (event) {
           if (event.persisted) {
@@ -176,6 +184,7 @@ const App = () => {
         </ScrollToTop>
         {/* <StudentSignin /> */}
       </BrowserRouter>
+
     </>
   );
 };

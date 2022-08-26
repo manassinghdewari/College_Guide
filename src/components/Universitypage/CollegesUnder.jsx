@@ -4,7 +4,7 @@ import './CollegesUnder.css';
 const CollegesUnder = () => {
   return (
     <>
-    <h1> Colleges under Visvesvaraya Technological University</h1>
+    <h1 className='mt-10'> Colleges under Visvesvaraya Technological University</h1>
         <table className="table align-middle mb-0 bg-grey">
       <thead className="bg-light">
         <tr>
