@@ -2,9 +2,9 @@ import { RedoTwoTone } from '@mui/icons-material';
 import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BASE_URL } from '../../api/UseFetch';
-import { FaLinkedin } from "react-icons/fa";
-import { FaTwitter} from "react-icons/fa";
+import useFetch, { BASE_URL } from '../../api/UseFetch';
+import { useSelector } from 'react-redux';
+
 // const {facultyData}= await axios.get(`${BASE_URL}/faculty/`);
 const facultyData=[
     {
@@ -196,12 +196,46 @@ const facultyData=[
 ]
 
 const Faculty=()=> {
+    let facultyData;
+    const {collegeData}= useSelector((state) => state.college);
     return (
         <>
-            
+            {/* {
+                collegeData.faculty.map((value)=>{
+                    const fd=get(`/faculty/${value}`)
+                    console.log("this is faculty data",fd);
+                })
+            } */}
             <div className="container">
             <div className="row text-center">
-            {   facultyData.map((value)=>{
+                {
+                    
+                    collegeData?.faculty.map(async(value)=>{
+                            try{
+                                 const {Data}=await axios.get(`/faculty/${value}`) 
+                                 facultyData=Data;
+                                console.log("this is faculty data",facultyData);
+                            }
+                            catch(error){
+                                console.log(error);
+                            }
+                        // console.log("this is faculty data",fd);
+                        <div className="col-xl-3 col-sm-6 mb-2.5 mt-2.5">
+                        <div className="bg-white rounded shadow-sm py-5 px-4">
+                            <div className='flex items-center justify-center'>
+                            <img src={facultyData.photo} alt="" width="100" className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
+                            </div>
+                            <div className="text-xl font-bold mb-0 text-center ">{facultyData.name}</div>
+                            <div className="  text-uppercase font-semibold text-slate-400">{facultyData.designation}</div>
+                            <div className="small text-uppercase text-muted font-semibold">{facultyData.college}</div>
+                            <div className="small text-muted">{facultyData.department}</div>
+                            <div>Research on:{facultyData.research}</div>
+                        </div>
+                    </div>
+                        
+                    })
+                }
+            {/* {   facultyData.map((value)=>{
                     return(
                         <div className="col-xl-3 col-sm-6 mb-2.5 mt-2.5">
                         <div className="bg-white rounded shadow-sm py-5 px-4">
@@ -219,35 +253,9 @@ const Faculty=()=> {
                             </div>
                         </div>
                     </div>
-
-                    // <div className="col-xl-3 col-sm-6 mb-2.5 mt-2.5">
-                    //     <div className="bg-white rounded shadow-sm py-5 px-4">
-                    //         <div className='flex items-center justify-center'>
-                    //         <img src={value.photo} alt="" width="100" className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
-                    //         </div>
-                    //         <div className="text-xl font-bold mb-0 text-center ">{value.name}</div>
-                    //         <div className="  text-uppercase text-muted font-semibold">{value.designation}</div>
-                    //         <div className="small text-uppercase text-muted">{value.department}</div>
-                    //         <div className="  text-uppercase text-muted font-semibold">{value.college}</div>
-                    //         {value.qualifiaction.map((val)=>{
-                    //             // console.log("hellojk",val.Field);
-                    //             return(
-                    //                 <div className="small text-muted">{val.degree} :-{val.Field}</div>
-                    //             )   
-                    //         })}
-                    //         <div>Total Publications:{value.research.totalPublications}</div>
-                    //         {value.research.title.map((val)=>{
-                    //             console.log("this is omg",val);
-                    //             return(
-                    //                 <div>Research on:-<Link to={val.url}>{val.name}</Link></div>
-                    //             )
-                    //         })}
-                    //         <a href="mailto:abc@example.com">{value.email}</a>
-                    //     </div>
-                    // </div>
                     )
                 })
-            }
+            } */}
             </div>
             </div>
         </>

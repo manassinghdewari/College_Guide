@@ -36,7 +36,8 @@ import Placements from "./components/Collegeregistration/Placement";
 import AlumniData from "./components/Collegeregistration/Alumni";
 import Collegesignup from "./components/authentication/Collegesignup";
 import LocationInfo from "./components/Collegeregistration/LocationInfo";
-
+import CollegeSignIn from "./components/authentication/Collegesignin"
+import CollegesUnder from "./components/Universitypage/CollegesUnder";
 // import Protected from './components/GoogleAuth/Protected';
 
 const ScrollToTop = ({ children }) => {
@@ -51,10 +52,14 @@ const ScrollToTop = ({ children }) => {
 
 const ProctectedRoute = ({ children }) => {
   const { currentUser } = useSelector((state) => state.user);
-  console.log(currentUser.details.role);
+  const role =(currentUser.details.role);
 
-  if (currentUser) {
+  if (role==="admin"||role==="college" ) {
     return children || null;
+  }
+  else{
+    alert("You are not authorised to access this route");
+    // Navigate('./components/authentication/Studentsignin.jsx')
   }
 };
 
@@ -73,8 +78,6 @@ const App = () => {
         }()
     }
     <BrowserRouter>
-      {/* <Homepage/> */}
-      {/* <MultipleEntry/> */}
       <ScrollToTop>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
@@ -85,10 +88,12 @@ const App = () => {
             path="/login"
             element={currentUser ? <Homepage /> : <StudentSignin />}
           />
-          <Route exact path="/collegesignin" element={<Collegesignin/>}/>
+          <Route exact path="/signup" element={<Studentsignup />}/>
+          <Route exact path="/institutepage/:id/compare" element={<Compare />}/>
+          <Route exact path="/collegesignin" element={<CollegeSignIn/>}/>
           <Route exact path="/collegesignup" element={<Collegesignup/>}/>
           <Route exact path="/institutepage/:id" element={<InstitutePage />}>
-            <Route index element={<Compare />} />
+            <Route index element={<Placements />} />
             <Route exact path="compare" element={<Compare />} />
 
             <Route exact path="info" element={<Info />} />
@@ -99,6 +104,8 @@ const App = () => {
             <Route exact path="courses" element={<Courses />} />
             <Route exact path="facility" element={<Facility />} />
             <Route exact path="alumni" element={<Alumni />} />
+            <Route exact path="affiliatedcollege" element={<CollegesUnder/>} />
+            {/* <Route path="*" element={alert("There is nothing here!!!")} /> */}
           </Route>
           <Route
             exact
@@ -173,6 +180,7 @@ const App = () => {
             path="/collegeRegistration/location"
             element={<LocationInfo />}
           />
+          {/* <Route path="*" element={alert("There is nothing here!!!")} /> */}
         </Routes>
       </ScrollToTop>
       {/* <StudentSignin /> */}
