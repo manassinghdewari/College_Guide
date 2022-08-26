@@ -87,10 +87,7 @@ export default function SignUp() {
     console.log(formData);
 
     try {
-      const { data } = await axios.post(
-        `${BASE_URL}/auth/registerUser`,
-        formData
-      );
+      const { data } = await axios.post("auth/registerUser", formData);
       console.log({ user: data });
     } catch (error) {
       console.log(error);
@@ -158,7 +155,7 @@ export default function SignUp() {
                   type="number"
                   inputProps={{ maxLength: 10 }}
                   label="Enter Contact No."
-                  name="phoneno"
+                  name="phone"
                   onChange={handleChange}
                   autoComplete="phone-number"
                   errorText="Please Enter only 10 digits number"
