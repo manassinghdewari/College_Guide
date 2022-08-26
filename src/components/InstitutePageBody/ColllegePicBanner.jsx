@@ -28,7 +28,7 @@ const url="https://vtu.ac.in/wp-content/uploads/2019/08/vtu-banner-1a-1516x552.j
           </span>
         </div>
         <div className=" flex items-start justify-end self-start justify-self-end ">
-          <button
+          {/* <button
             type="button"
             className="btn lik btn-link"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.7)", margin: "2px" }}
@@ -45,7 +45,7 @@ const url="https://vtu.ac.in/wp-content/uploads/2019/08/vtu-banner-1a-1516x552.j
             <span>
               <ShareIcon />
             </span>
-          </button>
+          </button> */}
         </div>
       </div>
     </>

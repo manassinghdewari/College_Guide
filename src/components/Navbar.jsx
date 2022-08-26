@@ -79,9 +79,9 @@ const NavScrollExample = () => {
             <Nav.Link className="sidelinks" href="/collegeRegistration">
               College
             </Nav.Link>
-            <Nav.Link className="sidelinks" href="#action2">
+            {/* <Nav.Link className="sidelinks" href="#action2">
               University
-            </Nav.Link>
+            </Nav.Link> */}
             {currentUser ? (
               <Button
                 className="searchbtn"

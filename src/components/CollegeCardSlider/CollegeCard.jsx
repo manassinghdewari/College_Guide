@@ -30,16 +30,16 @@ const CollegeCard = ({ collegeInfo }) => {
                 {/* <Link to={`/institutepage/${id}`} className="btn2 btn btn-primary rounded-3"
                 
               > */}
-              {/* <Link to={collegeInfo?.brochure}> */}
+              <Link to={collegeInfo?.brochure}>
                   <button className="btn2 btn btn-primary rounded-3">
                   Brochure
                   </button>
-              {/* </Link>                 */}
+              </Link>                
               </div>
               <div className="col tar">
-                <button type="button" className="btn lik btn-link">
+                {/* <button type="button" className="btn lik btn-link">
                   <span className="bi bi-heart"></span>
-                </button>
+                </button> */}
               </div>
             </div>
             <div className="ran">
