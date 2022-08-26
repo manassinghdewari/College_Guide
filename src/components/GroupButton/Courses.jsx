@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const coursesData=[
   {
@@ -37,6 +38,10 @@ const coursesData=[
   },
 ]
 const Courses = () => {
+
+const {collegeData} = useSelector((state)=>state.college)
+console.log(collegeData)
+
   return (
     <>
       <section className="main-content">

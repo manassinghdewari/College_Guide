@@ -92,7 +92,7 @@ console.log("master check",data);
                   </Link>
                 </div>
                 <div className="py-3 align-items: center; justify-center flex">
-                  <a href="https://vtu.ac.in/">
+                  <a href={data.website}>
 
                   <Button
                     style={{ backgroundColor: "#4681f4" }}
@@ -127,7 +127,7 @@ console.log("master check",data);
                   </Button>
                 </div>
                 <div>
-                  <a href="https://vtu.ac.in/">
+                  <a href={data.website}>
 
                   <Button
                     style={{ backgroundColor: "#3a72b7" }}
