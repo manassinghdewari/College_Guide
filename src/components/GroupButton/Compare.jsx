@@ -41,7 +41,9 @@ const Compare = () => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
+
                      BMS College of Engineering
+
                     </a>
                   </div>
                 </td>
@@ -113,7 +115,9 @@ const Compare = () => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
+
                       Banaras Hindu University
+
                     </a>
                   </div>
                 </td>
@@ -134,9 +138,11 @@ const Compare = () => {
               </tr>
               <tr>
                 <th>Ranked by NIRF</th>
+
                 <td>199</td>
                 <td>253</td>
                 <td>11</td>
+
               </tr>
             </tbody>
             <tbody id="college_placement" data-filter="target">
@@ -316,7 +322,7 @@ const Compare = () => {
                 <th>Student Reviews</th>
                 <td>7.8/10</td>
                 <td>7.8/10</td>
-                <td>7.8/10</td> 
+                <td>7.8/10</td>
               </tr>
             </tbody>
           </table>

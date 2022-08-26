@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { BASE_URL } from "../../api/UseFetch";
 import useFetch from "../../api/UseFetch";
 // import Compare from "../GroupButton/Compare";
+// import Compare from "../GroupButton/Compare";
 const CollegeCard = ({ collegeInfo }) => {
   
   const id = collegeInfo?._id;

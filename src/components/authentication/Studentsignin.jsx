@@ -134,23 +134,6 @@ export default function SignIn() {
             >
               Sign In
             </Button>
-            <Typography
-              align="center"
-              component="h1"
-              variant="h7"
-              sx={{ m: 1 }}
-            >
-              
-            </Typography>
-            {/* variant="contained" */}
-            {/* <GoogleButton
-              fullWidth
-              color="primary"
-              //  onClick={handleGoogleSignIn}
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In with Google
-            </GoogleButton> */}
             <Grid container>
               <Grid item xs>
                 <Link to="/">

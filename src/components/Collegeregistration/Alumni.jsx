@@ -29,9 +29,7 @@ const useStyles = makeStyles((theme) => ({
 function Alumni() {
   const navigate = useNavigate();
   const classes = useStyles();
-  const [inputFields, setInputFields] = useState([
-    { id: uuidv4(), firstName: "", lastName: "" },
-  ]);
+  const [inputFields, setInputFields] = useState([{ id: uuidv4() }]);
 
   const { collegeId } = useSelector((state) => state.collegeId);
 
