@@ -38,17 +38,20 @@ const NavScrollExample = () => {
       navigate(`/search?keyword=${query}`);
     }
   };
+  const handleButtonPress=() =>{
+      dispatch(searchCollege(query));
+      navigate(`/search?keyword=${query}`);
+    };
+
 
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container fluid>
-
         <Navbar.Brand
           className="font-bold cursor-pointer"
           onClick={() => navigate("/")}
         >
           <SchoolIcon className="mr-5 ml-2" /> College Guide
-
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -62,7 +65,9 @@ const NavScrollExample = () => {
               onChange={(e) => setQuery(e.target.value)}
               onKeyPress={handleKeyPress}
             />
-            <Button className="searchbtn" onChange variant="outline-success">
+            <Button className="searchbtn" onChange variant="outline-success"
+            
+            onClick={handleButtonPress}>
               Search
             </Button>
           </Form>

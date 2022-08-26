@@ -243,6 +243,7 @@ const BasicDetails = () => {
               rows={2}
               maxRows={4}
               fullWidth
+              name="info"
               style={{ marginTop: "20px", padding: "10px" }}
             />
             <Grid
@@ -264,7 +265,12 @@ const BasicDetails = () => {
                 </IconButton>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Typography variant="body1" display="block" gutterBottom>
+                <Typography
+                  variant="body1"
+                  display="block"
+                  name="logo"
+                  gutterBottom
+                >
                   Upload College Logo(100px*100px)
                 </Typography>
                 <IconButton
