@@ -71,7 +71,7 @@ const NewsCardSlider = () => (
                         className="Notification_Head"
                         >{value.topic}</span>
                     </div>
-                    <div className="Notification_Body">
+                    <div className="Notification_Body h16">
                       <p
                         className="Notification_Body"
                       >

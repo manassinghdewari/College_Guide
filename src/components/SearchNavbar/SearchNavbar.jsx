@@ -23,9 +23,9 @@ const SearchNavbar = () => {
             "{searchQuery ? searchQuery : "No search query"}"
           </Typography>
           <Box sx={{ flexGrow: 0.9 }} />
-          <SortBtn />
+          {/* <SortBtn /> */}
           <Box sx={{ flexGrow: 0.05 }} />
-          <SortordBtn/>
+          {/* <SortordBtn/> */}
         </Toolbar>
       </AppBar>
     </div>

@@ -1,6 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.h16{
+    height: 16rem;
+}
+.h10{
+    height: 10rem!important;
+}
+.h166{
+    height: 166px!important;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+.cd{
+    height: 415px;
+}
 .contbtn{
     padding-left: 21px!important;
     padding-right: 21px!important;
