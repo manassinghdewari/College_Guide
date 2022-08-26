@@ -50,7 +50,7 @@ const CollegePageBody = () => {
                   </Button>
                 </div>
                 <div className="py-3 align-items: center; justify-center flex">
-                  <a href="https://vtu.ac.in/">
+                  <a href={data.website}>
 
                   <Button
                     style={{ backgroundColor: "#4681f4" }}

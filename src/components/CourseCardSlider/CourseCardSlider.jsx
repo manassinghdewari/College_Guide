@@ -1,12 +1,12 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import CourseCard from "./CourseCard";
-import c1 from '../pdf/Engineering.pdf'
+import CourseCimport c1 from '../pdf/Engineering.pdf'
 import c2 from '../pdf/Medical.pdf'
 import c3 from '../pdf/LAW.pdf'
 import c4 from '../pdf/DESIGN.pdf'
 import c5 from '../pdf/BMS.pdf'
 import c6 from '../pdf/MBA (1).pdf'
+
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 984 },
@@ -93,6 +93,7 @@ const CourseCardSlider = () => (
         itemClass="align-items: center; justify-center flex"
         sliderClass=""
       >
+
         {
           courseinfo.map((value)=>{
             return(
@@ -132,6 +133,7 @@ const CourseCardSlider = () => (
             )
           })
         }
+
       </Carousel>
     </div>
   </>

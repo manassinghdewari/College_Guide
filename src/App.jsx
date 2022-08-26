@@ -65,19 +65,40 @@ const ProctectedRoute = ({ children }) => {
   }
 };
 
+const Protected=({children})=>{
+  const {currentUser} = useSelector((state)=>state.user)
+  if(!currentUser){
+    return <Navigate to="/login" />
+  }
+  return children;
+}
+
 const App = () => {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
     <>
 
-      {(function () {
-        window.onpageshow = function (event) {
-          if (event.persisted) {
-            window.location.reload();
-          }
-        };
-      })()}
+     
+    <BrowserRouter>
+      <ScrollToTop>
+        <Routes>
+          <Route exact path="/" element={<Protected><Homepage /></Protected>} />
+
+          <Route path="search" element={<Protected><Search /></Protected>} />
+          <Route
+            exact
+            path="/login"
+            element={currentUser ? <Homepage /> : <StudentSignin />}
+          />
+          <Route exact path="/signup" element={<Protected><Studentsignup /></Protected>}/>
+          <Route exact path="/institutepage/:id/compare" element={<Protected><Compare /></Protected>}/>
+          <Route exact path="/collegesignin" element={<Protected><CollegeSignIn /></Protected>}/>
+          <Route exact path="/collegesignup" element={<Protected><Collegesignup/></Protected>}/>
+          <Route exact path="/institutepage/:id" element={<Protected><InstitutePage /></Protected>}>
+            <Route index element={<Info/>} />
+            <Route exact path="compare" element={<Compare />} />
+
       <BrowserRouter>
         {/* <Homepage/> */}
         {/* <MultipleEntry/> */}
@@ -184,6 +205,7 @@ const App = () => {
         </ScrollToTop>
         {/* <StudentSignin /> */}
       </BrowserRouter>
+
 
     </>
   );
