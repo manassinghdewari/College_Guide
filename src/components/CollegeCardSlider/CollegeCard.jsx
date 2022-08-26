@@ -75,7 +75,7 @@ const CollegeCard = ({ collegeInfo }) => {
                 </Link>
               </div>
             </div>
-            <div className="row p4">
+            {/* <div className="row p4">
               <div className="col acc">
                 {collegeInfo?.accreditation.map((acc) => acc?.provider + ", ")}
               </div>
@@ -83,7 +83,7 @@ const CollegeCard = ({ collegeInfo }) => {
                 {collegeInfo?.course.map((course) => course?.coursename + ", ")}
                 ...
               </div>
-            </div>
+            </div> */}
             <hr />
             <div className="row p4">
               <div className="col rate">&#9733; Median Salary:</div>
