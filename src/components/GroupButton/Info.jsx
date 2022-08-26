@@ -17,7 +17,7 @@ const Info = () => {
           width="50%"
         />
       </div> */}
-        <div id="map"></div>
+        {/* <div id="map"></div> */}
     </>
   );
 };
