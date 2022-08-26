@@ -41,11 +41,11 @@ const Body = () => {
 
     <>
       <div className="align-items: center; justify-center flex my-10">
-        <div className="row w-11/12">
-          <div className="col-3 ">
+        <div className="row w-9/12">
+          {/* <div className="col-3 ">
             <Filters />
           </div>
-          <div className="col-9 flex flex-wrap">
+          <div className="col-9 flex flex-wrap"> */}
             {college?.map((college) => (
               <span className="px-1 py-2">
                 <CollegeCard collegeInfo={college} key={college._id} />
@@ -57,7 +57,7 @@ const Body = () => {
                 } */}
               </span>
             ))}
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </>
