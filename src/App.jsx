@@ -63,37 +63,53 @@ const ProctectedRoute = ({ children }) => {
   }
 };
 
+const Protected=({children})=>{
+  const {currentUser} = useSelector((state)=>state.user)
+  if(!currentUser){
+    return <Navigate to="/login" />
+  }
+  return children;
+}
+
 const App = () => {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
     <>
-      {
-        function () {
-          window.onpageshow = function(event) {
-            if (event.persisted) {
-              window.location.reload();
-            }
-          };
-        }()
-    }
+      {/* {
+        function initMap() {
+          const myLatLng = { lat: -25.363, lng: 131.044 };
+          const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: myLatLng,
+          });
+        
+          new google.maps.Marker({
+            position: myLatLng,
+            map,
+            title: "Hello World!",
+          });
+        }
+        
+        window.initMap = initMap;  
+      } */}
     <BrowserRouter>
       <ScrollToTop>
         <Routes>
-          <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/" element={<Protected><Homepage /></Protected>} />
 
-          <Route path="search" element={<Search />} />
+          <Route path="search" element={<Protected><Search /></Protected>} />
           <Route
             exact
             path="/login"
             element={currentUser ? <Homepage /> : <StudentSignin />}
           />
-          <Route exact path="/signup" element={<Studentsignup />}/>
-          <Route exact path="/institutepage/:id/compare" element={<Compare />}/>
-          <Route exact path="/collegesignin" element={<CollegeSignIn/>}/>
-          <Route exact path="/collegesignup" element={<Collegesignup/>}/>
-          <Route exact path="/institutepage/:id" element={<InstitutePage />}>
-            <Route index element={<Placements />} />
+          <Route exact path="/signup" element={<Protected><Studentsignup /></Protected>}/>
+          <Route exact path="/institutepage/:id/compare" element={<Protected><Compare /></Protected>}/>
+          <Route exact path="/collegesignin" element={<Protected><CollegeSignIn /></Protected>}/>
+          <Route exact path="/collegesignup" element={<Protected><Collegesignup/></Protected>}/>
+          <Route exact path="/institutepage/:id" element={<Protected><InstitutePage /></Protected>}>
+            <Route index element={<Info/>} />
             <Route exact path="compare" element={<Compare />} />
 
             <Route exact path="info" element={<Info />} />

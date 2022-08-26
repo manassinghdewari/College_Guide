@@ -11,10 +11,10 @@ import { Bar} from 'react-chartjs-2';
 
 const dataAlumni=[
     {
-    name:"Manuella Nevoresky",
+    name:"parag agrawal",
     photo:"https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg",
     designation:{
-        companyName:"Grey-Slone Memorial Hospital",
+        companyName:"OLA",
         position:"Founder",
     },
     websites:{
@@ -36,10 +36,10 @@ const dataAlumni=[
     branch:"Computer Science Engineering"
     },
     {
-        name:"Manuella Nevoresky",
+        name:"a.ramachander",
         photo:"https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg",
         designation:{
-            companyName:"Grey-Slone Memorial Hospital",
+            companyName:"Escorts Limited",
             position:"Founder",
         },
         websites:{
@@ -58,13 +58,13 @@ const dataAlumni=[
                 }
             ]
         },
-        branch:"Computer Science Engineering"
+        branch:"Mechanical"
     },
     {
-        name:"Manuella Nevoresky",
+        name:"k.s. das gupta",
         photo:"https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg",
         designation:{
-            companyName:"Grey-Slone Memorial Hospital",
+            companyName:"Dhirubhai Institute of Information Technology",
             position:"Founder",
         },
         websites:{
@@ -83,13 +83,13 @@ const dataAlumni=[
                 }
             ]
         },
-        branch:"Computer Science Engineering"
+        branch:"Electronics and TeleCommunication Engineering"
         },
         {
-            name:"Manuella Nevoresky",
+            name:"ashish chauhan",
             photo:"https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg",
             designation:{
-                companyName:"Grey-Slone Memorial Hospital",
+                companyName:"National Stock Exhange",
                 position:"Founder",
             },
             websites:{
@@ -108,7 +108,7 @@ const dataAlumni=[
                     }
                 ]
             },
-            branch:"Computer Science Engineering"
+            branch:"Mechanical Engineering"
             },
 
 ]
@@ -118,7 +118,7 @@ const state = {
              'Science & Technology', 'IT Sector'],
     datasets: [
       {
-        label: 'Rainfall',
+        label: 'Student Mobility',
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',

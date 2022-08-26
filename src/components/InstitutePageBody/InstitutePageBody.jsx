@@ -151,8 +151,8 @@ console.log("master check",data);
         </AliceCarousel> */}
             </div>
           </div>
-          <div className="font-bold text-3xl">Similar Institutes:-</div>
-          <CollegeCardSlider />
+          {/* <div className="font-bold text-3xl">Similar Institutes:-</div> */}
+          {/* <CollegeCardSlider /> */}
           <Accordian />
         </div>
       </div>
