@@ -1,33 +1,26 @@
-
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import Container from '@material-ui/core/Container';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import { ClassNames } from '@emotion/react';
-import { IconButton, Typography } from '@mui/material';
-import RemoveIcon from '@material-ui/icons/Remove';
-import AddIcon from '@material-ui/icons/Add';
-import { v4 as uuidv4 } from 'uuid';
-import CourseSelect from './Course';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import Container from "@material-ui/core/Container";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import { ClassNames } from "@emotion/react";
+import { IconButton, Typography } from "@mui/material";
+import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@material-ui/icons/Add";
+import { v4 as uuidv4 } from "uuid";
+import CourseSelect from "./Course";
 import BranchDetails from "./BranchDetails";
 import Menu from "@mui/material/Menu";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import { useSelector } from "react-redux";
 function Stream() {
   const { collegeId } = useSelector((state) => state.collegeId);
   console.log(collegeId);
 
-  const [Stream, setStream] = React.useState([
-    { id: uuidv4(), StreamName: "" },
-  ]);
-  const streams = [
-    { value: "Engineering", label: "Engineering" },
-    { value: "Medical", label: "Medical" },
-    { value: "Arts", label: "Arts" },
-  ];
+  const [Stream, setStream] = React.useState([{ id: uuidv4() }]);
+
   const handleChangeInput = (id, event) => {
     const newStream = Stream.map((i) => {
       if (id === i.id) {
@@ -78,13 +71,13 @@ function Stream() {
 
                 <Box>
                   <FormControl>
-                    <Select
+                    <Typography
+                      variant="filled"
                       className="w-48"
-                      placeholder="Select Stream"
+                      placeholder="Enter Stream"
                       id="demo-simple-select"
-                      name="Stream"
-                      options={streams}
-                      value={Stream.name}
+                      name="streamname"
+                      value={Stream.streamname}
                       label="Stream"
                     />
 
