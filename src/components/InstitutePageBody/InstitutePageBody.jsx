@@ -8,10 +8,10 @@ import Accordian from "../FAQsection/Accordian";
 import { useDispatch } from "react-redux";
 import ButtonGroup from "./ButtonGroup";
 import AliceCarousel from 'react-alice-carousel';
-import { BASE_URL } from "../../api/UseFetch";
+import useFetch, { BASE_URL } from "../../api/UseFetch";
 import LanguageIcon from '@mui/icons-material/Language';
 import image1 from '../../images/28466.jpg'
-import { Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import {
   fetchStart,
   fetchSuccess,
@@ -38,23 +38,25 @@ const InstitutePageBody = () => {
   }, [id]);
   
   // testing
-  const data={
-    photos:[
-      {
-        url:"https://bit.ly/3wl79kw",
-      },
-      {
-        url:"https://bit.ly/3wl79kw",
-      },
-      {
-        url:"https://bit.ly/3wl79kw",
-      },
-      {
-        url:"https://bit.ly/3wl79kw",
-      },
-    ]
-  }
-console.log("collegedata",data);
+//   const data={
+//     photos:[
+//       {
+//         url:"https://bit.ly/3wl79kw",
+//       },
+//       {
+//         url:"https://bit.ly/3wl79kw",
+//       },
+//       {
+//         url:"https://bit.ly/3wl79kw",
+//       },
+//       {
+//         url:"https://bit.ly/3wl79kw",
+//       },
+//     ]
+//   }
+// console.log("collegedata",data);
+const { data, loading, error } = useFetch(`{/college/${id}}`);
+console.log("master check",data);
   return (
     <>
       <div className="align-items: center; justify-center flex">
@@ -78,6 +80,7 @@ console.log("collegedata",data);
                   </Button>
                 </div>
                 <div className="py-3 align-items: center; justify-center flex">
+                  <Link to={"/"}>
                   <Button
                     style={{ backgroundColor: "#F37922" }}
                     className="text-white"
@@ -86,6 +89,7 @@ console.log("collegedata",data);
                   >
                     Brochure
                   </Button>
+                  </Link>
                 </div>
                 <div className="py-3 align-items: center; justify-center flex">
                   <a href="https://vtu.ac.in/">

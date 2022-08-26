@@ -37,8 +37,8 @@ const ButtonGroup = () => {
             </Link>
             </li>
             <li className="nav-item">
-            <Link to="/institutepage/alumni" className="nav-link  btnbtngroup">
-                Colleges Affliated
+            <Link to={`/institutepage/${collegeId}/affiliatedcollege`} className="nav-link  btnbtngroup">
+                Affliated Colleges 
             </Link>
             </li>
             <li className="nav-item ">

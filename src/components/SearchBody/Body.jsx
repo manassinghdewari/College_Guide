@@ -33,7 +33,7 @@ const Body = () => {
     `/college?keyword=${searchQuery}&sortBy=${sortBy}&sortOrder=desc`
   );
   console.log(college);
-
+  // const {data:placement,loading,error}=useFetch(`/college/placement/${id}`)  
   
   // console.log("this is for compare",college);
   // const [collegeIdCompare,setCollegeIdCompare]=useState([]);
