@@ -24,7 +24,7 @@ import Faculty from "./components/GroupButton/Faculty";
 import Courses from "./components/GroupButton/Courses";
 import Facility from "./components/GroupButton/Facility";
 import Alumni from "./components/GroupButton/Alumni";
-import Collegesignin from "./components/authentication/Collegesignin"
+import Collegesignin from "./components/authentication/Collegesignin";
 import Studentsignup from "./components/authentication/Studentsignup";
 import BasicDetails from "./components/Collegeregistration/BasicDetails";
 import Stream from "./components/Collegeregistration/Stream";
@@ -51,9 +51,9 @@ const ScrollToTop = ({ children }) => {
 
 const ProctectedRoute = ({ children }) => {
   const { currentUser } = useSelector((state) => state.user);
-  console.log(currentUser.details.role);
+  const role = currentUser.details.role;
 
-  if (currentUser) {
+  if (role === "admin" || role === "college") {
     return children || null;
   }
 };
@@ -63,122 +63,121 @@ const App = () => {
 
   return (
     <>
-      {
-        function () {
-          window.onpageshow = function(event) {
-            if (event.persisted) {
-              window.location.reload();
-            }
-          };
-        }()
-    }
-    <BrowserRouter>
-      {/* <Homepage/> */}
-      {/* <MultipleEntry/> */}
-      <ScrollToTop>
-        <Routes>
-          <Route exact path="/" element={<Homepage />} />
+      {(function () {
+        window.onpageshow = function (event) {
+          if (event.persisted) {
+            window.location.reload();
+          }
+        };
+      })()}
+      <BrowserRouter>
+        {/* <Homepage/> */}
+        {/* <MultipleEntry/> */}
+        <ScrollToTop>
+          <Routes>
+            <Route exact path="/" element={<Homepage />} />
 
-          <Route path="search" element={<Search />} />
-          <Route
-            exact
-            path="/login"
-            element={currentUser ? <Homepage /> : <StudentSignin />}
-          />
-          <Route exact path="/collegesignin" element={<Collegesignin/>}/>
-          <Route exact path="/collegesignup" element={<Collegesignup/>}/>
-          <Route exact path="/institutepage/:id" element={<InstitutePage />}>
-            <Route index element={<Compare />} />
-            <Route exact path="compare" element={<Compare />} />
+            <Route path="search" element={<Search />} />
+            <Route
+              exact
+              path="/login"
+              element={currentUser ? <Homepage /> : <StudentSignin />}
+            />
+            <Route exact path="/signup" element={<Studentsignup />} />
+            {/* <Route exact path="/collegesignin" element={<Collegesignin/>}/>
+          <Route exact path="/collegesignup" element={<Collegesignup/>}/> */}
+            <Route exact path="/institutepage/:id" element={<InstitutePage />}>
+              <Route index element={<Compare />} />
+              <Route exact path="compare" element={<Compare />} />
 
-            <Route exact path="info" element={<Info />} />
-            <Route exact path="fees" element={<Fees />} />
-            <Route exact path="review" element={<Review />} />
-            <Route exact path="placement" element={<Placement />} />
-            <Route exact path="faculty" element={<Faculty />} />
-            <Route exact path="courses" element={<Courses />} />
-            <Route exact path="facility" element={<Facility />} />
-            <Route exact path="alumni" element={<Alumni />} />
-          </Route>
-          <Route
-            exact
-            path="/collegeRegistration"
-            element={
-              <ProctectedRoute>
-                <BasicDetails />
-              </ProctectedRoute>
-            }
-          />
-          <Route
-            exact
-            path="/collegeRegistration/stream"
-            element={
-              <ProctectedRoute>
-                <Stream />
-              </ProctectedRoute>
-            }
-          />
-          <Route
-            exact
-            path="/collegeRegistration/accreditation"
-            element={
-              <ProctectedRoute>
-                <Accreditation />
-              </ProctectedRoute>
-            }
-          />
-          <Route
-            exact
-            path="/collegeRegistration/faculty"
-            element={
-              <ProctectedRoute>
-                <FacultyInfo />
-              </ProctectedRoute>
-            }
-          />
-          <Route
-            exact
-            path="/collegeRegistration/research"
-            element={
-              <ProctectedRoute>
-                <ResearchPublication />
-              </ProctectedRoute>
-            }
-          />
-          <Route
-            exact
-            path="/collegeRegistration/onlineCourse"
-            element={
-              <ProctectedRoute>
-                <OnlineCourses />
-              </ProctectedRoute>
-            }
-          />
-          <Route
-            exact
-            path="/collegeRegistration/placement"
-            element={
-              <ProctectedRoute>
-                <Placements />
-              </ProctectedRoute>
-            }
-          />
-          <Route
-            exact
-            path="/collegeRegistration/alumni"
-            element={<AlumniData />}
-          />
-          <Route
-            exact
-            path="/collegeRegistration/location"
-            element={<LocationInfo />}
-          />
-        </Routes>
-      </ScrollToTop>
-      {/* <StudentSignin /> */}
-    </BrowserRouter>
+              <Route exact path="info" element={<Info />} />
+              <Route exact path="fees" element={<Fees />} />
+              <Route exact path="review" element={<Review />} />
+              <Route exact path="placement" element={<Placement />} />
+              <Route exact path="faculty" element={<Faculty />} />
+              <Route exact path="courses" element={<Courses />} />
+              <Route exact path="facility" element={<Facility />} />
+              <Route exact path="alumni" element={<Alumni />} />
+            </Route>
+            <Route
+              exact
+              path="/collegeRegistration"
+              element={
+                <ProctectedRoute>
+                  <BasicDetails />
+                </ProctectedRoute>
+              }
+            />
+            <Route
+              exact
+              path="/collegeRegistration/stream"
+              element={
+                <ProctectedRoute>
+                  <Stream />
+                </ProctectedRoute>
+              }
+            />
+            <Route
+              exact
+              path="/collegeRegistration/accreditation"
+              element={
+                <ProctectedRoute>
+                  <Accreditation />
+                </ProctectedRoute>
+              }
+            />
+            <Route
+              exact
+              path="/collegeRegistration/faculty"
+              element={
+                <ProctectedRoute>
+                  <FacultyInfo />
+                </ProctectedRoute>
+              }
+            />
+            <Route
+              exact
+              path="/collegeRegistration/research"
+              element={
+                <ProctectedRoute>
+                  <ResearchPublication />
+                </ProctectedRoute>
+              }
+            />
+            <Route
+              exact
+              path="/collegeRegistration/onlineCourse"
+              element={
+                <ProctectedRoute>
+                  <OnlineCourses />
+                </ProctectedRoute>
+              }
+            />
+            <Route
+              exact
+              path="/collegeRegistration/placement"
+              element={
+                <ProctectedRoute>
+                  <Placements />
+                </ProctectedRoute>
+              }
+            />
+            <Route
+              exact
+              path="/collegeRegistration/alumni"
+              element={<AlumniData />}
+            />
+            <Route
+              exact
+              path="/collegeRegistration/location"
+              element={<LocationInfo />}
+            />
+          </Routes>
+        </ScrollToTop>
+        {/* <StudentSignin /> */}
+      </BrowserRouter>
     </>
-      );
+  );
 };
 
 export default App;
