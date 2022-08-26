@@ -1,29 +1,33 @@
 import axios from 'axios';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { BASE_URL } from '../../api/UseFetch';
+import useFetch, { BASE_URL } from '../../api/UseFetch';
 import millify from "millify";
 
 // const {placementData}=await axios.get(`${BASE_URL}/placement/`)
 
-const placementData =
-	{
-		average:millify(2259090, {
-			precision: 1,  
-			decimalSeparator: ","
-		  }),
-		median:millify(2259090, {
-			precision: 1,  
-			decimalSeparator: ","
-		  }),
-		highest:millify(2259090, {
-			precision: 1,  
-			decimalSeparator: ","
-		  }),
-	}
+// const placementData =
+// 	{
+// 		average:millify(2259090, {
+// 			precision: 1,  
+// 			decimalSeparator: ","
+// 		  }),
+// 		median:millify(2259090, {
+// 			precision: 1,  
+// 			decimalSeparator: ","
+// 		  }),
+// 		highest:millify(2259090, {
+// 			precision: 1,  
+// 			decimalSeparator: ","
+// 		  }),
+// 	}
+
 
 const Placement=()=> {
-	const { collegeData } = useSelector((state) => state.college);
+	const {collegeData}= useSelector((state) => state.college);
+	console.log("this is from placement page",collegeData);
+	const {data:placementData,loading,error}=useFetch(`/college/placement/${collegeData?._id}`)
+	console.log("this is from placement page",placementData);
     return (
         <section class="main-content">
 		<div class="container">

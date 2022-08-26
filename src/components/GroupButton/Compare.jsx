@@ -1,20 +1,8 @@
-import axios from "axios";
 import React from "react";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import useFetch, { BASE_URL } from "../../api/UseFetch";
 
-// function refreshPage() {
-//   window.location.reload(false);
-// }
-let id="63072a0d355aab9156ebaa1a";
 const Compare = () => {
-  const {data:placement,loading,error}=useFetch(`/college/placement/${id}`)
-  console.log(placement);
-  const {collegeData}= useSelector((state) => state.college);
   return (
-    <>
-      <div className="container-table">
+    <div className="container-table">
       <div className="container pb-5 mb-2 ">
         <div className="comparison-table">
           <table className="table table-bordered">
@@ -45,8 +33,7 @@ const Compare = () => {
                       href="shop-single.html"
                     >
                       <img
-                        // src="https://cache.careers360.mobi/media/colleges/social-media/logo/Indian_Institute_of_Technology_Delhi.jpg"
-                        src={collegeData.photos[0]}
+                        src="https://upload.wikimedia.org/wikipedia/en/thumb/8/87/BMS_College_of_Engineering.svg/1200px-BMS_College_of_Engineering.svg.png"
                         alt="logo_1"
                       />
                     </a>
@@ -84,7 +71,7 @@ const Compare = () => {
                       href="shop-single.html"
                     >
                       <img
-                        src="https://cache.careers360.mobi/media/colleges/social-media/logo/Indian_Institute_of_Technology_Delhi.jpg"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsOhBoCAgZu_dUyFIGc0V1P7AX7wwMcv0L2iB7aRCk&s"
                         alt="logo_2"
                       />
                     </a>
@@ -92,9 +79,7 @@ const Compare = () => {
                       className="comparison-item-title"
                       href="shop-single.html"
                     >
-
                     Sir M. Visvesvaraya Institute of Technology
-
                     </a>
                   </div>
                 </td>
@@ -122,7 +107,7 @@ const Compare = () => {
                       href="shop-single.html"
                     >
                       <img
-                        src="https://cache.careers360.mobi/media/colleges/social-media/logo/Indian_Institute_of_Technology_Delhi.jpg"
+                        src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Official_Logo_of_IIT%28BHU%29%2CVaranasi%2CIndia%2C2013.png/220px-Official_Logo_of_IIT%28BHU%29%2CVaranasi%2CIndia%2C2013.png"
                         alt="logo_3"
                       />
                     </a>
@@ -344,7 +329,6 @@ const Compare = () => {
         </div>
       </div>
     </div>
-    </>
   );
 };
 
